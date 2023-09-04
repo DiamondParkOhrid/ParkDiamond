@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Book Now!</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="src/logo.jpg">
+</head>
+<body>
+    <header class="flexbox-horizontal">
+        <div class="Logo"><img src="src/logo.jpg" width="64px" height="auto" alt="Your Logo"></div>
+        <nav>
+            <ul class="flexbox-horizontal">
+                <li ><a href="index.html" >Home</a></li>
+                <li><a id="ACTIVE" href="BookYourStay.html">Book your stay</a></li>
+                <li><a href="Galerija.html">Gallery</a></li>
+                <li><a href="Contact.html">Contact</a></li>
+                <li><a href="AboutUs.html">About us</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div id="bookStay-Main">
+        <div id="NoteContainer">
+            <h2>Note</h2>
+            <p>You are inquiring about the availability of an apartment that meets your requirements. Please note that this inquiry does not constitute a reservation. Once you click 'Submit,' we will contact you via email or phone to facilitate the booking process.</p>
+        </div>
+        <div class="Book-FormContainer">
+            <h2>Ask for Availability</h2>
+            <form action="https://formspree.io/f/mgejkewk" method="post">
+                <div class="InputContainer" id="FullName">
+                    <label for="name">Full Name:</label>
+                    <input type="text" id="name" name="Name: " required placeholder="Your Name">
+                </div>
+                <div class="InputContainer" id="emailContainer">
+                    <label for="email">Email:</label>
+                    <input type="email" id="Guestemail" name="Email:" required placeholder="Your Email">
+                </div>
+                <div class="InputContainer" id="TelContainer">
+                    <label for="phone">Telephone Number:</label>
+                    <input type="tel" id="phone" name="Phone Number:" required placeholder="Phone Number">
+                </div>
+                <div class="InputContainer" id="NoOfPeopleContainer">
+                    <label for="people">Select the number of people:</label>
+                    <input type="range" id="people" name="Number of people:" min="1" max="10" required>
+                    <p>Number of people: <span id="peopleValue"></span></p>
+                </div>
+                <div class="InputContainer" id="Dates">
+                    <div>
+                        <label for="datesFrom">From:</label>
+                        <input type="date" id="datesFrom" name="From:" required>
+                    </div>
+                    <div>
+                        <label for="datesTo">To:</label>
+                        <input type="date" id="datesTo" name="To:" required>
+                    </div>
+                </div>
+                <div class="InputContainer" id="SRequestContainer">
+                    <label for="request">Special Request:</label>
+                    <textarea id="request" name="Special Request: " rows="4" style="resize: none"></textarea>
+                </div>
+                <input type="submit" class="Dugme" value="Submit" id="SubmitRez">
+            </form>
+        </div>
+        <div id="BookingExample">
+            <h2>This is how your message looks to us!</h2>
+            <h3>Apartment Availability Inquiry</h3>
+            <p>Hello,</p>
+
+            <p>I am interested in renting an apartment. Below are my details:</p>
+
+            <ul>
+                <li><strong>Full Name:</strong> John Doe</li>
+                <li><strong>Phone:</strong> (123) 456-7890</li>
+                <li><strong>Email:</strong> johndoe@example.com</li>
+                <li><strong>Number of People:</strong> 2</li>
+                <li><strong>Selected Dates:</strong> August 15th - August 25th</li>
+                <li><strong>Special Request:</strong> I would prefer a quiet apartment with a nice view.</li>
+            </ul>
+
+            <p>Please let me know if the apartment is available during the specified dates. I look forward to your response.</p>
+
+            <p>Best regards,<br>
+                John Doe</p>
+        </div>
+
+    </div>
+
+
+    <a class="back-to-top-btn" id="backToTopBtn"><img src="src/ikoni/arrow.png"></a>
+
+    <script src="src/JS/button_script.js"></script>
+    <script src="src/JS/RangeValue.js"></script>
+    <footer>
+        <div id="footer-content">
+            <div class="contact">
+                <span>Give us a call or write us an email:</span>
+                <p><img src="src/ikoni/phone-call.png" id="Telefonce" class="icon"><a href="tel:+38978442675">+38978442675</a>,<span>&nbsp;&nbsp; </span><a href="tel:+38978333807">+38978333807</a></p>
+                <p><img src="src/ikoni/gmail.png" width="32px" height="auto" id="Email"><a href="mailto:">diamondohrid@gmail.com</a></p>
+            </div>
+            <div class="social">
+                <h4>Follow Us!</h4>
+                <div class="social-grid">
+                    <a href="https://facebook.com"><img src="src/ikoni/facebook.png" alt="Facebook" class="icon"></a>
+                    <a href="https://www.instagram.com/parkdiamond_apartments/"><img src="src/ikoni/instagram.png" alt="Instagram" class="icon"></a>
+                    <a href="viber://forward?text=Здраво, дали имате слободен апартман?"><img src="src/ikoni/viber.png" alt="Viber" class="icon"></a>
+                    <a href="https://www.booking.com/hotel/mk/park-diamond-apartments.html"><img src="src/ikoni/booking.png" alt="Booking" class="icon"></a>
+                    <a href="https://www.tripadvisor.com/Hotel_Review-g303864-d15674452-Reviews-Park_Diamond_Apartments-Ohrid_Southwestern_Region.html"><img src="src/ikoni/tripadvisor.png" alt="TripAdvisor" class="icon"></a>
+                </div>
+            </div>
+            <div class="location">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3007.0354131637796!2d20.797149115416627!3d41.090072879292634!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1350dca4598774a5%3A0x4ad88810e443cf29!2sPark%20Diamond%20Apartments!5e0!3m2!1sen!2smk!4v1690368394584!5m2!1sen!2smk" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+        <span>&copy; Park Diamond Apartments 2023. Developed by <a href="mailto:kostoskid66@gmail.com">Daniel Kostoski</a></span>
+    </footer>
+</body>
+</html>

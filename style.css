@@ -1,0 +1,1161 @@
+body{
+    background: url("src/Apartmani Sliki/background.jpg")no-repeat fixed, royalblue;
+    background-size: 100%;
+    font-family:'Raleway',Arial,Helvetica,sans-serif;
+    font-size: 15px;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    overflow-x: hidden;
+}
+*::-webkit-scrollbar {
+    width: 10px;
+}
+*::-webkit-scrollbar-track {
+    background: rgba(115, 115, 115, 0);
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 255, 233, 0.74);
+    border-radius: 10px;
+    border: 15px solid cornflowerblue;
+}
+header{
+    background: #FFFFFF;
+    padding: 15px 30px;
+    width: fit-content;
+    height: 70px;
+    box-sizing: border-box;
+    border-radius: 15px;
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: 3%;
+}
+.flexbox-horizontal{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.flexbox-vertical{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+nav > ul{
+    list-style: none;
+    margin: 0 2px;
+}
+nav > ul > li {
+
+    margin-right: 30px;
+}
+nav > ul > li > a {
+    box-sizing: border-box;
+    padding: 13px 27px;
+    border-radius: 20px;
+    text-decoration: none;
+    color: #484848;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+nav > ul > li > a:hover{
+    transition: background-color ease-in-out 0.5s;
+    background-color: rgba(0, 0, 0, 0.14);
+}
+nav > ul > li > a:not(:hover){
+    transition: background-color ease-in-out 0.5s;
+    background-color: rgba(100, 100, 100, 0);
+}
+#Naslov{
+    color: whitesmoke;
+}
+#Naslov > h1{
+    text-transform: uppercase;
+    font-weight: normal;
+    font-size: 50px;
+}
+#Naslov > p{
+    font-size: 35px;
+}
+.NaslovContainer{
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+body > div.NaslovContainer > div:nth-child(2) > a{
+    padding: 15px 20px;
+    border-radius: 7px;
+    margin: 20px;
+    text-decoration: none;
+    text-align: center;
+    border: 0;
+    box-sizing: border-box;
+    height: auto;
+    width: 200px;
+    background-color: royalblue;
+}
+body > div.NaslovContainer > div:nth-child(2) > a span{
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 16px;
+    color: white;
+}
+body > div.NaslovContainer > div:nth-child(2) > a:hover{
+    background-color: white;
+    transition: 0.5s ease-in-out background-color;
+}
+body > div.NaslovContainer > div:nth-child(2) > a:hover span{
+    color: royalblue;
+    transition: 0.5s ease-in-out color;
+}
+body > div.NaslovContainer > div:nth-child(2) > a:not(:hover){
+    background-color: royalblue;
+    transition: 0.5s ease-in-out background-color;
+}
+body > div.NaslovContainer > div:nth-child(2) > a:not(:hover) span{
+    color: white;
+    transition: color 0.5s ease-in-out;
+}
+.Galerija{
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    margin: 0;
+    padding: 25px 15px;
+}
+.grid-layout{
+    gap: 50px;
+    display: grid;
+    grid-template-columns:repeat(3, 1fr);
+}
+#ACTIVE{
+    background-color: royalblue;
+    color: white;
+}
+#ACTIVE > a{
+    color: #FFFFFF;
+}
+.grid-item{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 0 7px 0;
+    background-color: royalblue;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.5);
+    max-width:256px;
+}
+.grid-item > h1{
+    max-width:256px;
+}
+.grid-item p{
+    max-width: 90%;
+    margin: 5px auto;
+}
+footer{
+    background-color: royalblue;
+    color: white;
+    padding: 3px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    box-sizing:border-box;
+}
+#footer-content{
+    display: grid;
+    grid-template-rows: auto;
+    gap:0 195px;
+    align-items: center;
+    padding: 1%;
+}
+body > footer > span{
+    margin: auto;
+    display: inline-block;
+}
+#footer-content > div.location > iframe{
+    border-radius: 7px;
+}
+.social{
+    text-align: center;
+}
+.social > div{
+    margin-top: 15px;
+}
+.icon{
+    width: 32px;
+    filter: invert(100%);
+    height: auto;
+}
+.social-grid{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 17px;
+}
+.contact{
+    text-align: left;
+}
+.contact > p{
+    display: flex;
+    align-items: center;
+}
+.contact > p > img{
+    margin-right: 7px;
+}
+
+#footer-content > div.contact > p:nth-child(4) > a{
+    margin-top: -35px;
+}
+.social{
+    margin-bottom: 40px;
+}
+body > footer > span{
+    margin: 23px 0 7px;
+    border-top: rgba(255, 255, 255, 0.32) 1px solid;
+    padding-top: 13px;
+}
+#Naslov{
+    margin: 70px 0 50px;
+    padding: 20px;
+    backdrop-filter: blur(2px);
+    border-radius: 5px;
+    border: white 3px solid;
+}
+.grid-item > img{
+    width: 256px;
+    height: 256px;
+    border-radius:7px ;
+}
+.grid-item:hover{
+    translate: 0 -15px;
+    transition: 0.5s ease-in-out translate;
+}
+.grid-item:not(:hover){
+    translate: 0 0;
+    transition: 0.5s ease-in-out translate;
+}
+.linija{
+    width: 45px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: -7px;
+    border-bottom: white 2px solid;
+}
+#footer-content > div.contact > p > a{
+    text-decoration: none;
+    color: white;
+}
+.Logo{
+    margin-right: 20px;
+}
+.Dugme{
+    text-decoration: none;
+    padding: 15px 20px;
+    border-radius: 7px;
+    margin: 60px 20px 20px 20px;
+    text-align: center;
+    box-sizing: border-box;
+    height: auto;
+    width: 200px;
+    background-color: #FFFFFF;
+    color: royalblue;
+    cursor: pointer;
+    border: 2px solid royalblue;
+}
+.Dugme span{
+    text-decoration: none;
+    text-align: center;
+    font-size: 16px;
+    color: royalblue;
+}
+.Dugme:hover{
+    background-color: royalblue;
+    color: white;
+    border: 2px solid whitesmoke;
+    transition: background-color 0.5s ease-in-out, border 0.5s ease-in-out, color ease-in-out 0.5s;
+}
+.Dugme:hover span{
+    color: #FFFFFF;
+    transition: color 0.5s ease-in-out;
+}
+.Dugme:not(:hover){
+    background-color: #FFFFFF;
+    border: royalblue 2px solid;
+    color: royalblue;
+    transition: background-color 0.5s ease-in-out, border 0.5s ease-in-out, color 0.56s ease-in-out;
+}
+.Dugme:not(:hover) span{
+    color: royalblue;
+    transition: color 0.5s ease-in-out;
+}
+#backToTopBtn{
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px;
+    background-color: cornflowerblue;
+    color: #fff;
+    border: none;
+    border-radius: 100%;
+}
+#backToTopBtn img{
+    filter: invert(100%);
+    rotate: -90deg;
+    width: 32px;
+    height: auto;
+}
+.Gallery-MainContent{
+    width: 90%;
+    padding-left: 2%;
+    margin: 7% auto 15px;
+}
+.Gallery-MainContent > .Gallery-ApartmentConatiner{
+    background: white;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 7px;
+    margin-top: 35px;
+    width: fit-content;
+}
+.Gallery-Slika{
+    width: 100% ;
+    height: auto ;
+    margin-bottom:5px; /* to match column gap */
+}
+.Gallery-Imgs{
+    line-height:0;
+    -webkit-column-count:5; /* split it into 5 columns */
+    -webkit-column-gap:5px; /* give it a 5px gap between columns */
+    -moz-column-count:5;
+    -moz-column-gap:5px;
+    column-count:5;
+    column-gap:5px;
+    max-width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+@media (max-width: 1000px) {
+    .Gallery-Imgs{
+        -moz-column-count:    3;
+        -webkit-column-count: 3;
+        column-count:         3;
+    }
+}
+@media (max-width: 700px) {
+    .Gallery-Imgs{
+        scale: 70%;
+        -moz-column-count:    2;
+        -webkit-column-count: 2;
+        column-count:         2;
+    }
+}
+body > div > div > div > a{
+    max-width: 200px;
+    max-height: 200px;
+    padding: 0;
+    margin-right: 3px;
+    margin-bottom: 3px;
+}
+body > div > div > div > a > img{
+    height: 200px;
+}
+body > footer > span > a{
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+}
+body > footer > span > a:hover, #footer-content > div.contact > p:nth-child(3) > a:hover, #footer-content > div.contact > p:nth-child(2) > a:hover{
+    text-decoration: underline;
+}
+.Gallery-ApparetmentDescription{
+    max-height: 50%;
+}
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 9999;
+}
+.modal-content {
+    max-width: 90%;
+    max-height: 90%;
+    margin: 0 auto;
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.close {
+    color: #fff;
+    font-size: 40px;
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    cursor: pointer;
+}
+.Book-FormContainer{
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 35px;
+    margin-right: auto;
+    margin-left: auto;
+    background: white;
+    border-radius: 7px;
+}
+.Book-FormContainer > form{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: auto auto;
+    width: fit-content;
+   margin: auto;
+    gap: 10px;
+}
+.Book-FormContainer > h2{
+    color: royalblue;
+    font-size: 35px;
+    text-align: center;
+    max-width: 300px;
+    margin: 0 auto 45px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid royalblue ;
+}
+.Book-FormContainer > form > .InputContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.InputContainer label{
+    margin-bottom: 5px;
+}
+.Book-FormContainer > form > .InputContainer input{
+    border-radius: 7px;
+    height: 23px;
+    border: 1px solid grey;
+    padding: 5px;
+}
+.Book-FormContainer > form > .InputContainer input:focus {
+    outline: royalblue 2px solid;
+}
+.Book-FormContainer > form > .InputContainer > div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 5px;
+}
+#SubmitRez{
+    grid-column: 2/3;
+}
+#Dates{
+    display: flex;
+    flex-direction: row;
+}
+#Dates label{
+    margin-right: 7px;
+}
+#datesFrom{
+    margin-right: 10px;
+}
+#request{
+    border-radius: 7px;
+    border: 1px solid grey;
+    padding: 5px;
+}
+#SRequestContainer{
+    margin-top: 28px;
+}
+#bookStay-Main{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: fit-content;
+    flex-wrap: nowrap;
+    box-sizing: border-box;
+    padding: 15px;
+    border-radius: 15px;
+    gap: 5px;
+    margin: 50px auto 35px auto;
+}
+
+#request:focus{
+    outline: royalblue 2px solid;
+}
+#NoteContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 20px;
+    height: fit-content;
+    max-width: 20em;
+    background: white;
+    border-radius: 7px;
+}
+#NoteContainer > h2 {
+    color: royalblue;
+    font-size: 31px;
+    text-align: center;
+    max-width: 300px;
+    margin: 0 auto 12px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid royalblue;
+}
+#BookingExample{
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    box-sizing: border-box;
+    padding: 20px;
+    max-width: 400px;
+    background: white;
+    border-radius: 7px;
+}
+#BookingExample ul{
+    list-style: none;
+    padding: 0;
+}
+#BookingExample li{
+    margin: 7px 0 0 0;
+}
+#BookingExample h2 {
+    color: royalblue;
+    font-size: 31px;
+    text-align: center;
+    max-width: 300px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid royalblue;
+}
+.blue{
+    color: royalblue;
+}
+.img_link img:hover{
+    filter: brightness(100%);
+    transition: filter 0.5s ease-in-out;
+}
+.img_link img:not(:hover){
+    filter: brightness(75%);
+    transition: filter 0.5s ease-in-out;
+}
+#image_wrap {
+    /* dimensions */
+    width:700px;
+    padding:15px 0;
+
+    /* centered */
+    text-align:center;
+
+    /* some "skinning" */
+    background-color:#efefef;
+    border:2px solid #fff;
+    outline:1px solid #ddd;
+    -moz-outline-radius:4px;
+}
+.container{
+    display: grid;
+    grid-template-columns: repeat(6,1fr);
+    grid-auto-rows: 100px 300px;
+    grid-gap: 6px;
+    grid-auto-flow: dense;
+}
+
+.gallery-item{
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.gallery-item .image{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.gallery-item .image img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50% 50%;
+    cursor: pointer;
+    transition:.5s ease-in-out;
+}
+
+.gallery-item:hover .image img{
+    transform: scale(1.5);
+}
+
+.gallery-item .text{
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    color: white;
+    font-size: 25px;
+    pointer-events: none;
+    z-index: 4;
+    transition: .3s ease-in-out;
+    -webkit-backdrop-filter: blur(5px) saturate(1.8);
+    backdrop-filter: blur(5px) saturate(1.8);
+}
+
+.gallery-item:hover .text{
+    opacity: 1;
+    animation: move-down .3s linear;
+    padding: 1em;
+    width: 100%;
+}
+
+.w-1{
+    grid-column: span 1;
+}
+
+.w-2{
+    grid-column: span 2;
+}
+
+.w-3{
+    grid-column: span 3;
+}
+
+.w-4{
+    grid-column: span 4;
+}
+
+.w-5{
+    grid-column: span 5;
+}
+
+.w-6{
+    grid-column: span 6;
+}
+
+.h-1{
+    grid-row: span 1;
+}
+
+.h-2{
+    grid-row: span 2;
+}
+
+.h-3{
+    grid-row: span 3;
+}
+
+.h-4{
+    grid-row: span 4;
+}
+
+.h-5{
+    grid-row: span 5;
+}
+
+.h-6{
+    grid-row: span 6;
+}
+
+@media screen and (max-width:500px){
+    .container{
+        grid-template-columns: repeat(1,1fr);
+    }
+    .w-1,.w-2,.w-3,.w-4,.w-5,.w-6{
+        grid-column:span 1;
+    }
+
+    .h-1,.h-2,.h-3,.h-4,.h-5,.h-6{
+        grid-row: span 3;
+    }
+}
+@keyframes move-down{
+
+    0%{
+        top: 10%;
+    }
+    50%{
+        top: 35%;
+    }
+    100%{
+        top: 50%;
+    }
+}
+#footer-content{
+    width: 90%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.SocialIframes{
+    width: 91%;
+    margin: 20px auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+}
+div.Gallery-ApparetmentDescription h2{
+    color: royalblue;
+    display: inline-block;
+    padding: 0;
+}
+.PersonIcon{
+    width: 34px;
+    height: auto;
+}
+.heading2container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 5px;
+    margin: 10px 0;
+}
+.PersonContainer{
+    padding: 5px;
+    border: 1px solid royalblue;
+    display: flex;
+    align-items: baseline;
+    border-radius: 20px;
+}
+.PersonContainer > h2{
+    margin: 0;
+}
+body > div.Galerija > div > a > div > div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+body > div.Galerija > div > a > div > div > p{
+    text-align: center;
+    max-width: 200px;
+}
+.ContactMain{
+    display: flex;
+    width: 92%;
+    flex-direction: column;
+    align-content: center;
+    padding: 15px 5px;
+    margin: 35px auto 106px;
+}
+.Contact-Container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.Grid-2x2{
+    display: inline-grid;
+    grid-template-columns: 200px 200px;
+    z-index: 99999;
+    gap: 15px;
+    margin-right: -6%;
+    width: fit-content;
+}
+.grid-2x2-item:not(:hover){
+    width: 200px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    background-color: white;
+    padding: 7px;
+    color: #484848;
+    box-sizing: border-box;
+    translate: 0;
+    transition: translate 0.5s ease-in-out;
+}
+.grid-2x2-item:hover{
+    width: 200px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #484848;
+    translate: 0 -7px;
+    transition: translate 0.5s ease-in-out;
+    background-color: white;
+    padding: 7px;
+    box-sizing: border-box;
+    border-radius: 5px;
+}
+.grid-2x2-item > a{
+    text-decoration: none;
+    display: flex;
+    color: #484848;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.ContactForm{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: royalblue;
+    color: white;
+    padding: 50px 15px;
+    border-radius: 5px;
+    width: 40%;
+}
+.ContactForm form{
+    display: flex;
+    flex-direction: column;
+}
+.ContactForm form input{
+    width: 20em;
+    height: 1.8em;
+}
+.ContactForm form textarea{
+    height: 6em;
+}
+.ContactForm form input, .ContactForm form textarea{
+    border-radius: 7px;
+    border: 1px solid grey;
+    padding: 5px;
+    margin: 15px;
+}
+.ContactForm form input:focus, .ContactForm form textarea:focus{
+    outline: white 2px solid;
+}
+#ContactDugme{
+    width: 40%;
+    height: auto;
+    align-self: center;
+    padding: 10px 9px;
+}
+.grid-2x2-item h4{
+    margin-bottom: 3px;
+}
+.grid-2x2-item a p{
+    max-width: 80%;
+    text-align: center;
+}
+#emailcontact > a > img {
+    width: 48px;
+    height: auto;
+}
+#emailcontact p{
+    max-width: 200px;
+}
+#emailcontact:hover p{
+    max-width: 200px;
+}
+#BookingLogo{
+    font-weight: bold;
+    font-size: 48px;
+    color: royalblue;
+        font-family: "Comic Sans MS", serif;
+}
+#contactFooter{
+    background-color: royalblue;
+    color: white;
+    margin-bottom: 0;
+    padding: 10px 10%;
+}
+#contactFooter > span{
+    margin-top: 10px;
+    border-top: 1px solid white;
+}
+#contactFooter > span > a{
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+#NoOfPeopleContainer{
+    margin-top: 15px;
+}
+#BookingExample > h2{
+    margin-left: auto;
+    margin-right: auto;
+}
+#AboutUS-MainContainer{
+    width: 100%;
+    margin: 35px 0 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    color: white;
+    background: royalblue;
+    box-sizing: border-box;
+    padding: 35px 0 0;
+}
+
+.Equippmentlist li p{
+    font-size: 1.2em;
+}
+#AboutUsNaslov-Container{
+    margin-top: -50px;
+}
+#NaslovAboutUS{
+    margin: 70px 0 0;
+    padding: 27px 55px;
+    backdrop-filter: blur(2px);
+    border-radius: 5px;
+    border: white 3px solid;
+}
+#NaslovAboutUS > h1{
+    text-transform: uppercase;
+    font-weight: normal;
+    font-size: 50px;
+    color: #FFFFFF;
+}
+.AboutUs-MainText{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+main{
+    width: 60%;
+    padding: 0 35px;
+    box-sizing: border-box;
+}
+aside{
+    width: 35%;
+    padding: 0 35px;
+    box-sizing: border-box;
+}
+.GridLayout-Aboutus{
+    display: grid;
+    grid-template-columns: 32% 32% 32%;
+    gap: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    margin-top: 3%;
+    box-sizing: border-box;
+    background: white;
+    color: royalblue;
+    padding: 20px 55px;
+}
+#AboutUS-MainContainer > h2{
+    font-size: 2.4em;
+    width: 60%;
+    text-align: center;
+    margin-bottom: 5%;
+    box-sizing: border-box;
+    padding-bottom: 30px;
+    border-bottom: 2px #FFFFFF solid;
+}
+.griditem-Aboutus{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    padding: 7px;
+    border-radius: 12px;
+    border: 2px solid royalblue;
+}
+.griditem-Aboutus > img{
+    width: 256px;
+    height: 256px;
+    border-radius: 100%;
+    margin-bottom: 3%;
+}
+.griditem-Aboutus > p{
+    text-align: center;
+    font-size: 1.15em;
+    box-sizing: border-box;
+    padding: 6px;
+}
+#AboutUS-MainContainer > div.AboutUs-MainText > main > p{
+    font-size: 1.3em;
+}
+#AboutUS-MainContainer > div.AboutUs-MainText > aside > p{
+    font-size: 1.3em;
+    text-align: right;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 1000px){
+    .GridLayout-Aboutus{
+        display: grid;
+        grid-template-columns: 32% 32% 32%;
+        gap: 20px;
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 3%;
+        box-sizing: border-box;
+    }
+    .griditem-Aboutus > img{
+        width: 128px;
+        height: 128px;
+        border-radius: 100%;
+        margin-bottom: 3%;
+    }
+    .Contact-Container{
+        display: flex;
+        width: 95%;
+        margin: auto;
+        flex-direction: column-reverse;
+    }
+    .Grid-2x2{
+        display: grid;
+        z-index: auto;
+        margin:50px auto auto auto;
+        gap: 50px;
+    }
+    #bookStay-Main{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        margin:50px auto 0 auto;
+        width: 99%;
+        padding: 15px;
+    }
+    #footer-content{
+        gap: 55px;
+    }
+    .Book-FormContainer{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 66%;
+        border-radius: 20px;
+        margin: 50px auto;
+    }
+    #bookStay-Main > div.Book-FormContainer > form{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        font-size: larger;
+        width: 80%;
+    }
+    #BookingExample{
+        display: none;
+    }
+    #NoteContainer{
+        width: 120%;
+        margin: auto;
+    }
+    .InputContainer label{
+        margin-bottom: 5px;
+    }
+    .Book-FormContainer > form > .InputContainer input{
+        border-radius: 7px;
+        height: 35px;
+        border: 1px solid grey;
+        padding: 5px;
+    }
+    .Book-FormContainer > form > .InputContainer input:focus {
+        outline: royalblue 2px solid;
+    }
+    .Book-FormContainer > form > .InputContainer > div{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 0 5px;
+    }
+    #SubmitRez{
+        grid-column: 2/3;
+    }
+    #Dates{
+        display: flex;
+        flex-direction: row;
+    }
+    #Dates label{
+        margin-right: 7px;
+    }
+    #datesFrom{
+        margin-right: 10px;
+    }
+    #request{
+        border-radius: 7px;
+        border: 1px solid grey;
+        padding: 5px;
+    }
+    #SRequestContainer{
+        margin-top: 28px;
+    }
+    #BookingFooter{
+        margin-top: 350px;
+    }
+    .Galerija{
+        padding: 100px 15px;
+    }
+    #AboutUS-MainContainer > div > h5{
+        font-size: 260%;
+        margin: 2px;
+    }
+    #AboutUS-MainContainer > div > h2{
+        font-size: 360%;
+    }
+    #AboutUS-MainContainer > div > p{
+        font-size: 1.3em;
+    }
+    header{
+        margin-right: auto;
+    }
+    body > header > div.Logo{
+        margin-right: 10px;
+    }
+    .close{
+        font-size: 80px;
+    }
+    #backToTopBtn{
+    display: none;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    padding: 10px;
+    background-color: cornflowerblue;
+    color: #fff;
+    border: none;
+    border-radius: 100%;
+}
+#backToTopBtn img{
+    filter: invert(100%);
+    rotate: -90deg;
+    width: 75px;
+    height: auto;
+}
+}
