@@ -994,7 +994,7 @@ aside{
     text-align: right;
 }
 #Apartments > h2{
-    text-align: center:
+    text-align: center;
 }
 
 
@@ -1016,7 +1016,7 @@ aside{
 
 @media screen and (max-width: 1000px){
     #Apartments > h2{
-    text-align: center:
+    text-align: center;
 }
     .GridLayout-Aboutus{
         display: grid;
