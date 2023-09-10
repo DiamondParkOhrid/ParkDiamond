@@ -1015,6 +1015,9 @@ aside{
 
 
 @media screen and (max-width: 1000px){
+    #Apartments > h2{
+    text-align: center:
+}
     .GridLayout-Aboutus{
         display: grid;
         grid-template-columns: 32% 32% 32%;
