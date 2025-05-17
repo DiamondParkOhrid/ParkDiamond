@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Diamond Market Catalog</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="market_style.css" />
+</head>
+<body>
+
+
+<nav class="navbar navbar-expand-lg fixed-top shadow-sm" style="background-color: royalblue;">
+  <div class="container">
+    <a class="navbar-brand text-white fw-bold" href="#" style="letter-spacing: 1px;">
+      <img src="../src/transparent%20logo.png" alt="Diamond Market Logo" height="40" class="me-2" />
+      Diamond Market
+    </a>
+    <button class="navbar-toggler btn-outline-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
+            aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon" style="filter: invert(1);"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarContent">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item"><a class="nav-link text-white" href="MarketIndex.html">Home</a></li>
+        <li class="nav-item"><a  class="nav-link activeNav" href="Product%20Catalog.html">Products</a></li>
+        <li class="nav-item"><a class="nav-link text-white" href="#about">About Us</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<div style="padding-top: 90px;"></div>
+<main class="container">
+  <h2 class="mb-4 text-primary fw-bold text-center">Our Catalog</h2>
+
+  <!-- Category Filter -->
+  <div class="mb-4 d-flex justify-content-center">
+    <select id="categoryFilter" class="form-select w-auto" aria-label="Filter products by category">
+      <option value="All">All Categories</option>
+      <!-- Categories will be populated here dynamically -->
+    </select>
+  </div>
+
+  <div id="product-list" class="row g-4" aria-live="polite" aria-atomic="true">
+    <!-- Products will be inserted here -->
+  </div>
+
+  <nav aria-label="Page navigation" class="mt-4 d-flex justify-content-center">
+    <ul class="pagination">
+      <li class="page-item" id="prev-page"><a class="page-link" href="#" tabindex="0">Previous</a></li>
+      <li class="page-item disabled"><a class="page-link" href="#" id="page-info" tabindex="-1">Page 1</a></li>
+      <li class="page-item" id="next-page"><a class="page-link" href="#" tabindex="0">Next</a></li>
+    </ul>
+  </nav>
+</main>
+
+<footer>
+  &copy; 2025 Diamond Market. All rights reserved.
+</footer>
+
+<script>
+  let products = [];
+  let filteredProducts = [];
+  const productsPerPage = 8;
+  let currentPage = 1;
+  let totalPages = 1;
+
+  const categoryFilter = document.getElementById('categoryFilter');
+  const productList = document.getElementById('product-list');
+
+  // Render products for current page
+  function renderProducts() {
+    productList.innerHTML = '';
+
+    const start = (currentPage - 1) * productsPerPage;
+    const end = start + productsPerPage;
+    const currentProducts = filteredProducts.slice(start, end);
+
+    if(currentProducts.length === 0){
+      productList.innerHTML = '<p class="text-center text-muted">No products found.</p>';
+    } else {
+      currentProducts.forEach(prod => {
+        const card = document.createElement('div');
+        card.className = 'col-12 col-lg-3'; // 1 per small, 4 per large screens
+        card.innerHTML = `
+    <div class="card h-100 shadow-sm border-primary" role="article" tabindex="0">
+      <img src="${prod.img}" class="card-img-top" alt="${prod.title}" />
+      <div class="card-body">
+        <h5 class="card-title text-primary">${prod.title}</h5>
+        <p class="card-text text-secondary">${prod.description}</p>
+        <p class="text-success fw-bold">${prod.price}</p>
+        <small class="text-muted">Category: ${prod.category}</small>
+      </div>
+    </div>
+  `;
+        productList.appendChild(card);
+      });
+    }
+
+    document.getElementById('page-info').textContent = `Page ${currentPage} of ${totalPages}`;
+
+    document.getElementById('prev-page').classList.toggle('disabled', currentPage === 1);
+    document.getElementById('next-page').classList.toggle('disabled', currentPage === totalPages);
+  }
+
+  // Populate category filter dropdown dynamically
+  function populateCategories() {
+    const categories = [...new Set(products.map(p => p.category))].sort();
+
+    categories.forEach(cat => {
+      const option = document.createElement('option');
+      option.value = cat;
+      option.textContent = cat;
+      categoryFilter.appendChild(option);
+    });
+  }
+
+  // Filter products based on selected category
+  function filterProducts() {
+    const selectedCategory = categoryFilter.value;
+    if (selectedCategory === 'All') {
+      filteredProducts = [...products];
+    } else {
+      filteredProducts = products.filter(p => p.category === selectedCategory);
+    }
+    currentPage = 1;
+    totalPages = Math.ceil(filteredProducts.length / productsPerPage) || 1;
+    renderProducts();
+  }
+
+  categoryFilter.addEventListener('change', filterProducts);
+
+  document.getElementById('prev-page').addEventListener('click', e => {
+    e.preventDefault();
+    if (currentPage > 1) {
+      currentPage--;
+      renderProducts();
+    }
+  });
+
+  document.getElementById('next-page').addEventListener('click', e => {
+    e.preventDefault();
+    if (currentPage < totalPages) {
+      currentPage++;
+      renderProducts();
+    }
+  });
+
+  // Fetch product data
+  fetch('../src/products.json')
+          .then(res => res.json())
+          .then(data => {
+            products = data;
+            populateCategories();
+            filterProducts(); // apply initial filter "All"
+          })
+          .catch(err => {
+            console.error('Error loading products:', err);
+            productList.innerHTML = '<p class="text-danger text-center">Failed to load products.</p>';
+          });
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
