@@ -9,7 +9,6 @@
 </head>
 <body>
 
-
 <nav class="navbar navbar-expand-lg fixed-top shadow-sm" style="background-color: royalblue;">
   <div class="container">
     <a class="navbar-brand text-white fw-bold" href="#" style="letter-spacing: 1px;">
@@ -23,22 +22,32 @@
     <div class="collapse navbar-collapse" id="navbarContent">
       <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
         <li class="nav-item"><a class="nav-link text-white" href="MarketIndex.html">Home</a></li>
-        <li class="nav-item"><a  class="nav-link activeNav" href="Product%20Catalog.html">Products</a></li>
+        <li class="nav-item"><a class="nav-link activeNav" href="Product%20Catalog.html">Products</a></li>
         <li class="nav-item"><a class="nav-link text-white" href="#about">About Us</a></li>
       </ul>
     </div>
   </div>
 </nav>
+
 <div style="padding-top: 90px;"></div>
+
 <main class="container">
   <h2 class="mb-4 text-primary fw-bold text-center">Our Catalog</h2>
 
-  <!-- Category Filter -->
   <div class="mb-4 d-flex justify-content-center">
-    <select id="categoryFilter" class="form-select w-auto" aria-label="Filter products by category">
-      <option value="All">All Categories</option>
-      <!-- Categories will be populated here dynamically -->
-    </select>
+    <input
+            type="search"
+            id="productSearch"
+            class="form-control w-auto"
+            placeholder="Search products..."
+            aria-label="Search products by title or description"
+    />
+  </div>
+
+  <div class="d-flex justify-content-center my-4 d-none" id="loadingSpinner">
+    <div class="spinner-border text-primary" role="status">
+      <span class="visually-hidden">Loading...</span>
+    </div>
   </div>
 
   <div id="product-list" class="row g-4" aria-live="polite" aria-atomic="true">
@@ -54,6 +63,24 @@
   </nav>
 </main>
 
+<!-- Quick View Modal -->
+<div class="modal fade" id="productModal" tabindex="-1" aria-labelledby="productModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="productModalLabel"></h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <img id="modalImg" class="img-fluid mb-3" />
+        <p id="modalDesc"></p>
+        <p class="text-success fw-bold" id="modalPrice"></p>
+        <p class="text-muted" id="modalCategory"></p>
+      </div>
+    </div>
+  </div>
+</div>
+
 <footer>
   &copy; 2025 Diamond Market. All rights reserved.
 </footer>
@@ -65,10 +92,24 @@
   let currentPage = 1;
   let totalPages = 1;
 
-  const categoryFilter = document.getElementById('categoryFilter');
+  const productSearch = document.getElementById('productSearch');
   const productList = document.getElementById('product-list');
+  const loadingSpinner = document.getElementById('loadingSpinner');
 
-  // Render products for current page
+  function parseCSV(csvText) {
+    const lines = csvText.trim().split('\n');
+    const headers = lines[0].split(',').map(h => h.trim());
+
+    return lines.slice(1).map(line => {
+      const values = line.split(',').map(v => v.trim());
+      const product = {};
+      headers.forEach((header, i) => {
+        product[header] = values[i] || '';
+      });
+      return product;
+    });
+  }
+
   function renderProducts() {
     productList.innerHTML = '';
 
@@ -76,59 +117,62 @@
     const end = start + productsPerPage;
     const currentProducts = filteredProducts.slice(start, end);
 
-    if(currentProducts.length === 0){
+    if (currentProducts.length === 0) {
       productList.innerHTML = '<p class="text-center text-muted">No products found.</p>';
     } else {
       currentProducts.forEach(prod => {
+        const cardWrapper = document.createElement('div');
+        cardWrapper.className = 'col-12 col-lg-3';
+
         const card = document.createElement('div');
-        card.className = 'col-12 col-lg-3'; // 1 per small, 4 per large screens
+        card.className = 'card h-100 shadow-sm border-primary';
+        card.setAttribute('role', 'button');
+        card.setAttribute('tabindex', '0');
+
         card.innerHTML = `
-    <div class="card h-100 shadow-sm border-primary" role="article" tabindex="0">
-      <img src="${prod.img}" class="card-img-top" alt="${prod.title}" />
-      <div class="card-body">
-        <h5 class="card-title text-primary">${prod.title}</h5>
-        <p class="card-text text-secondary">${prod.description}</p>
-        <p class="text-success fw-bold">${prod.price}</p>
-        <small class="text-muted">Category: ${prod.category}</small>
-      </div>
-    </div>
-  `;
-        productList.appendChild(card);
+          <img src="${prod.img}" class="card-img-top" alt="${prod.title}" />
+          <div class="card-body">
+            <h5 class="card-title text-primary">${prod.title}</h5>
+            <p class="card-text text-secondary">${prod.description}</p>
+            <p class="text-success fw-bold">${prod.price}</p>
+            <small class="text-muted">Category: ${prod.category}</small>
+          </div>
+        `;
+
+        card.addEventListener('click', () => {
+          document.getElementById('productModalLabel').textContent = prod.title;
+          document.getElementById('modalImg').src = prod.img;
+          document.getElementById('modalImg').alt = prod.title;
+          document.getElementById('modalDesc').textContent = prod.description;
+          document.getElementById('modalPrice').textContent = prod.price;
+          document.getElementById('modalCategory').textContent = `Category: ${prod.category}`;
+          new bootstrap.Modal(document.getElementById('productModal')).show();
+        });
+
+        cardWrapper.appendChild(card);
+        productList.appendChild(cardWrapper);
       });
     }
 
     document.getElementById('page-info').textContent = `Page ${currentPage} of ${totalPages}`;
-
     document.getElementById('prev-page').classList.toggle('disabled', currentPage === 1);
     document.getElementById('next-page').classList.toggle('disabled', currentPage === totalPages);
   }
 
-  // Populate category filter dropdown dynamically
-  function populateCategories() {
-    const categories = [...new Set(products.map(p => p.category))].sort();
-
-    categories.forEach(cat => {
-      const option = document.createElement('option');
-      option.value = cat;
-      option.textContent = cat;
-      categoryFilter.appendChild(option);
-    });
-  }
-
-  // Filter products based on selected category
   function filterProducts() {
-    const selectedCategory = categoryFilter.value;
-    if (selectedCategory === 'All') {
-      filteredProducts = [...products];
-    } else {
-      filteredProducts = products.filter(p => p.category === selectedCategory);
-    }
+    const query = productSearch.value.trim().toLowerCase();
+
+    filteredProducts = products.filter(p =>
+            p.title.toLowerCase().includes(query) ||
+            p.description.toLowerCase().includes(query)
+    );
+
     currentPage = 1;
     totalPages = Math.ceil(filteredProducts.length / productsPerPage) || 1;
     renderProducts();
   }
 
-  categoryFilter.addEventListener('change', filterProducts);
+  productSearch.addEventListener('input', filterProducts);
 
   document.getElementById('prev-page').addEventListener('click', e => {
     e.preventDefault();
@@ -146,17 +190,21 @@
     }
   });
 
-  // Fetch product data
-  fetch('../src/products.json')
-          .then(res => res.json())
-          .then(data => {
-            products = data;
-            populateCategories();
-            filterProducts(); // apply initial filter "All"
+  loadingSpinner.classList.remove('d-none');
+
+  fetch('../src/Market/products.csv')
+          .then(res => res.text())
+          .then(csvText => {
+            products = parseCSV(csvText);
+            filteredProducts = [...products];
+            totalPages = Math.ceil(filteredProducts.length / productsPerPage) || 1;
+            renderProducts();
+            loadingSpinner.classList.add('d-none');
           })
           .catch(err => {
             console.error('Error loading products:', err);
             productList.innerHTML = '<p class="text-danger text-center">Failed to load products.</p>';
+            loadingSpinner.classList.add('d-none');
           });
 </script>
 

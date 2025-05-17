@@ -239,3 +239,17 @@ footer .icon:hover {
     border-radius: 0.375rem 0.375rem; /* rounded top corners */
     border-bottom: 2px solid #2563eb;
 }
+#productSearch {
+    width: 300px;
+    padding: 0.5rem 1rem;
+    font-size: 1.1rem;
+    border-radius: 0.375rem;
+    border: 1px solid #ccc;
+    transition: border-color 0.3s ease;
+}
+
+#productSearch:focus {
+    outline: none;
+    border-color: royalblue;
+    box-shadow: 0 0 5px royalblue;
+}
