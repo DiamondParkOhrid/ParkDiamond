@@ -7,7 +7,91 @@ body {
     display: flex;
     flex-direction: column;
 }
+html {
+    scroll-behavior: smooth;
+}
 
+body {
+    background-color: #f4f7ff;
+    color: #0d3b66;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* Promo Banner */
+#promoBanner {
+    background-color: #2563eb;
+}
+
+/* Hero Section */
+#home {
+    background: linear-gradient(-45deg, #ffffff, #f0f8ff, #e6f0ff, #dceeff);
+    background-size: 400% 400%;
+    animation: gradientShift 12s ease infinite;
+    color: #0d3b66;
+}
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Card Effects */
+.card:hover .card-img-top {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+}
+
+.card-body::after {
+    content: "View Details";
+    position: absolute;
+    bottom: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #2563eb;
+    color: white;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.card:hover .card-body::after {
+    opacity: 1;
+}
+
+/* Back to Top Button */
+#backToTopBtn {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1030;
+    background-color: #2563eb;
+    color: white;
+    border: none;
+    padding: 10px 14px;
+    border-radius: 50%;
+    font-size: 1.25rem;
+}
+
+#backToTopBtn:hover {
+    background-color: #174ea6;
+}
+
+/* Footer icons */
+.social-icons a {
+    color: #0d3b66;
+    font-size: 1.5rem;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: #2563eb;
+}
 a {
     text-decoration: none;
     color: #0d6efd; /* royal blue */
