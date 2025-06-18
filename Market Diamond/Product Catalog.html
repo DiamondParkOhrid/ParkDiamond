@@ -91,7 +91,7 @@
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                 <li class="nav-item"><a class="nav-link text-white" href="MarketIndex.html">Home</a></li>
                 <li class="nav-item"><a class="nav-link activeNav" href="Product%20Catalog.html">Products</a></li>
-                <li class="nav-item"><a class="nav-link text-white" href="#about">About Us</a></li>
+                <li class="nav-item"><a class="nav-link text-white" href="AboutUs.html">About Us</a></li>
             </ul>
         </div>
     </div>
@@ -99,24 +99,27 @@
 <div style="padding-top: 90px;"></div>
 
 <div class="container py-4">
-    <h1 class="text-center mb-4">Список на Производи</h1>
+    <h1 class="text-center mb-4">Product Catalog</h1>
 
     <div class="search-sort-bar d-flex justify-content-center flex-wrap gap-2 mb-4">
-        <input type="text" id="productSearch" class="form-control w-25 w-sm-50" placeholder="Пребарај по наслов..." />
-        <select id="sortSelect" class="form-select w-25 w-sm-25">
-            <option value="default">Сортирај</option>
-            <option value="asc">Најниска цена</option>
-            <option value="desc">Највисока цена</option>
+        <input type="text" id="productSearch" class="form-control w-100 w-sm-25" placeholder="Search Products..." />
+        <select id="sortSelect" class="form-select w-100 w-sm-25">
+            <option value="default">Sort</option>
+            <option value="asc">Lowest price firs</option>
+            <option value="desc">Highest price first</option>
         </select>
-    </div>
 
+    </div>
+    <div class="d-flex justify-content-center mb-3">
+        <button id="toggleViewBtn" class="btn btn-outline-secondary btn-sm">Switch to List View</button>
+    </div>
     <div class="text-center mb-3">
         <div id="loadingSpinner" class="spinner-border text-primary" role="status">
             <span class="visually-hidden">Loading...</span>
         </div>
     </div>
 
-    <div id="topPagination" class="pagination-controls d-flex justify-content-between align-items-center">
+    <div id="topPagination"  class="pagination-controls d-flex justify-content-between align-items-center d-none">
         <button id="top-prev-page" class="btn btn-outline-primary btn-sm">◀ Претходна</button>
         <span id="top-page-info" class="text-muted small"></span>
         <button id="top-next-page" class="btn btn-outline-primary btn-sm">Следна ▶</button>
@@ -125,10 +128,11 @@
     <div id="product-list" class="row g-4 mt-2"></div>
 
     <div id="bottomPagination" class="pagination-controls d-flex justify-content-between align-items-center">
-        <button id="bottom-prev-page" class="btn btn-outline-primary btn-sm">◀ Претходна</button>
+        <button id="bottom-prev-page" class="btn btn-outline-primary btn-sm">◀ Previous</button>
         <span id="bottom-page-info" class="text-muted small"></span>
-        <button id="bottom-next-page" class="btn btn-outline-primary btn-sm">Следна ▶</button>
+        <button id="bottom-next-page" class="btn btn-outline-primary btn-sm">Next ▶</button>
     </div>
+    <p id="lastUpdated" class="text-center text-muted mb-4"></p>
 </div>
 
 
@@ -174,7 +178,7 @@
 
         <!-- Footer Bottom -->
         <div class="text-center mt-4 pt-3 border-top border-white">
-      <span>&copy; Park Diamond Apartments 2023. Developed by
+      <span>&copy; Market Diamond 2025. Developed by
         <a href="mailto:kostoskid66@gmail.com" class="text-white fw-bold text-decoration-none">Daniel Kostoski</a>
       </span>
         </div>
@@ -185,7 +189,6 @@
         style="color: #0d3b66; font-weight: 700; font-size: 1.5rem;">
     ↑
 </button>
-
 <script>
     document.getElementById("backToTopBtn").addEventListener("click", function () {
         window.scrollTo({ top: 0, behavior: "smooth" });
@@ -195,9 +198,40 @@
     let filteredProducts = [];
     let currentPage = 1;
     let totalPages = 1;
+    let isCardView = true; // Start with card view
 
     function getProductsPerPage() {
         return window.innerWidth < 576 ? 4 : 8;
+    }
+    function getLastMondayAt10AM() {
+        const now = new Date();
+        const day = now.getDay(); // Sunday=0, Monday=1, ...
+        const daysSinceMonday = (day + 6) % 7; // days since last Monday
+
+        const lastMonday = new Date(now);
+        lastMonday.setDate(now.getDate() - daysSinceMonday);
+        lastMonday.setHours(10, 0, 0, 0); // 10:00 AM exactly
+
+        // If it’s before Monday 10 AM this week, go back 1 week more
+        if (now < lastMonday) {
+            lastMonday.setDate(lastMonday.getDate() - 7);
+        }
+
+        return lastMonday;
+    }
+
+    function timeAgo(date) {
+        const now = new Date();
+        const diffMs = now - date; // milliseconds diff
+        const diffSec = Math.floor(diffMs / 1000);
+        const diffMin = Math.floor(diffSec / 60);
+        const diffHrs = Math.floor(diffMin / 60);
+        const diffDays = Math.floor(diffHrs / 24);
+
+        if (diffMin < 1) return "Last updated just now";
+        if (diffMin < 60) return `Last updated ${diffMin} minute${diffMin === 1 ? '' : 's'} ago`;
+        if (diffHrs < 24) return `Last updated ${diffHrs} hour${diffHrs === 1 ? '' : 's'} ago`;
+        return `Last updated ${diffDays} day${diffDays === 1 ? '' : 's'} ago`;
     }
 
     let productsPerPage = getProductsPerPage();
@@ -206,6 +240,7 @@
     const sortSelect = document.getElementById('sortSelect');
     const productList = document.getElementById('product-list');
     const loadingSpinner = document.getElementById('loadingSpinner');
+    const toggleViewBtn = document.getElementById('toggleViewBtn');
 
     function parseCSV(csvText) {
         const lines = csvText.trim().split('\n');
@@ -243,29 +278,29 @@
         const currentProducts = filteredProducts.slice(start, start + productsPerPage);
 
         if (currentProducts.length === 0) {
-            productList.innerHTML = '<p class="text-center text-muted">Нема пронајдени производи.</p>';
+            productList.innerHTML = '<p class="text-center text-muted">No products found.</p>';
             return;
         }
 
         currentProducts.forEach(p => {
             const col = document.createElement('div');
-            col.className = 'col-12 col-sm-6 col-md-4 col-lg-3';
+            col.className = 'col-12 ' + (isCardView ? 'col-sm-6 col-md-4 col-lg-3' : '');
 
             const card = document.createElement('div');
-            card.className = 'product-card text-center mx-auto';
-            card.style.maxWidth = '90%';
+            card.className = isCardView ? 'product-card text-center mx-auto' : 'border p-3 bg-white rounded shadow-sm mb-2';
+            card.style.maxWidth = isCardView ? '90%' : '100%';
 
             card.innerHTML = `
-              <div class="product-title">${p.title}</div>
-              <div class="product-price">${p.price} ден</div>
+                <div class="product-title">${p.title}</div>
+                <div class="product-price">${p.price} MKD</div>
             `;
 
             col.appendChild(card);
             productList.appendChild(col);
         });
 
-        document.getElementById('top-page-info').textContent = `Страница ${currentPage} од ${totalPages}`;
-        document.getElementById('bottom-page-info').textContent = `Страница ${currentPage} од ${totalPages}`;
+        document.getElementById('top-page-info').textContent = `Page ${currentPage} of ${totalPages}`;
+        document.getElementById('bottom-page-info').textContent = `Page ${currentPage} of ${totalPages}`;
 
         document.getElementById('top-prev-page').disabled = currentPage === 1;
         document.getElementById('bottom-prev-page').disabled = currentPage === 1;
@@ -305,8 +340,17 @@
         });
     });
 
+    toggleViewBtn.addEventListener('click', () => {
+        isCardView = !isCardView;
+        toggleViewBtn.textContent = isCardView ? "Switch to List View" : "Switch to Card View";
+        renderProducts();
+    });
+
     window.addEventListener('DOMContentLoaded', () => {
         loadingSpinner.style.display = 'inline-block';
+        const lastMonday = getLastMondayAt10AM();
+        const message = timeAgo(lastMonday);
+        document.getElementById('lastUpdated').textContent = message;
         fetch('cenovnik.csv')
             .then(res => res.text())
             .then(csv => {
@@ -316,10 +360,11 @@
                 renderProducts();
             })
             .catch(() => {
-                productList.innerHTML = '<p class="text-danger text-center">Не може да се вчитаат производите.</p>';
+                productList.innerHTML = '<p class="text-danger text-center">Failed to load products.</p>';
             })
             .finally(() => loadingSpinner.style.display = 'none');
     });
 </script>
+
 </body>
 </html>

@@ -1230,3 +1230,85 @@ aside{
     height: auto;
 }
 }
+.promo-section {
+    background-color: #f7f7f7;
+    padding: 40px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   /* margin-top: 40px;*/
+}
+
+.promo-content {
+    display: flex;
+    flex-direction: row;
+    max-width: 1000px;
+    width: 100%;
+    gap: 30px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.promo-image {
+    width: 300px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.promo-text {
+    max-width: 600px;
+    flex: 1;
+}
+
+.promo-text h2 {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+.promo-text p {
+    font-size: 1.1em;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.promo-text a span {
+    background-color: #0074d9;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.promo-text a span:hover {
+    background-color: #005fa3;
+}
+
+/* Responsive styles for mobile screens */
+@media (max-width: 768px) {
+    .promo-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+
+    .promo-image {
+        width: 90%;
+        max-width: 350px;
+    }
+
+    .promo-text h2 {
+        font-size: 1.5em;
+    }
+
+    .promo-text p {
+        font-size: 1em;
+        padding: 0 10px;
+    }
+
+    .promo-text a span {
+        display: inline-block;
+        margin-top: 10px;
+    }
+}

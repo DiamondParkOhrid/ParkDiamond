@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Diamond Market</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="market_style.css">
+    <style>
+        .vertical-carousel {
+            max-width: 400px;
+            height: auto;
+            margin: 0 auto 2rem;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .vertical-carousel .carousel-inner {
+            height: 100%;
+        }
+
+        .vertical-carousel .carousel-item img {
+            object-fit: cover;
+            height: 100%;
+            width: 100%;
+        }
+
+        .vertical-carousel .carousel-control-prev {
+            top: 0;
+        }
+
+        .vertical-carousel .carousel-control-next {
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Identical Header to Index -->
+<nav class="navbar navbar-expand-lg fixed-top shadow-sm" style="background-color: royalblue;">
+    <div class="container">
+        <a class="navbar-brand text-white fw-bold" href="#" style="letter-spacing: 1px;">
+            <img src="../src/transparent%20logo.png" alt="Diamond Market Logo" height="40" class="me-2"/>
+            Diamond Market
+        </a>
+        <button class="navbar-toggler btn-outline-light" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon" style="filter: invert(1);"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarContent">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                <li class="nav-item"><a class="nav-link text-white" href="MarketIndex.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link text-white" href="Product%20Catalog.html">Products</a></li>
+                <li class="nav-item"><a class="nav-link activeNav" href="#">About Us</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div style="padding-top: 66px;"></div>
+
+<section class="text-center py-5 bg-light">
+    <div class="container">
+        <h1 class="text-primary fw-bold mb-4">About Diamond Market</h1>
+        <div id="aboutCarousel" class="carousel slide vertical-carousel" data-bs-ride="carousel">
+            <div class="carousel-inner rounded shadow">
+                <div class="carousel-item active">
+                    <img src="../src/Market/img/puri.png" class="d-block" alt="Store Front">
+                </div>
+                <div class="carousel-item">
+                    <img src="../src/Market/img/puri%202.png" class="d-block" alt="Fresh Produce">
+                </div>
+                <div class="carousel-item">
+                    <img src="../src/Market/img/map.png" class="d-block" alt="Inside Market">
+                </div>
+                <div class="carousel-item">
+                    <img src="../src/Market/img/vapes.png" class="d-block" alt="Inside Market">
+                </div>
+                <div class="carousel-item">
+                    <img src="../src/Market/img/entrance.png" class="d-block" alt="Inside Market">
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#aboutCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#aboutCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+
+        <p class="text-secondary" style="max-width: 700px; margin: auto;">
+            Diamond Market is your neighborhood grocery store located at the heart of Park Diamond Apartments.
+            We bring convenience, freshness, and affordability under one roof. Whether you're looking for daily
+            essentials, locally sourced produce, snacks, or beverages — we have it all. Our mission is to make shopping
+            easy and enjoyable for our community, combining warm service with a well-stocked selection.
+        </p>
+    </div>
+</section>
+
+<section class="py-5 bg-white">
+    <div class="container">
+        <h2 class="text-primary fw-bold text-center mb-4">Contact Info</h2>
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">
+                        <strong>Email:</strong> <a href="mailto:diamondohrid@gmail.com">diamondohrid@gmail.com</a>
+                    </li>
+                    <li class="list-group-item">
+                        <strong>Phone:</strong> <a href="tel:+38978442675">+38978442675</a>
+                    </li>
+                    <li class="list-group-item">
+                        <strong>Location:</strong> Ohrid, North Macedonia
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Identical Footer to Index -->
+<footer class="text-white pt-4" style="background-color: royalblue;">
+    <div class="container">
+        <div class="row text-center text-md-start align-items-center g-4" id="footer-content">
+            <div class="col-md-4 contact">
+                <h5>Contact Us</h5>
+                <p class="d-flex align-items-center">
+                    <img src="../src/ikoni/phone-call.png" alt="Phone" class="me-2 inverted-icon" width="24">
+                    <a href="tel:+38978442675" class="text-white text-decoration-none me-2">+38978442675</a>
+                    <a href="tel:+38978333807" class="text-white text-decoration-none">+38978333807</a>
+                </p>
+                <p class="d-flex align-items-center">
+                    <img src="../src/ikoni/gmail.png" alt="Email" class="me-2 inverted-icon" width="24">
+                    <a href="mailto:diamondohrid@gmail.com" class="text-white text-decoration-none">diamondohrid@gmail.com</a>
+                </p>
+            </div>
+            <div class="col-md-4 social text-center">
+                <h5>Follow Us!</h5>
+                <div class="d-flex justify-content-center gap-3 mt-2 flex-wrap">
+                    <a href="https://facebook.com"><img src="../src/ikoni/facebook.png" alt="Facebook" width="32"
+                                                        class="inverted-icon"></a>
+                    <a href="https://www.instagram.com/parkdiamond_apartments/"><img src="../src/ikoni/instagram.png"
+                                                                                     alt="Instagram" width="32"
+                                                                                     class="inverted-icon"></a>
+                    <a href="viber://forward?text=Здраво, дали имате слободен апартман?"><img
+                            src="../src/ikoni/viber.png" alt="Viber" width="32" class="inverted-icon"></a>
+                    <a href="https://www.booking.com/hotel/mk/park-diamond-apartments.html"><img
+                            src="../src/ikoni/booking.png" alt="Booking" width="32" class="inverted-icon"></a>
+                    <a href="https://www.tripadvisor.com/Hotel_Review-g303864-d15674452-Reviews-Park_Diamond_Apartments-Ohrid_Southwestern_Region.html"><img
+                            src="../src/ikoni/tripadvisor.png" alt="TripAdvisor" width="32" class="inverted-icon"></a>
+                </div>
+            </div>
+            <div class="col-md-4 location">
+                <h5>Location</h5>
+                <div class="ratio ratio-4x3" style="max-height: 200px; overflow: hidden;">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3007.0354131637796!2d20.797149115416627!3d41.090072879292634!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1350dca4598774a5%3A0x4ad88810e443cf29!2sPark%20Diamond%20Apartments!5e0!3m2!1sen!2smk!4v1690368394584!5m2!1sen!2smk"
+                            allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+        <div class="text-center mt-4 pt-3 border-top border-white">
+            <span>&copy; 2025 Diamond Market. Developed by
+                <a href="mailto:kostoskid66@gmail.com"
+                   class="text-white fw-bold text-decoration-none">Daniel Kostoski</a>
+            </span>
+        </div>
+    </div>
+</footer>
+
+<button id="backToTopBtn" class="btn btn-light position-fixed bottom-0 end-0 m-3 rounded-circle p-2 shadow">
+    <img src="../src/ikoni/up-arrow.png" alt="Back to Top">
+</button>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    document.getElementById("backToTopBtn").addEventListener("click", function () {
+        window.scrollTo({top: 0, behavior: "smooth"});
+    });
+</script>
+</body>
+</html>
