@@ -102,7 +102,7 @@
       <workItem from="1747777258816" duration="623000" />
       <workItem from="1748687267686" duration="96000" />
       <workItem from="1750232252965" duration="13566000" />
-      <workItem from="1750279813403" duration="1662000" />
+      <workItem from="1750279813403" duration="1965000" />
     </task>
     <task id="LOCAL-00001" summary="Market Diamond init commit">
       <option name="closed" value="true" />
@@ -208,7 +208,15 @@
       <option name="project" value="LOCAL" />
       <updated>1750281484010</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="optimize img width">
+      <option name="closed" value="true" />
+      <created>1750281767626</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1750281767626</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

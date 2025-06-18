@@ -366,6 +366,17 @@
             .finally(() => loadingSpinner.style.display = 'none');
     });
 </script>
+<script>
+    document.querySelectorAll('.navbar-collapse .nav-link').forEach(function(navLink) {
+        navLink.addEventListener('click', function () {
+            const navbarToggler = document.querySelector('.navbar-toggler');
+            const navbarCollapse = document.querySelector('.navbar-collapse');
 
+            if (window.getComputedStyle(navbarToggler).display !== 'none') {
+                new bootstrap.Collapse(navbarCollapse).hide();
+            }
+        });
+    });
+</script>
 </body>
 </html>
