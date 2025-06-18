@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4d2ad94f-13d4-4fde-989b-2cfae4a39742" name="Changes" comment="SEO for MarketIndex.html">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="4d2ad94f-13d4-4fde-989b-2cfae4a39742" name="Changes" comment="add EventListener for auto-collapse">
       <change beforePath="$PROJECT_DIR$/Market Diamond/AboutUs.html" beforeDir="false" afterPath="$PROJECT_DIR$/Market Diamond/AboutUs.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Market Diamond/MarketIndex.html" beforeDir="false" afterPath="$PROJECT_DIR$/Market Diamond/MarketIndex.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Market Diamond/Product Catalog.html" beforeDir="false" afterPath="$PROJECT_DIR$/Market Diamond/Product Catalog.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -107,7 +105,7 @@
       <workItem from="1747777258816" duration="623000" />
       <workItem from="1748687267686" duration="96000" />
       <workItem from="1750232252965" duration="13566000" />
-      <workItem from="1750279813403" duration="2675000" />
+      <workItem from="1750279813403" duration="3008000" />
     </task>
     <task id="LOCAL-00001" summary="Market Diamond init commit">
       <option name="closed" value="true" />
@@ -237,7 +235,23 @@
       <option name="project" value="LOCAL" />
       <updated>1750282265568</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="add EventListener for auto-collapse">
+      <option name="closed" value="true" />
+      <created>1750282524663</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1750282524663</updated>
+    </task>
+    <task id="LOCAL-00018" summary="add EventListener for auto-collapse">
+      <option name="closed" value="true" />
+      <created>1750282635228</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1750282635228</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -261,6 +275,7 @@
     <MESSAGE value="optimize img width" />
     <MESSAGE value="add script for auto-collapse" />
     <MESSAGE value="SEO for MarketIndex.html" />
-    <option name="LAST_COMMIT_MESSAGE" value="SEO for MarketIndex.html" />
+    <MESSAGE value="add EventListener for auto-collapse" />
+    <option name="LAST_COMMIT_MESSAGE" value="add EventListener for auto-collapse" />
   </component>
 </project>
