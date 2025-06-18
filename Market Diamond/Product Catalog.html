@@ -193,183 +193,187 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
 <script>
-    document.getElementById("backToTopBtn").addEventListener("click", function () {
-        window.scrollTo({ top: 0, behavior: "smooth" });
-    });
+</script>
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
 
-    let products = [];
-    let filteredProducts = [];
-    let currentPage = 1;
-    let totalPages = 1;
-    let isCardView = true; // Start with card view
 
-    function getProductsPerPage() {
-        return window.innerWidth < 576 ? 4 : 8;
-    }
-    function getLastMondayAt10AM() {
-        const now = new Date();
-        const day = now.getDay(); // Sunday=0, Monday=1, ...
-        const daysSinceMonday = (day + 6) % 7; // days since last Monday
-
-        const lastMonday = new Date(now);
-        lastMonday.setDate(now.getDate() - daysSinceMonday);
-        lastMonday.setHours(10, 0, 0, 0); // 10:00 AM exactly
-
-        // If it’s before Monday 10 AM this week, go back 1 week more
-        if (now < lastMonday) {
-            lastMonday.setDate(lastMonday.getDate() - 7);
-        }
-
-        return lastMonday;
-    }
-
-    function timeAgo(date) {
-        const now = new Date();
-        const diffMs = now - date; // milliseconds diff
-        const diffSec = Math.floor(diffMs / 1000);
-        const diffMin = Math.floor(diffSec / 60);
-        const diffHrs = Math.floor(diffMin / 60);
-        const diffDays = Math.floor(diffHrs / 24);
-
-        if (diffMin < 1) return "Last updated just now";
-        if (diffMin < 60) return `Last updated ${diffMin} minute${diffMin === 1 ? '' : 's'} ago`;
-        if (diffHrs < 24) return `Last updated ${diffHrs} hour${diffHrs === 1 ? '' : 's'} ago`;
-        return `Last updated ${diffDays} day${diffDays === 1 ? '' : 's'} ago`;
-    }
-
-    let productsPerPage = getProductsPerPage();
-
-    const productSearch = document.getElementById('productSearch');
-    const sortSelect = document.getElementById('sortSelect');
-    const productList = document.getElementById('product-list');
-    const loadingSpinner = document.getElementById('loadingSpinner');
-    const toggleViewBtn = document.getElementById('toggleViewBtn');
-
-    function parseCSV(csvText) {
-        const lines = csvText.trim().split('\n');
-        return lines.slice(1).map(line => {
-            const [id, title, price] = line.split(',').map(v => v.trim());
-            return {
-                id,
-                title,
-                price: parseFloat(price)
-            };
+        document.getElementById("backToTopBtn").addEventListener("click", function () {
+            window.scrollTo({ top: 0, behavior: "smooth" });
         });
-    }
 
-    function shuffleArray(array) {
-        for (let i = array.length - 1; i > 0; i--) {
-            const j = Math.floor(Math.random() * (i + 1));
-            [array[i], array[j]] = [array[j], array[i]];
+        let products = [];
+        let filteredProducts = [];
+        let currentPage = 1;
+        let totalPages = 1;
+        let isCardView = true; // Start with card view
+
+        function getProductsPerPage() {
+            return window.innerWidth < 576 ? 4 : 8;
         }
-    }
+        function getLastMondayAt10AM() {
+            const now = new Date();
+            const day = now.getDay(); // Sunday=0, Monday=1, ...
+            const daysSinceMonday = (day + 6) % 7; // days since last Monday
 
-    function sortProducts() {
-        const sort = sortSelect.value;
-        if (sort === 'asc') filteredProducts.sort((a, b) => a.price - b.price);
-        else if (sort === 'desc') filteredProducts.sort((a, b) => b.price - a.price);
-        else shuffleArray(filteredProducts);
-    }
+            const lastMonday = new Date(now);
+            lastMonday.setDate(now.getDate() - daysSinceMonday);
+            lastMonday.setHours(10, 0, 0, 0); // 10:00 AM exactly
 
-    function renderProducts() {
-        productList.innerHTML = '';
-        productsPerPage = getProductsPerPage();
-        totalPages = Math.ceil(filteredProducts.length / productsPerPage);
-        sortProducts();
+            // If it’s before Monday 10 AM this week, go back 1 week more
+            if (now < lastMonday) {
+                lastMonday.setDate(lastMonday.getDate() - 7);
+            }
 
-        const start = (currentPage - 1) * productsPerPage;
-        const currentProducts = filteredProducts.slice(start, start + productsPerPage);
-
-        if (currentProducts.length === 0) {
-            productList.innerHTML = '<p class="text-center text-muted">No products found.</p>';
-            return;
+            return lastMonday;
         }
 
-        currentProducts.forEach(p => {
-            const col = document.createElement('div');
-            col.className = 'col-12 ' + (isCardView ? 'col-sm-6 col-md-4 col-lg-3' : '');
+        function timeAgo(date) {
+            const now = new Date();
+            const diffMs = now - date; // milliseconds diff
+            const diffSec = Math.floor(diffMs / 1000);
+            const diffMin = Math.floor(diffSec / 60);
+            const diffHrs = Math.floor(diffMin / 60);
+            const diffDays = Math.floor(diffHrs / 24);
 
-            const card = document.createElement('div');
-            card.className = isCardView ? 'product-card text-center mx-auto' : 'border p-3 bg-white rounded shadow-sm mb-2';
-            card.style.maxWidth = isCardView ? '90%' : '100%';
+            if (diffMin < 1) return "Last updated just now";
+            if (diffMin < 60) return `Last updated ${diffMin} minute${diffMin === 1 ? '' : 's'} ago`;
+            if (diffHrs < 24) return `Last updated ${diffHrs} hour${diffHrs === 1 ? '' : 's'} ago`;
+            return `Last updated ${diffDays} day${diffDays === 1 ? '' : 's'} ago`;
+        }
 
-            card.innerHTML = `
+        let productsPerPage = getProductsPerPage();
+
+        const productSearch = document.getElementById('productSearch');
+        const sortSelect = document.getElementById('sortSelect');
+        const productList = document.getElementById('product-list');
+        const loadingSpinner = document.getElementById('loadingSpinner');
+        const toggleViewBtn = document.getElementById('toggleViewBtn');
+
+        function parseCSV(csvText) {
+            const lines = csvText.trim().split('\n');
+            return lines.slice(1).map(line => {
+                const [id, title, price] = line.split(',').map(v => v.trim());
+                return {
+                    id,
+                    title,
+                    price: parseFloat(price)
+                };
+            });
+        }
+
+        function shuffleArray(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+        }
+
+        function sortProducts() {
+            const sort = sortSelect.value;
+            if (sort === 'asc') filteredProducts.sort((a, b) => a.price - b.price);
+            else if (sort === 'desc') filteredProducts.sort((a, b) => b.price - a.price);
+            else shuffleArray(filteredProducts);
+        }
+
+        function renderProducts() {
+            productList.innerHTML = '';
+            productsPerPage = getProductsPerPage();
+            totalPages = Math.ceil(filteredProducts.length / productsPerPage);
+            sortProducts();
+
+            const start = (currentPage - 1) * productsPerPage;
+            const currentProducts = filteredProducts.slice(start, start + productsPerPage);
+
+            if (currentProducts.length === 0) {
+                productList.innerHTML = '<p class="text-center text-muted">No products found.</p>';
+                return;
+            }
+
+            currentProducts.forEach(p => {
+                const col = document.createElement('div');
+                col.className = 'col-12 ' + (isCardView ? 'col-sm-6 col-md-4 col-lg-3' : '');
+
+                const card = document.createElement('div');
+                card.className = isCardView ? 'product-card text-center mx-auto' : 'border p-3 bg-white rounded shadow-sm mb-2';
+                card.style.maxWidth = isCardView ? '90%' : '100%';
+
+                card.innerHTML = `
                 <div class="product-title">${p.title}</div>
                 <div class="product-price">${p.price} MKD</div>
             `;
 
-            col.appendChild(card);
-            productList.appendChild(col);
+                col.appendChild(card);
+                productList.appendChild(col);
+            });
+
+            document.getElementById('top-page-info').textContent = `Page ${currentPage} of ${totalPages}`;
+            document.getElementById('bottom-page-info').textContent = `Page ${currentPage} of ${totalPages}`;
+
+            document.getElementById('top-prev-page').disabled = currentPage === 1;
+            document.getElementById('bottom-prev-page').disabled = currentPage === 1;
+            document.getElementById('top-next-page').disabled = currentPage === totalPages;
+            document.getElementById('bottom-next-page').disabled = currentPage === totalPages;
+        }
+
+        function filterProducts() {
+            const query = productSearch.value.trim().toLowerCase();
+            filteredProducts = products.filter(p => p.title.toLowerCase().includes(query));
+            currentPage = 1;
+            renderProducts();
+        }
+
+        productSearch.addEventListener('input', filterProducts);
+        sortSelect.addEventListener('change', renderProducts);
+
+        window.addEventListener('resize', () => {
+            productsPerPage = getProductsPerPage();
+            totalPages = Math.ceil(filteredProducts.length / productsPerPage);
+            currentPage = Math.min(currentPage, totalPages);
+            renderProducts();
         });
 
-        document.getElementById('top-page-info').textContent = `Page ${currentPage} of ${totalPages}`;
-        document.getElementById('bottom-page-info').textContent = `Page ${currentPage} of ${totalPages}`;
-
-        document.getElementById('top-prev-page').disabled = currentPage === 1;
-        document.getElementById('bottom-prev-page').disabled = currentPage === 1;
-        document.getElementById('top-next-page').disabled = currentPage === totalPages;
-        document.getElementById('bottom-next-page').disabled = currentPage === totalPages;
-    }
-
-    function filterProducts() {
-        const query = productSearch.value.trim().toLowerCase();
-        filteredProducts = products.filter(p => p.title.toLowerCase().includes(query));
-        currentPage = 1;
-        renderProducts();
-    }
-
-    productSearch.addEventListener('input', filterProducts);
-    sortSelect.addEventListener('change', renderProducts);
-
-    window.addEventListener('resize', () => {
-        productsPerPage = getProductsPerPage();
-        totalPages = Math.ceil(filteredProducts.length / productsPerPage);
-        currentPage = Math.min(currentPage, totalPages);
-        renderProducts();
-    });
-
-    ['top', 'bottom'].forEach(loc => {
-        document.getElementById(`${loc}-prev-page`).addEventListener('click', () => {
-            if (currentPage > 1) {
-                currentPage--;
-                renderProducts();
-            }
+        ['top', 'bottom'].forEach(loc => {
+            document.getElementById(`${loc}-prev-page`).addEventListener('click', () => {
+                if (currentPage > 1) {
+                    currentPage--;
+                    renderProducts();
+                }
+            });
+            document.getElementById(`${loc}-next-page`).addEventListener('click', () => {
+                if (currentPage < totalPages) {
+                    currentPage++;
+                    renderProducts();
+                }
+            });
         });
-        document.getElementById(`${loc}-next-page`).addEventListener('click', () => {
-            if (currentPage < totalPages) {
-                currentPage++;
-                renderProducts();
-            }
+
+        toggleViewBtn.addEventListener('click', () => {
+            isCardView = !isCardView;
+            toggleViewBtn.textContent = isCardView ? "Switch to List View" : "Switch to Card View";
+            renderProducts();
         });
-    });
 
-    toggleViewBtn.addEventListener('click', () => {
-        isCardView = !isCardView;
-        toggleViewBtn.textContent = isCardView ? "Switch to List View" : "Switch to Card View";
-        renderProducts();
-    });
+        window.addEventListener('DOMContentLoaded', () => {
+            loadingSpinner.style.display = 'inline-block';
+            const lastMonday = getLastMondayAt10AM();
+            const message = timeAgo(lastMonday);
+            document.getElementById('lastUpdated').textContent = message;
+            fetch('cenovnik.csv')
+                .then(res => res.text())
+                .then(csv => {
+                    products = parseCSV(csv);
+                    filteredProducts = [...products];
+                    shuffleArray(filteredProducts);
+                    renderProducts();
+                })
+                .catch(() => {
+                    productList.innerHTML = '<p class="text-danger text-center">Failed to load products.</p>';
+                })
+                .finally(() => loadingSpinner.style.display = 'none');
+        });
 
-    window.addEventListener('DOMContentLoaded', () => {
-        loadingSpinner.style.display = 'inline-block';
-        const lastMonday = getLastMondayAt10AM();
-        const message = timeAgo(lastMonday);
-        document.getElementById('lastUpdated').textContent = message;
-        fetch('cenovnik.csv')
-            .then(res => res.text())
-            .then(csv => {
-                products = parseCSV(csv);
-                filteredProducts = [...products];
-                shuffleArray(filteredProducts);
-                renderProducts();
-            })
-            .catch(() => {
-                productList.innerHTML = '<p class="text-danger text-center">Failed to load products.</p>';
-            })
-            .finally(() => loadingSpinner.style.display = 'none');
-    });
-</script>
-<script>
-    window.addEventListener('DOMContentLoaded', () => {
+
         document.querySelectorAll('.navbar-collapse .nav-link').forEach(function(navLink) {
             navLink.addEventListener('click', function () {
                 const navbarToggler = document.querySelector('.navbar-toggler');
