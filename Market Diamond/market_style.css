@@ -358,7 +358,7 @@ footer .icon:hover {
     }
 
     .responsive-image-wrapper img {
-        width: 100%;
+        width: 300px;
         height: auto;
         object-fit: contain;
     }
