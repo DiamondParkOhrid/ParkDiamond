@@ -192,6 +192,8 @@
 </button>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
 <script>
     document.getElementById("backToTopBtn").addEventListener("click", function () {
         window.scrollTo({ top: 0, behavior: "smooth" });
@@ -201,33 +203,30 @@
     let filteredProducts = [];
     let currentPage = 1;
     let totalPages = 1;
-    let isCardView = true; // Start with card view
+    let isCardView = true;
 
     function getProductsPerPage() {
+        if (typeof window === 'undefined') return 8;
         return window.innerWidth < 576 ? 4 : 8;
     }
+
     function getLastMondayAt10AM() {
         const now = new Date();
-        const day = now.getDay(); // Sunday=0, Monday=1, ...
-        const daysSinceMonday = (day + 6) % 7; // days since last Monday
-
+        const day = now.getDay();
+        const daysSinceMonday = (day + 6) % 7;
         const lastMonday = new Date(now);
         lastMonday.setDate(now.getDate() - daysSinceMonday);
-        lastMonday.setHours(10, 0, 0, 0); // 10:00 AM exactly
-
-        // If it’s before Monday 10 AM this week, go back 1 week more
+        lastMonday.setHours(10, 0, 0, 0);
         if (now < lastMonday) {
             lastMonday.setDate(lastMonday.getDate() - 7);
         }
-
         return lastMonday;
     }
 
     function timeAgo(date) {
         const now = new Date();
-        const diffMs = now - date; // milliseconds diff
-        const diffSec = Math.floor(diffMs / 1000);
-        const diffMin = Math.floor(diffSec / 60);
+        const diffMs = now - date;
+        const diffMin = Math.floor(diffMs / 60000);
         const diffHrs = Math.floor(diffMin / 60);
         const diffDays = Math.floor(diffHrs / 24);
 
@@ -236,14 +235,6 @@
         if (diffHrs < 24) return `Last updated ${diffHrs} hour${diffHrs === 1 ? '' : 's'} ago`;
         return `Last updated ${diffDays} day${diffDays === 1 ? '' : 's'} ago`;
     }
-
-    let productsPerPage = getProductsPerPage();
-
-    const productSearch = document.getElementById('productSearch');
-    const sortSelect = document.getElementById('sortSelect');
-    const productList = document.getElementById('product-list');
-    const loadingSpinner = document.getElementById('loadingSpinner');
-    const toggleViewBtn = document.getElementById('toggleViewBtn');
 
     function parseCSV(csvText) {
         const lines = csvText.trim().split('\n');
@@ -265,15 +256,16 @@
     }
 
     function sortProducts() {
-        const sort = sortSelect.value;
+        const sort = document.getElementById('sortSelect').value;
         if (sort === 'asc') filteredProducts.sort((a, b) => a.price - b.price);
         else if (sort === 'desc') filteredProducts.sort((a, b) => b.price - a.price);
         else shuffleArray(filteredProducts);
     }
 
     function renderProducts() {
+        const productList = document.getElementById('product-list');
         productList.innerHTML = '';
-        productsPerPage = getProductsPerPage();
+        const productsPerPage = getProductsPerPage();
         totalPages = Math.ceil(filteredProducts.length / productsPerPage);
         sortProducts();
 
@@ -312,48 +304,23 @@
     }
 
     function filterProducts() {
-        const query = productSearch.value.trim().toLowerCase();
+        const query = document.getElementById('productSearch').value.trim().toLowerCase();
         filteredProducts = products.filter(p => p.title.toLowerCase().includes(query));
         currentPage = 1;
         renderProducts();
     }
 
-    productSearch.addEventListener('input', filterProducts);
-    sortSelect.addEventListener('change', renderProducts);
+    // 🚀 Main logic runs AFTER everything is fully loaded (safer for mobile)
+    window.addEventListener('load', () => {
+        const productSearch = document.getElementById('productSearch');
+        const sortSelect = document.getElementById('sortSelect');
+        const loadingSpinner = document.getElementById('loadingSpinner');
+        const toggleViewBtn = document.getElementById('toggleViewBtn');
 
-    window.addEventListener('resize', () => {
-        productsPerPage = getProductsPerPage();
-        totalPages = Math.ceil(filteredProducts.length / productsPerPage);
-        currentPage = Math.min(currentPage, totalPages);
-        renderProducts();
-    });
-
-    ['top', 'bottom'].forEach(loc => {
-        document.getElementById(`${loc}-prev-page`).addEventListener('click', () => {
-            if (currentPage > 1) {
-                currentPage--;
-                renderProducts();
-            }
-        });
-        document.getElementById(`${loc}-next-page`).addEventListener('click', () => {
-            if (currentPage < totalPages) {
-                currentPage++;
-                renderProducts();
-            }
-        });
-    });
-
-    toggleViewBtn.addEventListener('click', () => {
-        isCardView = !isCardView;
-        toggleViewBtn.textContent = isCardView ? "Switch to List View" : "Switch to Card View";
-        renderProducts();
-    });
-
-    window.addEventListener('DOMContentLoaded', () => {
         loadingSpinner.style.display = 'inline-block';
         const lastMonday = getLastMondayAt10AM();
-        const message = timeAgo(lastMonday);
-        document.getElementById('lastUpdated').textContent = message;
+        document.getElementById('lastUpdated').textContent = timeAgo(lastMonday);
+
         fetch('cenovnik.csv')
             .then(res => res.text())
             .then(csv => {
@@ -362,12 +329,56 @@
                 shuffleArray(filteredProducts);
                 renderProducts();
             })
-            .catch(() => {
-                productList.innerHTML = '<p class="text-danger text-center">Failed to load products.</p>';
+            .catch((err) => {
+                console.error("Failed to load CSV:", err);
+                document.getElementById('product-list').innerHTML = '<p class="text-danger text-center">Failed to load products.</p>';
             })
             .finally(() => loadingSpinner.style.display = 'none');
+
+        productSearch.addEventListener('input', filterProducts);
+        sortSelect.addEventListener('change', renderProducts);
+
+        toggleViewBtn.addEventListener('click', () => {
+            isCardView = !isCardView;
+            toggleViewBtn.textContent = isCardView ? "Switch to List View" : "Switch to Card View";
+            renderProducts();
+        });
+
+        window.addEventListener('resize', () => {
+            const productsPerPage = getProductsPerPage();
+            totalPages = Math.ceil(filteredProducts.length / productsPerPage);
+            currentPage = Math.min(currentPage, totalPages);
+            renderProducts();
+        });
+
+        ['top', 'bottom'].forEach(loc => {
+            document.getElementById(`${loc}-prev-page`).addEventListener('click', () => {
+                if (currentPage > 1) {
+                    currentPage--;
+                    renderProducts();
+                }
+            });
+            document.getElementById(`${loc}-next-page`).addEventListener('click', () => {
+                if (currentPage < totalPages) {
+                    currentPage++;
+                    renderProducts();
+                }
+            });
+        });
+
+        // 🧠 Fix collapse bug for hamburger menu
+        document.querySelectorAll('.navbar-collapse .nav-link').forEach(function(navLink) {
+            navLink.addEventListener('click', function () {
+                const navbarToggler = document.querySelector('.navbar-toggler');
+                const navbarCollapse = document.querySelector('.navbar-collapse');
+                if (window.getComputedStyle(navbarToggler).display !== 'none') {
+                    new bootstrap.Collapse(navbarCollapse).hide();
+                }
+            });
+        });
     });
 </script>
+
 <script>
     window.addEventListener('DOMContentLoaded', () => {
         document.querySelectorAll('.navbar-collapse .nav-link').forEach(function(navLink) {
