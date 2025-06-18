@@ -54,6 +54,72 @@ nav > ul > li {
 
     margin-right: 30px;
 }
+.diamond-market-highlight {
+    width: 100%;
+    padding: 2rem 1rem;
+    background: #fefefe;
+    display: flex;
+    justify-content: center;
+}
+
+.market-banner-link {
+    text-decoration: none;
+    color: inherit;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.market-banner {
+    display: flex;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.market-banner:hover {
+    transform: scale(1.02);
+}
+
+.market-img {
+    width: 45%;
+    object-fit: cover;
+    height: 100%;
+}
+
+.market-text {
+    padding: 2rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.market-text h2 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.market-text p {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+}
+
+.market-button {
+    background-color: #0078D4;
+    color: white;
+    padding: 0.6rem 1.2rem;
+    border-radius: 10px;
+    font-weight: bold;
+    display: inline-block;
+    transition: background 0.3s ease;
+}
+
+.market-button:hover {
+    background-color: #005ea3;
+}
+
 nav > ul > li > a {
     box-sizing: border-box;
     padding: 13px 27px;

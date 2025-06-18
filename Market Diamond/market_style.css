@@ -337,3 +337,6 @@ footer .icon:hover {
     border-color: royalblue;
     box-shadow: 0 0 5px royalblue;
 }
+.inverted-icon {
+    filter: invert(100%);
+}

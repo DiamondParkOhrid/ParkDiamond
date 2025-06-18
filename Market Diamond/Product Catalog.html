@@ -1,23 +1,90 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="mk">
 <head>
-    <meta charset="UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <title>Diamond Market Catalog</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
-    <link rel="stylesheet" href="market_style.css"/>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Производи</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="market_style.css" />
+    <style>
+        body {
+            background-color: #eaf4ff;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        h1 {
+            color: #007bff;
+            font-weight: 700;
+        }
+
+        .product-card {
+            background-color: #ffffff;
+            border-radius: 1rem;
+            padding: 1rem;
+            box-shadow: 0 2px 8px rgba(0, 123, 255, 0.1);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 6px 16px rgba(0, 123, 255, 0.2);
+        }
+
+        .product-title {
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: #0056b3;
+        }
+
+        .product-price {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #28a745;
+        }
+
+        .pagination-controls {
+            margin: 2rem 0 1rem;
+        }
+
+        #loadingSpinner {
+            display: none;
+        }
+
+        @media (max-width: 576px) {
+            .product-title,
+            .product-price {
+                font-size: 1rem;
+            }
+
+            .product-card {
+                padding: 0.8rem;
+            }
+
+            .search-sort-bar {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .pagination-controls {
+                flex-direction: column;
+                gap: 0.5rem;
+                text-align: center;
+            }
+
+            .pagination-controls button {
+                width: 100%;
+            }
+        }
+    </style>
 </head>
 <body>
-
 <nav class="navbar navbar-expand-lg fixed-top shadow-sm" style="background-color: royalblue;">
     <div class="container">
         <a class="navbar-brand text-white fw-bold" href="#" style="letter-spacing: 1px;">
-            <img src="../src/transparent%20logo.png" alt="Diamond Market Logo" height="40" class="me-2"/>
+            <img src="../src/transparent%20logo.png" alt="Diamond Market Logo" height="40" class="me-2" />
             Diamond Market
         </a>
-        <button class="navbar-toggler btn-outline-light" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarContent"
-                aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler btn-outline-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
             <span class="navbar-toggler-icon" style="filter: invert(1);"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarContent">
@@ -29,225 +96,230 @@
         </div>
     </div>
 </nav>
-
 <div style="padding-top: 90px;"></div>
 
-<main class="container">
-    <section class="text-center py-5 bg-light">
-        <div class="container">
-            <h1 class="display-5 fw-bold text-primary">Explore Our Premium Diamond Collection</h1>
-            <p class="text-muted">Find the perfect gem that suits your style and budget. Browse now and experience
-                elegance like never before.</p>
-        </div>
-    </section>
+<div class="container py-4">
+    <h1 class="text-center mb-4">Список на Производи</h1>
 
-    <div class="mb-4 d-flex justify-content-center">
-        <input
-                type="search"
-                id="productSearch"
-                class="form-control w-auto"
-                placeholder="Search products..."
-                aria-label="Search products by title or description"
-        />
+    <div class="search-sort-bar d-flex justify-content-center flex-wrap gap-2 mb-4">
+        <input type="text" id="productSearch" class="form-control w-25 w-sm-50" placeholder="Пребарај по наслов..." />
+        <select id="sortSelect" class="form-select w-25 w-sm-25">
+            <option value="default">Сортирај</option>
+            <option value="asc">Најниска цена</option>
+            <option value="desc">Највисока цена</option>
+        </select>
     </div>
 
-    <!-- Top Pagination -->
-    <nav aria-label="Page navigation" class="mb-4 d-flex justify-content-center">
-        <ul class="pagination" id="top-pagination">
-            <li class="page-item" id="top-prev-page"><a class="page-link" href="#" tabindex="0">Previous</a></li>
-            <li class="page-item disabled"><a class="page-link" href="#" id="top-page-info" tabindex="-1">Page 1</a>
-            </li>
-            <li class="page-item" id="top-next-page"><a class="page-link" href="#" tabindex="0">Next</a></li>
-        </ul>
-    </nav>
-
-    <div class="d-flex justify-content-center my-4 d-none" id="loadingSpinner">
-        <div class="spinner-border text-primary" role="status">
+    <div class="text-center mb-3">
+        <div id="loadingSpinner" class="spinner-border text-primary" role="status">
             <span class="visually-hidden">Loading...</span>
         </div>
     </div>
 
-    <div id="product-list" class="row g-4" aria-live="polite" aria-atomic="true">
-        <!-- Products will be inserted here -->
+    <div id="topPagination" class="pagination-controls d-flex justify-content-between align-items-center">
+        <button id="top-prev-page" class="btn btn-outline-primary btn-sm">◀ Претходна</button>
+        <span id="top-page-info" class="text-muted small"></span>
+        <button id="top-next-page" class="btn btn-outline-primary btn-sm">Следна ▶</button>
     </div>
 
-    <!-- Bottom Pagination -->
-    <nav aria-label="Page navigation" class="mt-4 d-flex justify-content-center">
-        <ul class="pagination" id="bottom-pagination">
-            <li class="page-item" id="bottom-prev-page"><a class="page-link" href="#" tabindex="0">Previous</a></li>
-            <li class="page-item disabled"><a class="page-link" href="#" id="bottom-page-info" tabindex="-1">Page 1</a>
-            </li>
-            <li class="page-item" id="bottom-next-page"><a class="page-link" href="#" tabindex="0">Next</a></li>
-        </ul>
-    </nav>
-</main>
+    <div id="product-list" class="row g-4 mt-2"></div>
 
-<!-- Quick View Modal -->
-<div class="modal fade" id="productModal" tabindex="-1" aria-labelledby="productModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg modal-dialog-centered">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="productModalLabel"></h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <img id="modalImg" class="img-fluid mb-3"/>
-                <p id="modalDesc"></p>
-                <p class="text-success fw-bold" id="modalPrice"></p>
-                <p class="text-muted" id="modalCategory"></p>
-            </div>
-        </div>
+    <div id="bottomPagination" class="pagination-controls d-flex justify-content-between align-items-center">
+        <button id="bottom-prev-page" class="btn btn-outline-primary btn-sm">◀ Претходна</button>
+        <span id="bottom-page-info" class="text-muted small"></span>
+        <button id="bottom-next-page" class="btn btn-outline-primary btn-sm">Следна ▶</button>
     </div>
 </div>
 
-<footer class="text-center py-3">
-    &copy; 2025 Diamond Market. All rights reserved.
+
+<footer class=" text-white pt-4"  style="background-color: royalblue;">
+    <div class="container">
+        <div class="row text-center text-md-start align-items-center g-4" id="footer-content">
+
+            <!-- Contact Section -->
+            <div class="col-md-4 contact">
+                <h5>Contact Us</h5>
+                <p class="d-flex align-items-center">
+                    <img src="../src/ikoni/phone-call.png" alt="Phone" class="me-2 inverted-icon" width="24">
+                    <a href="tel:+38978442675" class="text-white text-decoration-none me-2">+38978442675</a>
+                    <a href="tel:+38978333807" class="text-white text-decoration-none">+38978333807</a>
+                </p>
+                <p class="d-flex align-items-center">
+                    <img src="../src/ikoni/gmail.png" alt="Email" class="me-2" width="24">
+                    <a href="mailto:diamondohrid@gmail.com" class="text-white text-decoration-none">diamondohrid@gmail.com</a>
+                </p>
+            </div>
+
+            <!-- Social Section -->
+            <div class="col-md-4 social text-center">
+                <h5>Follow Us!</h5>
+                <div class="d-flex justify-content-center gap-3 mt-2 flex-wrap">
+                    <a href="https://facebook.com"><img src="../src/ikoni/facebook.png" alt="Facebook" width="32" class="inverted-icon"></a>
+                    <a href="https://www.instagram.com/parkdiamond_apartments/"><img src="../src/ikoni/instagram.png" alt="Instagram" width="32" class="inverted-icon"></a>
+                    <a href="viber://forward?text=Здраво, дали имате слободен апартман?"><img src="../src/ikoni/viber.png" alt="Viber" width="32" class="inverted-icon"></a>
+                    <a href="https://www.booking.com/hotel/mk/park-diamond-apartments.html"><img src="../src/ikoni/booking.png" alt="Booking" width="32" class="inverted-icon"></a>
+                    <a href="https://www.tripadvisor.com/Hotel_Review-g303864-d15674452-Reviews-Park_Diamond_Apartments-Ohrid_Southwestern_Region.html"><img src="../src/ikoni/tripadvisor.png" alt="TripAdvisor" width="32" class="inverted-icon"></a>
+                </div>
+            </div>
+
+            <!-- Map Section -->
+            <div class="col-md-4 location">
+                <h5>Location</h5>
+                <div class="ratio ratio-4x3" style="max-height: 200px; overflow: hidden;">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3007.0354131637796!2d20.797149115416627!3d41.090072879292634!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1350dca4598774a5%3A0x4ad88810e443cf29!2sPark%20Diamond%20Apartments!5e0!3m2!1sen!2smk!4v1690368394584!5m2!1sen!2smk"
+                            allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer Bottom -->
+        <div class="text-center mt-4 pt-3 border-top border-white">
+      <span>&copy; Park Diamond Apartments 2023. Developed by
+        <a href="mailto:kostoskid66@gmail.com" class="text-white fw-bold text-decoration-none">Daniel Kostoski</a>
+      </span>
+        </div>
+    </div>
 </footer>
 
+<button id="backToTopBtn" class="btn btn-light position-fixed bottom-0 end-0 m-3 rounded-circle p-2 shadow"
+        style="color: #0d3b66; font-weight: 700; font-size: 1.5rem;">
+    ↑
+</button>
+
 <script>
+    document.getElementById("backToTopBtn").addEventListener("click", function () {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+
     let products = [];
     let filteredProducts = [];
-    const productsPerPage = 8;
     let currentPage = 1;
     let totalPages = 1;
 
+    function getProductsPerPage() {
+        return window.innerWidth < 576 ? 4 : 8;
+    }
+
+    let productsPerPage = getProductsPerPage();
+
     const productSearch = document.getElementById('productSearch');
+    const sortSelect = document.getElementById('sortSelect');
     const productList = document.getElementById('product-list');
     const loadingSpinner = document.getElementById('loadingSpinner');
 
     function parseCSV(csvText) {
         const lines = csvText.trim().split('\n');
-        const headers = lines[0].split(',').map(h => h.trim());
-
         return lines.slice(1).map(line => {
-            const values = line.split(',').map(v => v.trim());
-            const product = {};
-            headers.forEach((header, i) => {
-                product[header] = values[i] || '';
-            });
-            return product;
+            const [id, title, price] = line.split(',').map(v => v.trim());
+            return {
+                id,
+                title,
+                price: parseFloat(price)
+            };
         });
+    }
+
+    function shuffleArray(array) {
+        for (let i = array.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [array[i], array[j]] = [array[j], array[i]];
+        }
+    }
+
+    function sortProducts() {
+        const sort = sortSelect.value;
+        if (sort === 'asc') filteredProducts.sort((a, b) => a.price - b.price);
+        else if (sort === 'desc') filteredProducts.sort((a, b) => b.price - a.price);
+        else shuffleArray(filteredProducts);
     }
 
     function renderProducts() {
         productList.innerHTML = '';
+        productsPerPage = getProductsPerPage();
+        totalPages = Math.ceil(filteredProducts.length / productsPerPage);
+        sortProducts();
 
         const start = (currentPage - 1) * productsPerPage;
-        const end = start + productsPerPage;
-        const currentProducts = filteredProducts.slice(start, end);
+        const currentProducts = filteredProducts.slice(start, start + productsPerPage);
 
         if (currentProducts.length === 0) {
-            productList.innerHTML = '<p class="text-center text-muted">No products found.</p>';
-        } else {
-            currentProducts.forEach(prod => {
-                const cardWrapper = document.createElement('div');
-                cardWrapper.className = 'col-12 col-lg-3';
-
-                const card = document.createElement('div');
-                card.className = 'card h-100 shadow-sm border-primary';
-                card.setAttribute('role', 'button');
-                card.setAttribute('tabindex', '0');
-
-                card.innerHTML = `
-          <img src="${prod.img}" class="card-img-top" alt="${prod.title}" />
-          <div class="card-body">
-            <h5 class="card-title text-primary">${prod.title}</h5>
-            <p class="card-text text-secondary">${prod.description}</p>
-            <p class="text-success fw-bold">${prod.price}</p>
-
-          </div>
-        `;
-
-                card.addEventListener('click', () => {
-                    document.getElementById('productModalLabel').textContent = prod.title;
-                    document.getElementById('modalImg').src = prod.img;
-                    document.getElementById('modalImg').alt = prod.title;
-                    document.getElementById('modalDesc').textContent = prod.description;
-                    document.getElementById('modalPrice').textContent = prod.price;
-                    document.getElementById('modalCategory').textContent = `Category: ${prod.category}`;
-                    new bootstrap.Modal(document.getElementById('productModal')).show();
-                });
-
-                cardWrapper.appendChild(card);
-                productList.appendChild(cardWrapper);
-            });
+            productList.innerHTML = '<p class="text-center text-muted">Нема пронајдени производи.</p>';
+            return;
         }
 
-        document.getElementById('top-page-info').textContent = `Page ${currentPage} of ${totalPages}`;
-        document.getElementById('bottom-page-info').textContent = `Page ${currentPage} of ${totalPages}`;
+        currentProducts.forEach(p => {
+            const col = document.createElement('div');
+            col.className = 'col-12 col-sm-6 col-md-4 col-lg-3';
 
-        document.getElementById('top-prev-page').classList.toggle('disabled', currentPage === 1);
-        document.getElementById('bottom-prev-page').classList.toggle('disabled', currentPage === 1);
+            const card = document.createElement('div');
+            card.className = 'product-card text-center mx-auto';
+            card.style.maxWidth = '90%';
 
-        document.getElementById('top-next-page').classList.toggle('disabled', currentPage === totalPages);
-        document.getElementById('bottom-next-page').classList.toggle('disabled', currentPage === totalPages);
+            card.innerHTML = `
+              <div class="product-title">${p.title}</div>
+              <div class="product-price">${p.price} ден</div>
+            `;
+
+            col.appendChild(card);
+            productList.appendChild(col);
+        });
+
+        document.getElementById('top-page-info').textContent = `Страница ${currentPage} од ${totalPages}`;
+        document.getElementById('bottom-page-info').textContent = `Страница ${currentPage} од ${totalPages}`;
+
+        document.getElementById('top-prev-page').disabled = currentPage === 1;
+        document.getElementById('bottom-prev-page').disabled = currentPage === 1;
+        document.getElementById('top-next-page').disabled = currentPage === totalPages;
+        document.getElementById('bottom-next-page').disabled = currentPage === totalPages;
     }
 
     function filterProducts() {
         const query = productSearch.value.trim().toLowerCase();
-
-        filteredProducts = products.filter(p =>
-            p.title.toLowerCase().includes(query) ||
-            p.description.toLowerCase().includes(query)
-        );
-
+        filteredProducts = products.filter(p => p.title.toLowerCase().includes(query));
         currentPage = 1;
-        totalPages = Math.ceil(filteredProducts.length / productsPerPage) || 1;
         renderProducts();
     }
 
     productSearch.addEventListener('input', filterProducts);
+    sortSelect.addEventListener('change', renderProducts);
 
-    document.getElementById('top-prev-page').addEventListener('click', e => {
-        e.preventDefault();
-        if (currentPage > 1) {
-            currentPage--;
-            renderProducts();
-        }
+    window.addEventListener('resize', () => {
+        productsPerPage = getProductsPerPage();
+        totalPages = Math.ceil(filteredProducts.length / productsPerPage);
+        currentPage = Math.min(currentPage, totalPages);
+        renderProducts();
     });
 
-    document.getElementById('bottom-prev-page').addEventListener('click', e => {
-        e.preventDefault();
-        if (currentPage > 1) {
-            currentPage--;
-            renderProducts();
-        }
-    });
-
-    document.getElementById('top-next-page').addEventListener('click', e => {
-        e.preventDefault();
-        if (currentPage < totalPages) {
-            currentPage++;
-            renderProducts();
-        }
-    });
-
-    document.getElementById('bottom-next-page').addEventListener('click', e => {
-        e.preventDefault();
-        if (currentPage < totalPages) {
-            currentPage++;
-            renderProducts();
-        }
-    });
-
-    loadingSpinner.classList.remove('d-none');
-
-    fetch('../src/Market/products.csv')
-        .then(res => res.text())
-        .then(csvText => {
-            products = parseCSV(csvText);
-            filteredProducts = [...products];
-            totalPages = Math.ceil(filteredProducts.length / productsPerPage) || 1;
-            renderProducts();
-            loadingSpinner.classList.add('d-none');
-        })
-        .catch(err => {
-            console.error('Error loading products:', err);
-            productList.innerHTML = '<p class="text-danger text-center">Failed to load products.</p>';
-            loadingSpinner.classList.add('d-none');
+    ['top', 'bottom'].forEach(loc => {
+        document.getElementById(`${loc}-prev-page`).addEventListener('click', () => {
+            if (currentPage > 1) {
+                currentPage--;
+                renderProducts();
+            }
         });
-</script>
+        document.getElementById(`${loc}-next-page`).addEventListener('click', () => {
+            if (currentPage < totalPages) {
+                currentPage++;
+                renderProducts();
+            }
+        });
+    });
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    window.addEventListener('DOMContentLoaded', () => {
+        loadingSpinner.style.display = 'inline-block';
+        fetch('cenovnik.csv')
+            .then(res => res.text())
+            .then(csv => {
+                products = parseCSV(csv);
+                filteredProducts = [...products];
+                shuffleArray(filteredProducts);
+                renderProducts();
+            })
+            .catch(() => {
+                productList.innerHTML = '<p class="text-danger text-center">Не може да се вчитаат производите.</p>';
+            })
+            .finally(() => loadingSpinner.style.display = 'none');
+    });
+</script>
 </body>
 </html>
