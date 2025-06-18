@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4d2ad94f-13d4-4fde-989b-2cfae4a39742" name="Changes" comment="add navigation between pages" />
+    <list default="true" id="4d2ad94f-13d4-4fde-989b-2cfae4a39742" name="Changes" comment="add navigation between pages">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Market Diamond/MarketIndex.html" beforeDir="false" afterPath="$PROJECT_DIR$/Market Diamond/MarketIndex.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/style.css" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -52,6 +56,7 @@
     "JavaScript Debug.index.html.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
     "last_opened_file_path": "C:/Users/kosto/WebstormProjects/ParkDiamond/Market Diamond",
     "list.type.of.created.stylesheet": "CSS",
@@ -101,6 +106,7 @@
       <workItem from="1747777258816" duration="623000" />
       <workItem from="1748687267686" duration="96000" />
       <workItem from="1750232252965" duration="13566000" />
+      <workItem from="1750279813403" duration="937000" />
     </task>
     <task id="LOCAL-00001" summary="Market Diamond init commit">
       <option name="closed" value="true" />
@@ -166,7 +172,15 @@
       <option name="project" value="LOCAL" />
       <updated>1750279353736</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="add navigation between pages">
+      <option name="closed" value="true" />
+      <created>1750279864293</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1750279864293</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
