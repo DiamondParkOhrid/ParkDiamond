@@ -340,3 +340,26 @@ footer .icon:hover {
 .inverted-icon {
     filter: invert(100%);
 }
+.responsive-image-wrapper {
+    max-width: 400px;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    border: 2px solid #0d6efd;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Phone view: Remove clipping, make image fully visible */
+@media (max-width: 576px) {
+    .responsive-image-wrapper {
+        max-width: 100%;
+        aspect-ratio: auto;
+        overflow: visible;
+    }
+
+    .responsive-image-wrapper img {
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+    }
+}
