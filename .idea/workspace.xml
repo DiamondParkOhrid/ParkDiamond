@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="4d2ad94f-13d4-4fde-989b-2cfae4a39742" name="Changes" comment="add navigation between pages" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="CSS File" />
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="dev" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Dkostoski30&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/DiamondParkOhrid/ParkDiamond.git&quot;,
+    &quot;accountId&quot;: &quot;c6909c42-d3d5-4ff4-a962-c7481cfd2b08&quot;
+  }
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 4
+}</component>
+  <component name="ProjectId" id="2wwlxlrDb4V3rzaWjXwazdooDsb" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "JavaScript Debug.index.html.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "C:/Users/kosto/WebstormProjects/ParkDiamond/Market Diamond",
+    "list.type.of.created.stylesheet": "CSS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\kosto\WebstormProjects\ParkDiamond\Market Diamond" />
+      <recent name="C:\Users\kosto\WebstormProjects\ParkDiamond\src\Market" />
+      <recent name="C:\Users\kosto\WebstormProjects\ParkDiamond\src" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\kosto\WebstormProjects\ParkDiamond\src" />
+      <recent name="C:\Users\kosto\WebstormProjects\ParkDiamond\src\Market" />
+      <recent name="C:\Users\kosto\WebstormProjects\ParkDiamond\src\Market\img" />
+    </key>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-d6986cc7102b-deb605915726-JavaScript-WS-243.22562.222" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="4d2ad94f-13d4-4fde-989b-2cfae4a39742" name="Changes" comment="" />
+      <created>1746960765707</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1746960765707</updated>
+      <workItem from="1746960766933" duration="1038000" />
+      <workItem from="1747465459288" duration="11000000" />
+      <workItem from="1747555995889" duration="883000" />
+      <workItem from="1747561640155" duration="917000" />
+      <workItem from="1747565388309" duration="785000" />
+      <workItem from="1747588248307" duration="2067000" />
+      <workItem from="1747594022959" duration="1397000" />
+      <workItem from="1747685216768" duration="323000" />
+      <workItem from="1747777258816" duration="623000" />
+      <workItem from="1748687267686" duration="96000" />
+      <workItem from="1750232252965" duration="13566000" />
+    </task>
+    <task id="LOCAL-00001" summary="Market Diamond init commit">
+      <option name="closed" value="true" />
+      <created>1747471518353</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1747471518353</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Rename Folder">
+      <option name="closed" value="true" />
+      <created>1747471653457</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1747471653457</updated>
+    </task>
+    <task id="LOCAL-00003" summary="changed from json to csv">
+      <option name="closed" value="true" />
+      <created>1747475086219</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1747475086219</updated>
+    </task>
+    <task id="LOCAL-00004" summary="add json">
+      <option name="closed" value="true" />
+      <created>1747475104247</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1747475104247</updated>
+    </task>
+    <task id="LOCAL-00005" summary="style changes">
+      <option name="closed" value="true" />
+      <created>1747477272813</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1747477272813</updated>
+    </task>
+    <task id="LOCAL-00006" summary="add images">
+      <option name="closed" value="true" />
+      <created>1747566083968</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1747566083968</updated>
+    </task>
+    <task id="LOCAL-00007" summary="finishing MarketIndex.html and Product Catalog.html">
+      <option name="closed" value="true" />
+      <created>1750261765586</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1750261765586</updated>
+    </task>
+    <task id="LOCAL-00008" summary="add navigation between pages">
+      <option name="closed" value="true" />
+      <created>1750279353736</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1750279353736</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="sitemap.xml" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Market Diamond init commit" />
+    <MESSAGE value="Rename Folder" />
+    <MESSAGE value="changed from json to csv" />
+    <MESSAGE value="add json" />
+    <MESSAGE value="style changes" />
+    <MESSAGE value="add images" />
+    <MESSAGE value="finishing MarketIndex.html and Product Catalog.html" />
+    <MESSAGE value="add navigation between pages" />
+    <option name="LAST_COMMIT_MESSAGE" value="add navigation between pages" />
+  </component>
+</project>
