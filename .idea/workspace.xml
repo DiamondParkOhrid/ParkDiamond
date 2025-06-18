@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4d2ad94f-13d4-4fde-989b-2cfae4a39742" name="Changes" comment="add favicon logo">
-      <change beforePath="$PROJECT_DIR$/Market Diamond/MarketIndex.html" beforeDir="false" afterPath="$PROJECT_DIR$/Market Diamond/MarketIndex.html" afterDir="false" />
-    </list>
+    <list default="true" id="4d2ad94f-13d4-4fde-989b-2cfae4a39742" name="Changes" comment="optimize img width" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -104,7 +102,7 @@
       <workItem from="1747777258816" duration="623000" />
       <workItem from="1748687267686" duration="96000" />
       <workItem from="1750232252965" duration="13566000" />
-      <workItem from="1750279813403" duration="1272000" />
+      <workItem from="1750279813403" duration="1662000" />
     </task>
     <task id="LOCAL-00001" summary="Market Diamond init commit">
       <option name="closed" value="true" />
@@ -194,7 +192,23 @@
       <option name="project" value="LOCAL" />
       <updated>1750280963019</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="optimize design">
+      <option name="closed" value="true" />
+      <created>1750281376792</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1750281376792</updated>
+    </task>
+    <task id="LOCAL-00013" summary="optimize img width">
+      <option name="closed" value="true" />
+      <created>1750281484010</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1750281484010</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -214,6 +228,8 @@
     <MESSAGE value="add navigation between pages" />
     <MESSAGE value="change iframe with img and fix width bug" />
     <MESSAGE value="add favicon logo" />
-    <option name="LAST_COMMIT_MESSAGE" value="add favicon logo" />
+    <MESSAGE value="optimize design" />
+    <MESSAGE value="optimize img width" />
+    <option name="LAST_COMMIT_MESSAGE" value="optimize img width" />
   </component>
 </project>
