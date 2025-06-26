@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4d2ad94f-13d4-4fde-989b-2cfae4a39742" name="Changes" comment="fix product loading" />
+    <list default="true" id="4d2ad94f-13d4-4fde-989b-2cfae4a39742" name="Changes" comment="fix product loading">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Galerija.html" beforeDir="false" afterPath="$PROJECT_DIR$/Galerija.html" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -46,24 +49,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "DefaultHtmlFileTemplate": "HTML File",
-    "JavaScript Debug.index.html.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/Users/kosto/WebstormProjects/ParkDiamond/Market Diamond",
-    "list.type.of.created.stylesheet": "CSS",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;JavaScript Debug.index.html.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/kosto/WebstormProjects/ParkDiamond/Market Diamond&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\kosto\WebstormProjects\ParkDiamond\Market Diamond" />
@@ -71,6 +74,7 @@
       <recent name="C:\Users\kosto\WebstormProjects\ParkDiamond\src" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\kosto\WebstormProjects\ParkDiamond\src\Apartmani Sliki" />
       <recent name="C:\Users\kosto\WebstormProjects\ParkDiamond\src" />
       <recent name="C:\Users\kosto\WebstormProjects\ParkDiamond\src\Market" />
       <recent name="C:\Users\kosto\WebstormProjects\ParkDiamond\src\Market\img" />
@@ -102,7 +106,9 @@
       <workItem from="1747777258816" duration="623000" />
       <workItem from="1748687267686" duration="96000" />
       <workItem from="1750232252965" duration="13566000" />
-      <workItem from="1750279813403" duration="3350000" />
+      <workItem from="1750279813403" duration="4081000" />
+      <workItem from="1750871129379" duration="1685000" />
+      <workItem from="1750967062025" duration="1860000" />
     </task>
     <task id="LOCAL-00001" summary="Market Diamond init commit">
       <option name="closed" value="true" />
@@ -272,7 +278,15 @@
       <option name="project" value="LOCAL" />
       <updated>1750283178572</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="fix product loading">
+      <option name="closed" value="true" />
+      <created>1750283304107</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1750283304107</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
