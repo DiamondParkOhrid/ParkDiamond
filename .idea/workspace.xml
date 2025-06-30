@@ -4,7 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4d2ad94f-13d4-4fde-989b-2cfae4a39742" name="Changes" comment="fix product loading">
+    <list default="true" id="4d2ad94f-13d4-4fde-989b-2cfae4a39742" name="Changes" comment="fixed style for new apartments">
+      <change afterPath="$PROJECT_DIR$/src/Apartmani Sliki/L Mountain View/l_mountain_view_new.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Apartmani Sliki/L Mountain View/l_mountain_view_new_2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Apartmani Sliki/XL Lake view/xl_lakeside.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Apartmani Sliki/XL Mountain view/xl_mountain_view.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Apartmani Sliki/XXL LakeView/xxl_lakeside.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Galerija.html" beforeDir="false" afterPath="$PROJECT_DIR$/Galerija.html" afterDir="false" />
     </list>
@@ -74,16 +79,17 @@
       <recent name="C:\Users\kosto\WebstormProjects\ParkDiamond\src" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\kosto\WebstormProjects\ParkDiamond\src\Apartmani Sliki\XL Lake view" />
+      <recent name="C:\Users\kosto\WebstormProjects\ParkDiamond\src\Apartmani Sliki\XXL LakeView" />
+      <recent name="C:\Users\kosto\WebstormProjects\ParkDiamond\src\Apartmani Sliki\XL Mountain view" />
+      <recent name="C:\Users\kosto\WebstormProjects\ParkDiamond\src\Apartmani Sliki\L Mountain View" />
       <recent name="C:\Users\kosto\WebstormProjects\ParkDiamond\src\Apartmani Sliki" />
-      <recent name="C:\Users\kosto\WebstormProjects\ParkDiamond\src" />
-      <recent name="C:\Users\kosto\WebstormProjects\ParkDiamond\src\Market" />
-      <recent name="C:\Users\kosto\WebstormProjects\ParkDiamond\src\Market\img" />
     </key>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-deb605915726-JavaScript-WS-243.22562.222" />
+        <option value="bundled-js-predefined-d6986cc7102b-09060db00ec0-JavaScript-WS-251.26927.40" />
       </set>
     </attachedChunks>
   </component>
@@ -108,7 +114,10 @@
       <workItem from="1750232252965" duration="13566000" />
       <workItem from="1750279813403" duration="4081000" />
       <workItem from="1750871129379" duration="1685000" />
-      <workItem from="1750967062025" duration="1860000" />
+      <workItem from="1750967062025" duration="3270000" />
+      <workItem from="1751298756219" duration="164000" />
+      <workItem from="1751301248015" duration="111000" />
+      <workItem from="1751311423634" duration="986000" />
     </task>
     <task id="LOCAL-00001" summary="Market Diamond init commit">
       <option name="closed" value="true" />
@@ -286,7 +295,31 @@
       <option name="project" value="LOCAL" />
       <updated>1750283304107</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="add 3 more apartments2">
+      <option name="closed" value="true" />
+      <created>1750969672794</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1750969672794</updated>
+    </task>
+    <task id="LOCAL-00024" summary="add 3 more apartments2">
+      <option name="closed" value="true" />
+      <created>1750969679646</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1750969679646</updated>
+    </task>
+    <task id="LOCAL-00025" summary="fixed style for new apartments">
+      <option name="closed" value="true" />
+      <created>1750970843869</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1750970843869</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -294,6 +327,17 @@
   </component>
   <component name="UnknownFeatures">
     <option featureType="com.intellij.fileTypeFactory" implementationName="sitemap.xml" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Market Diamond init commit" />
@@ -314,6 +358,9 @@
     <MESSAGE value="fix auto-collapse" />
     <MESSAGE value="remove &quot;View More&quot; and fix products not loading" />
     <MESSAGE value="fix product loading" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix product loading" />
+    <MESSAGE value="add 3 more apartments" />
+    <MESSAGE value="add 3 more apartments2" />
+    <MESSAGE value="fixed style for new apartments" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed style for new apartments" />
   </component>
 </project>
