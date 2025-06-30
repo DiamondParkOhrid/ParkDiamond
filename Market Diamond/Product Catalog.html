@@ -212,15 +212,13 @@
 
     function getLastMondayAt10AM() {
         const now = new Date();
-        const day = now.getDay();
-        const daysSinceMonday = (day + 6) % 7;
-        const lastMonday = new Date(now);
-        lastMonday.setDate(now.getDate() - daysSinceMonday);
-        lastMonday.setHours(10, 0, 0, 0);
-        if (now < lastMonday) {
-            lastMonday.setDate(lastMonday.getDate() - 7);
+        const todayAt10 = new Date(now);
+        todayAt10.setHours(10, 0, 0, 0);
+        if (now < todayAt10) {
+            // If it's before 10 AM today, use 10 AM from yesterday
+            todayAt10.setDate(todayAt10.getDate() - 1);
         }
-        return lastMonday;
+        return todayAt10;
     }
 
     function timeAgo(date) {
@@ -230,10 +228,10 @@
         const diffHrs = Math.floor(diffMin / 60);
         const diffDays = Math.floor(diffHrs / 24);
 
-        if (diffMin < 1) return "Last updated just now";
-        if (diffMin < 60) return `Last updated ${diffMin} minute${diffMin === 1 ? '' : 's'} ago`;
-        if (diffHrs < 24) return `Last updated ${diffHrs} hour${diffHrs === 1 ? '' : 's'} ago`;
-        return `Last updated ${diffDays} day${diffDays === 1 ? '' : 's'} ago`;
+        if (diffMin < 1) return "just now";
+        if (diffMin < 60) return `${diffMin} minute${diffMin === 1 ? '' : 's'} ago`;
+        if (diffHrs < 24) return `${diffHrs} hour${diffHrs === 1 ? '' : 's'} ago`;
+        return `${diffDays} day${diffDays === 1 ? '' : 's'} ago`;
     }
 
     function parseCSV(csvText) {
@@ -316,10 +314,24 @@
         const sortSelect = document.getElementById('sortSelect');
         const loadingSpinner = document.getElementById('loadingSpinner');
         const toggleViewBtn = document.getElementById('toggleViewBtn');
+        const updatedTime = getLastMondayAt10AM();
+        const now = new Date();
+        let dayLabel;
+        if (
+            now.getDate() === updatedTime.getDate() &&
+            now.getMonth() === updatedTime.getMonth() &&
+            now.getFullYear() === updatedTime.getFullYear()
+        ) {
+            dayLabel = "today";
+        } else {
+            dayLabel = "yesterday";
+        }
 
         loadingSpinner.style.display = 'inline-block';
         const lastMonday = getLastMondayAt10AM();
-        document.getElementById('lastUpdated').textContent = timeAgo(lastMonday);
+
+        document.getElementById('lastUpdated').textContent =
+            `Last updated ${dayLabel} at 10:00 (${timeAgo(lastMonday)})`;
 
         fetch('cenovnik.csv')
             .then(res => res.text())
