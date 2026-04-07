@@ -1,0 +1,38 @@
+<nav class="navbar" [class.scrolled]="scrolled()">
+  <div class="navbar-inner desktop-nav">
+    <a routerLink="/" class="logo">
+      <img src="assets/transparent logo.png" alt="Park Diamond">
+      <div class="logo-text">
+        <span class="logo-name">Park Diamond</span>
+        <span class="logo-sub">Apartments &middot; Ohrid</span>
+      </div>
+    </a>
+    <div class="nav-links">
+      <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">{{ 'nav.home' | translate }}</a>
+      <a routerLink="/gallery" routerLinkActive="active">{{ 'nav.gallery' | translate }}</a>
+      <a routerLink="/booking" routerLinkActive="active">{{ 'nav.book' | translate }}</a>
+      <a routerLink="/contact" routerLinkActive="active">{{ 'nav.contact' | translate }}</a>
+      <a routerLink="/about" routerLinkActive="active">{{ 'nav.about' | translate }}</a>
+      <a routerLink="/market" routerLinkActive="active">{{ 'nav.market' | translate }}</a>
+    </div>
+    <div class="nav-actions">
+      <button class="lang-toggle" (click)="toggleLang()" [attr.aria-label]="'Switch language'">
+        <span class="lang-label">{{ i18n.lang() === 'en' ? 'MK' : 'EN' }}</span>
+      </button>
+      <a href="viber://chat?number=%2B38978333807" class="btn-viber-nav">
+        <span class="material-icons-round">chat</span>
+        {{ 'nav.viber' | translate }}
+      </a>
+    </div>
+  </div>
+
+  <div class="navbar-inner mobile-nav">
+    <a routerLink="/" class="logo mobile-logo" aria-label="Park Diamond Home">
+      <img src="assets/transparent logo.png" alt="Park Diamond">
+      <span class="logo-name">Park Diamond</span>
+    </a>
+    <button class="lang-toggle mobile-lang-toggle" (click)="toggleLang()" [attr.aria-label]="'Switch language'">
+      <span class="lang-label">{{ i18n.lang() === 'en' ? 'MK' : 'EN' }}</span>
+    </button>
+  </div>
+</nav>

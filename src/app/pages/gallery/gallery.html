@@ -1,0 +1,90 @@
+<!-- Page Header -->
+<div class="page-header">
+  <div class="container">
+    <h1>{{ 'gallery.title' | translate }}</h1>
+    <p>{{ 'gallery.subtitle' | translate }}</p>
+  </div>
+</div>
+
+<!-- Filter Bar -->
+<div class="filter-bar">
+  <div class="container">
+    <div class="filter-row">
+      <span class="filter-label">{{ 'gallery.filterView' | translate }}</span>
+      <div class="filter-pills">
+        @for (f of viewFilters; track f.key) {
+          <button
+            class="filter-pill"
+            [class.active]="activeView() === f.key"
+            (click)="setView(f.key)">
+            <span class="material-icons-round">{{ f.icon }}</span>
+            {{ f.label | translate }}
+          </button>
+        }
+      </div>
+    </div>
+    <div class="filter-row">
+      <span class="filter-label">{{ 'gallery.filterCapacity' | translate }}</span>
+      <div class="filter-pills">
+        @for (f of capacityFilters; track f.key) {
+          <button
+            class="filter-pill"
+            [class.active]="activeCapacity() === f.key"
+            (click)="setCapacity(f.key)">
+            <span class="material-icons-round">{{ f.icon }}</span>
+            {{ f.label | translate }}
+          </button>
+        }
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Apartments Grid -->
+<section class="section">
+  <div class="container">
+    <div class="apartments-grid">
+      @for (apt of apartments(); track apt.id; let i = $index) {
+        <a [routerLink]="['/gallery', apt.id]" class="apartment-card">
+          <div class="card-image">
+            <img [src]="apt.images[0]" [alt]="apt.name" loading="lazy">
+            <div class="card-badges">
+              <span class="view-badge">{{ apt.subtitle | translate }}</span>
+              <span class="guest-badge">
+                <span class="material-icons-round">person</span>
+                {{ apt.guests }}
+              </span>
+            </div>
+          </div>
+          <div class="card-body">
+            <h3>{{ apt.name | translate }}</h3>
+            <p class="card-desc">{{ apt.description | translate }}</p>
+            <div class="card-amenities">
+              @for (amenity of apt.amenities.slice(0, 4); track amenity) {
+                <span class="amenity-chip">{{ amenity | translate }}</span>
+              }
+              @if (apt.amenities.length > 4) {
+                <span class="amenity-chip">+{{ apt.amenities.length - 4 }}</span>
+              }
+            </div>
+            <div class="card-footer">
+              <span class="view-link">
+                {{ i18n.t('gallery.viewDetails') }}
+                <span class="material-icons-round">arrow_forward</span>
+              </span>
+              <span class="viber-link">
+                <span class="material-icons-round">chat</span>
+                Viber
+              </span>
+            </div>
+          </div>
+        </a>
+      } @empty {
+        <div class="no-results">
+          <span class="material-icons-round">search_off</span>
+          <p>No apartments match this filter.</p>
+        </div>
+      }
+    </div>
+  </div>
+</section>

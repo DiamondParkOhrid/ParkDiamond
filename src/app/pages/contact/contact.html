@@ -1,0 +1,116 @@
+<div class="page-header">
+  <div class="container">
+    <h1>{{ 'contact.title' | translate }}</h1>
+    <p>{{ 'contact.subtitle' | translate }}</p>
+  </div>
+</div>
+
+<section class="section">
+  <div class="container">
+    <!-- Contact Cards -->
+    <div class="contact-grid">
+      <a href="viber://chat?number=%2B38978333807" class="contact-card viber-card">
+        <div class="card-icon viber-icon">
+          <img src="assets/ikoni/viber.png" alt="Viber">
+        </div>
+        <h3>{{ 'contact.viber' | translate }}</h3>
+        <p>{{ 'contact.instant' | translate }}</p>
+        <span class="card-action">{{ 'contact.chatNow' | translate }}</span>
+      </a>
+
+      <a href="tel:+38978333807" class="contact-card">
+        <div class="card-icon">
+          <span class="material-icons-round">phone</span>
+        </div>
+        <h3>{{ 'contact.reception' | translate }}</h3>
+        <p>+389 78 333 807</p>
+        <span class="card-action">{{ 'contact.call' | translate }}</span>
+      </a>
+
+      <a href="tel:+38978442675" class="contact-card">
+        <div class="card-icon">
+          <span class="material-icons-round">phone_in_talk</span>
+        </div>
+        <h3>{{ 'contact.privateLine' | translate }}</h3>
+        <p>+389 78 442 675</p>
+        <span class="card-action">{{ 'contact.call' | translate }}</span>
+      </a>
+
+      <a href="mailto:diamondohrid@gmail.com" class="contact-card">
+        <div class="card-icon">
+          <span class="material-icons-round">mail</span>
+        </div>
+        <h3>{{ 'contact.emailLabel' | translate }}</h3>
+        <p>diamondohrid&#64;gmail.com</p>
+        <span class="card-action">{{ 'contact.sendEmail' | translate }}</span>
+      </a>
+
+      <a href="https://www.booking.com/hotel/mk/park-diamond-apartments.html" target="_blank" rel="noopener" class="contact-card">
+        <div class="card-icon">
+          <img src="assets/ikoni/booking.png" alt="Booking.com">
+        </div>
+        <h3>{{ 'contact.bookingCom' | translate }}</h3>
+        <p>{{ 'contact.bookReview' | translate }}</p>
+        <span class="card-action">{{ 'contact.visit' | translate }}</span>
+      </a>
+
+      <div class="contact-card location-card">
+        <div class="card-icon">
+          <span class="material-icons-round">location_on</span>
+        </div>
+        <h3>{{ 'contact.location' | translate }}</h3>
+        <p>Naum Ohridski 10 A, Ohrid</p>
+        <span class="card-detail">{{ 'contact.fromCenter' | translate }}</span>
+      </div>
+    </div>
+
+    <!-- Contact Form & Map -->
+    <div class="contact-bottom">
+      <div class="form-section">
+        <h2>{{ 'contact.sendMessage' | translate }}</h2>
+        @if (!submitted()) {
+          <form #contactForm="ngForm" class="contact-form" (ngSubmit)="onSubmit(contactForm)">
+            <div class="form-group">
+              <label>{{ 'contact.name' | translate }}</label>
+              <input type="text" name="name" [(ngModel)]="model.name" [placeholder]="i18n.t('contact.namePlaceholder')" required>
+            </div>
+            <div class="form-group">
+              <label>{{ 'contact.emailLabel' | translate }}</label>
+              <input type="email" name="email" [(ngModel)]="model.email" placeholder="your@email.com" required>
+            </div>
+            <div class="form-group">
+              <label>{{ 'contact.message' | translate }}</label>
+              <textarea name="message" [(ngModel)]="model.message" rows="4" [placeholder]="i18n.t('contact.messagePlaceholder')" required></textarea>
+            </div>
+            <button type="submit" class="btn-primary submit-btn" [disabled]="submitting()">
+              <span class="material-icons-round">send</span>
+              {{ submitting() ? (i18n.lang() === 'en' ? 'Sending...' : 'Се испраќа...') : ('contact.sendBtn' | translate) }}
+            </button>
+
+            @if (submitError()) {
+              <p class="form-error">
+                <span class="material-icons-round">error</span>
+                {{ submitError() }}
+              </p>
+            }
+          </form>
+        } @else {
+          <div class="success-msg">
+            <span class="material-icons-round">check_circle</span>
+            <p>{{ 'contact.messageSent' | translate }}</p>
+          </div>
+        }
+      </div>
+
+      <div class="map-section">
+        <h2>{{ 'contact.findUs' | translate }}</h2>
+        <div class="map-container">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3007.0354131637796!2d20.797149115416627!3d41.090072879292634!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1350dca4598774a5%3A0x4ad88810e443cf29!2sPark%20Diamond%20Apartments!5e0!3m2!1sen!2smk!4v1690368394584!5m2!1sen!2smk"
+            allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

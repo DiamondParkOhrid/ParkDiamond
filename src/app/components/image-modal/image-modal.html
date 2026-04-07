@@ -1,0 +1,8 @@
+@if (src()) {
+  <div class="modal-overlay" (click)="onBackdrop($event)">
+    <button class="close-btn" (click)="close()">
+      <span class="material-icons-round">close</span>
+    </button>
+    <img [src]="src()" [alt]="alt()" class="modal-image">
+  </div>
+}

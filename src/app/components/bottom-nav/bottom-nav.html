@@ -1,0 +1,26 @@
+<nav class="bottom-nav">
+  <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" class="nav-item">
+    <span class="material-icons-round">home</span>
+    <span class="label">{{ 'nav.home' | translate }}</span>
+  </a>
+  <a routerLink="/gallery" routerLinkActive="active" class="nav-item">
+    <span class="material-icons-round">photo_library</span>
+    <span class="label">{{ 'nav.gallery' | translate }}</span>
+  </a>
+
+  <a href="tel:+38978333807" class="nav-item call-btn" aria-label="Call us">
+    <div class="call-circle">
+      <span class="material-icons-round">call</span>
+    </div>
+    <span class="label">{{ 'nav.callUs' | translate }}</span>
+  </a>
+
+  <a routerLink="/booking" routerLinkActive="active" class="nav-item">
+    <span class="material-icons-round">calendar_month</span>
+    <span class="label">{{ 'nav.book' | translate }}</span>
+  </a>
+  <a routerLink="/market" routerLinkActive="active" class="nav-item">
+    <span class="material-icons-round">storefront</span>
+    <span class="label">{{ 'nav.market' | translate }}</span>
+  </a>
+</nav>

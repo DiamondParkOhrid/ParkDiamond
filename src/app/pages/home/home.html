@@ -1,0 +1,154 @@
+<!-- Hero -->
+<section class="hero">
+  <div class="hero-bg">
+    <img src="assets/Apartmani Sliki/background.jpg" alt="Park Diamond">
+  </div>
+  <div class="hero-content">
+    <span class="hero-badge animate-in">
+      <span class="material-icons-round">location_on</span>
+      {{ 'hero.badge' | translate }}
+    </span>
+    <h1 class="animate-in stagger-1">{{ 'hero.title' | translate }}<br><span>{{ 'hero.subtitle' | translate }}</span></h1>
+    <p class="hero-sub animate-in stagger-2">{{ 'hero.description' | translate }}</p>
+    <div class="hero-actions animate-in stagger-3">
+      <a routerLink="/booking" class="btn-primary">
+        <span class="material-icons-round">calendar_month</span>
+        {{ 'hero.bookBtn' | translate }}
+      </a>
+      <a href="viber://chat?number=%2B38978333807" class="btn-viber">
+        <span class="material-icons-round">chat</span>
+        {{ 'hero.viberBtn' | translate }}
+      </a>
+    </div>
+    <div class="hero-stats animate-in stagger-4">
+      <div class="stat">
+        <strong>35+</strong>
+        <span>{{ 'hero.guestCapacity' | translate }}</span>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat">
+        <strong>3km</strong>
+        <span>{{ 'hero.fromCenter' | translate }}</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Featured Apartments -->
+<section class="section apartments-section">
+  <div class="container">
+    <h2 class="section-title">{{ 'apartments.title' | translate }}</h2>
+    <p class="section-subtitle">{{ 'apartments.subtitle' | translate }}</p>
+
+    <div class="apartments-grid">
+      @for (apt of apartments; track apt.id) {
+        <a [routerLink]="['/gallery', apt.id]" class="apartment-card card">
+          <div class="card-image">
+            <img [src]="apt.images[0]" [alt]="apt.name" loading="lazy">
+            <span class="guest-badge">
+              <span class="material-icons-round">person</span>
+              {{ apt.guests }}
+            </span>
+          </div>
+          <div class="card-body">
+            <div class="card-header-row">
+              <h3>{{ apt.name | translate }}</h3>
+              <span class="view-tag">{{ apt.subtitle | translate }}</span>
+            </div>
+            <p>{{ apt.description | translate }}</p>
+          </div>
+        </a>
+      }
+    </div>
+
+    <div class="section-cta">
+      <a routerLink="/gallery" class="btn-outline">
+        <span class="material-icons-round">photo_library</span>
+        {{ 'apartments.viewAll' | translate }}
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Amenities -->
+<section class="section amenities-section">
+  <div class="container">
+    <h2 class="section-title">{{ 'amenities.title' | translate }}</h2>
+    <p class="section-subtitle">{{ 'amenities.subtitle' | translate }}</p>
+    <div class="amenities-grid">
+      <div class="amenity">
+        <span class="material-icons-round">wifi</span>
+        <span>{{ 'amenities.wifi' | translate }}</span>
+      </div>
+      <div class="amenity">
+        <span class="material-icons-round">local_parking</span>
+        <span>{{ 'amenities.parking' | translate }}</span>
+      </div>
+      <div class="amenity">
+        <span class="material-icons-round">pool</span>
+        <span>{{ 'amenities.pool' | translate }}</span>
+      </div>
+      <div class="amenity">
+        <span class="material-icons-round">ac_unit</span>
+        <span>{{ 'amenities.ac' | translate }}</span>
+      </div>
+      <div class="amenity">
+        <span class="material-icons-round">kitchen</span>
+        <span>{{ 'amenities.kitchen' | translate }}</span>
+      </div>
+      <div class="amenity">
+        <span class="material-icons-round">tv</span>
+        <span>{{ 'amenities.tv' | translate }}</span>
+      </div>
+      <div class="amenity">
+        <span class="material-icons-round">balcony</span>
+        <span>{{ 'amenities.balcony' | translate }}</span>
+      </div>
+      <div class="amenity">
+        <span class="material-icons-round">store</span>
+        <span>{{ 'amenities.market' | translate }}</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Market Promo -->
+<section class="section market-promo">
+  <div class="container">
+    <div class="promo-card">
+      <div class="promo-content">
+<!--        <img src="assets/market_diamond.png" alt="Diamond Market" class="market-logo">-->
+        <h2>{{ 'market.title' | translate }}</h2>
+        <p>{{ 'market.description' | translate }}</p>
+        <a routerLink="/market" class="btn-primary">
+          <span class="material-icons-round">storefront</span>
+          {{ 'market.visitBtn' | translate }}
+        </a>
+      </div>
+      <div class="promo-image">
+
+        <img src="assets/Market/img/market_nokje.jpg" alt="Diamond Market" loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section cta-section">
+  <div class="container">
+    <div class="cta-content">
+      <h2>{{ 'cta.title' | translate }}</h2>
+      <p>{{ 'cta.subtitle' | translate }}</p>
+      <div class="cta-actions">
+        <a href="viber://chat?number=%2B38978333807" class="btn-viber">
+          <span class="material-icons-round">chat</span>
+          {{ 'hero.viberBtn' | translate }}
+        </a>
+        <a routerLink="/booking" class="btn-outline cta-outline-btn">
+          <span class="material-icons-round">calendar_month</span>
+          {{ 'cta.bookOnline' | translate }}
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

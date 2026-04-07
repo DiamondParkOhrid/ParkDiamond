@@ -1,0 +1,84 @@
+<div class="page-header">
+  <div class="container">
+    <div class="header-row">
+      <a routerLink="/market" class="back-link">
+        <span class="material-icons-round">arrow_back</span>
+        {{ 'nav.market' | translate }}
+      </a>
+    </div>
+    <h1>{{ 'catalog.title' | translate }}</h1>
+    <p>{{ 'catalog.subtitle' | translate }}</p>
+  </div>
+</div>
+
+<section class="section">
+  <div class="container">
+    <!-- Filters -->
+    <div class="filters">
+      <div class="search-box">
+        <span class="material-icons-round">search</span>
+        <input
+          type="text"
+          [placeholder]="i18n.t('catalog.search')"
+          [ngModel]="searchQuery()"
+          (ngModelChange)="onSearch($event)">
+      </div>
+<!--      <div class="category-pills">
+        @for (cat of categories(); track cat) {
+          <button
+            class="pill"
+            [class.active]="selectedCategory() === cat"
+            (click)="onCategoryChange(cat)">
+            {{ cat === 'All' ? i18n.t('catalog.all') : cat }}
+          </button>
+        }
+      </div>-->
+    </div>
+
+    <!-- Results Count -->
+    <p class="results-count">
+      {{ filteredProducts().length }} {{ i18n.lang() === 'en' ? 'products found' : 'производи пронајдени' }}
+    </p>
+
+    <!-- Products Grid -->
+    <div class="products-grid">
+      @for (product of paginatedProducts(); track product.title) {
+        <div class="product-card card">
+          <div class="product-body">
+            <span class="category-badge">{{ product.category }}</span>
+            <h3>{{ product.title }}</h3>
+            <p>{{ product.description }}</p>
+            <span class="price">{{ product.price }}</span>
+          </div>
+        </div>
+      }
+    </div>
+
+    @if (filteredProducts().length === 0) {
+      <div class="empty-state">
+        <span class="material-icons-round">search_off</span>
+        <h3>{{ 'catalog.noResults' | translate }}</h3>
+        <p>{{ 'catalog.tryDifferent' | translate }}</p>
+      </div>
+    }
+
+    <!-- Pagination -->
+    @if (totalPages() > 1) {
+      <div class="pagination">
+        <button (click)="goToPage(currentPage() - 1)" [disabled]="currentPage() === 1">
+          <span class="material-icons-round">chevron_left</span>
+        </button>
+        @for (page of getPages(); track page) {
+          <button
+            [class.active]="page === currentPage()"
+            (click)="goToPage(page)">
+            {{ page }}
+          </button>
+        }
+        <button (click)="goToPage(currentPage() + 1)" [disabled]="currentPage() === totalPages()">
+          <span class="material-icons-round">chevron_right</span>
+        </button>
+      </div>
+    }
+  </div>
+</section>

@@ -1,0 +1,127 @@
+@if (apartment) {
+  <!-- Hero Image Gallery -->
+  <section class="detail-hero">
+    <div class="hero-image-wrapper" (click)="openModal(heroImage())">
+      <img [src]="heroImage()" [alt]="apartment.name" class="hero-img">
+      <div class="hero-overlay">
+        <span class="material-icons-round">zoom_in</span>
+      </div>
+    </div>
+    <button class="nav-arrow prev" (click)="prevImage()">
+      <span class="material-icons-round">chevron_left</span>
+    </button>
+    <button class="nav-arrow next" (click)="nextImage()">
+      <span class="material-icons-round">chevron_right</span>
+    </button>
+    <div class="image-counter">{{ activeImage() + 1 }} / {{ apartment.images.length }}</div>
+  </section>
+
+  <!-- Thumbnails -->
+  <section class="thumbs-bar">
+    <div class="thumbs-scroll">
+      @for (img of apartment.images; track img; let i = $index) {
+        <div class="thumb" [class.active]="activeImage() === i" (click)="selectImage(i)">
+          <img [src]="img" [alt]="apartment.name" loading="lazy">
+        </div>
+      }
+    </div>
+  </section>
+
+  <!-- Content -->
+  <section class="detail-content">
+    <div class="container">
+      <div class="detail-grid">
+        <!-- Main Info -->
+        <div class="detail-main">
+          <a routerLink="/gallery" class="back-link">
+            <span class="material-icons-round">arrow_back</span>
+            {{ i18n.t('gallery.backToAll') }}
+          </a>
+
+          <div class="detail-header">
+            <h1>{{ apartment.name | translate }}</h1>
+            <div class="detail-tags">
+              <span class="tag view-tag">
+                <span class="material-icons-round">visibility</span>
+                {{ apartment.subtitle | translate }}
+              </span>
+              <span class="tag guest-tag">
+                <span class="material-icons-round">group</span>
+                {{ apartment.guests }} {{ i18n.t('gallery.guests') }}
+              </span>
+            </div>
+          </div>
+
+          <p class="detail-desc">{{ apartment.description | translate }}</p>
+
+          <div class="amenities-section">
+            <h2>{{ i18n.t('gallery.amenitiesTitle') }}</h2>
+            <div class="amenities-grid">
+              @for (amenity of apartment.amenities; track amenity) {
+                <div class="amenity-item">
+                  <span class="material-icons-round">check_circle</span>
+                  <span>{{ amenity | translate }}</span>
+                </div>
+              }
+            </div>
+          </div>
+
+          <!-- Photo Grid -->
+          <div class="photo-grid-section">
+            <h2>{{ i18n.t('gallery.allPhotos') }}</h2>
+            <div class="photo-grid">
+              @for (img of apartment.images; track img; let i = $index) {
+                <div class="photo-item" (click)="openModal(img)">
+                  <img [src]="img" [alt]="apartment.name" loading="lazy">
+                </div>
+              }
+            </div>
+          </div>
+        </div>
+
+        <!-- Sidebar -->
+        <div class="detail-sidebar">
+          <div class="sidebar-sticky">
+            <div class="booking-card">
+              <h3>{{ i18n.t('gallery.interested') }}</h3>
+              <p>{{ i18n.t('gallery.interestedDesc') }}</p>
+              <a href="viber://chat?number=%2B38978333807" class="btn-viber sidebar-btn">
+                <span class="material-icons-round">chat</span>
+                {{ 'gallery.inquire' | translate }}
+              </a>
+              <a routerLink="/booking" class="btn-outline sidebar-btn">
+                <span class="material-icons-round">calendar_month</span>
+                {{ 'hero.bookBtn' | translate }}
+              </a>
+            </div>
+
+            <div class="contact-card">
+              <h3>{{ 'booking.quickContact' | translate }}</h3>
+              <div class="contact-item">
+                <span class="material-icons-round">phone</span>
+                <a href="tel:+38978333807">+389 78 333 807</a>
+              </div>
+              <div class="contact-item">
+                <span class="material-icons-round">mail</span>
+                <a href="mailto:diamondohrid@gmail.com">diamondohrid&#64;gmail.com</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+} @else {
+  <div class="not-found">
+    <div class="container">
+      <span class="material-icons-round">error_outline</span>
+      <h1>{{ i18n.t('gallery.notFound') }}</h1>
+      <a routerLink="/gallery" class="btn-primary">
+        <span class="material-icons-round">arrow_back</span>
+        {{ i18n.t('gallery.backToAll') }}
+      </a>
+    </div>
+  </div>
+}
+
+<app-image-modal [src]="modalImage()" (closed)="closeModal()"></app-image-modal>

@@ -1,0 +1,79 @@
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <!-- Brand -->
+      <div class="footer-col brand-col">
+        <div class="footer-brand">
+          <img src="assets/transparent logo.png" alt="Park Diamond" class="footer-logo">
+          <div class="footer-brand-text">
+            <span class="brand-name">Park Diamond</span>
+            <span class="brand-loc">Apartments &middot; Ohrid</span>
+          </div>
+        </div>
+        <p class="brand-text">{{ 'footer.tagline' | translate }}</p>
+        <div class="social-links">
+          <a href="https://www.instagram.com/parkdiamond_apartments/" target="_blank" rel="noopener" aria-label="Instagram">
+            <img src="assets/ikoni/instagram.png" alt="Instagram">
+          </a>
+          <a href="https://facebook.com" target="_blank" rel="noopener" aria-label="Facebook">
+            <img src="assets/ikoni/facebook.png" alt="Facebook">
+          </a>
+          <a href="viber://chat?number=%2B38978333807" aria-label="Viber">
+            <img src="assets/ikoni/viber.png" alt="Viber">
+          </a>
+          <a href="https://www.tripadvisor.com/Hotel_Review-g303864-d15674452-Reviews-Park_Diamond_Apartments-Ohrid_Southwestern_Region.html" target="_blank" rel="noopener" aria-label="TripAdvisor">
+            <img src="assets/ikoni/tripadvisor.png" alt="TripAdvisor">
+          </a>
+        </div>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="footer-col">
+        <h4>{{ 'footer.quickLinks' | translate }}</h4>
+        <a routerLink="/">{{ 'nav.home' | translate }}</a>
+        <a routerLink="/gallery">{{ 'nav.gallery' | translate }}</a>
+        <a routerLink="/booking">{{ 'footer.bookStay' | translate }}</a>
+        <a routerLink="/contact">{{ 'footer.contact' | translate }}</a>
+        <a routerLink="/about">{{ 'footer.aboutUs' | translate }}</a>
+        <a routerLink="/market">{{ 'footer.diamondMarket' | translate }}</a>
+      </div>
+
+      <!-- Contact -->
+      <div class="footer-col">
+        <h4>{{ 'footer.contactTitle' | translate }}</h4>
+        <div class="contact-item">
+          <span class="material-icons-round">location_on</span>
+          <span>Naum Ohridski 10 A, Ohrid</span>
+        </div>
+        <div class="contact-item">
+          <span class="material-icons-round">phone</span>
+          <a href="tel:+38978333807">+389 78 333 807</a>
+        </div>
+        <div class="contact-item">
+          <span class="material-icons-round">mail</span>
+          <a href="mailto:diamondohrid@gmail.com">diamondohrid&#64;gmail.com</a>
+        </div>
+        <div class="contact-item">
+          <span class="material-icons-round">travel_explore</span>
+          <a href="https://www.booking.com/hotel/mk/park-diamond-apartments.html" target="_blank" rel="noopener">Booking.com</a>
+        </div>
+      </div>
+
+      <!-- Map -->
+      <div class="footer-col map-col">
+        <h4>{{ 'footer.findUs' | translate }}</h4>
+        <div class="map-wrapper">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3007.0354131637796!2d20.797149115416627!3d41.090072879292634!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1350dca4598774a5%3A0x4ad88810e443cf29!2sPark%20Diamond%20Apartments!5e0!3m2!1sen!2smk!4v1690368394584!5m2!1sen!2smk"
+            allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; {{ year }} Park Diamond Apartments. {{ 'footer.rights' | translate }}</p>
+      <p class="dev-credit">{{ 'footer.websiteBy' | translate }} <a href="https://dkostoski.dev/" target="_blank" rel="noopener">dkostoski.dev</a></p>
+    </div>
+  </div>
+</footer>

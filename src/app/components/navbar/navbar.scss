@@ -1,0 +1,182 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  transition: all 0.35s ease;
+  border-bottom: 1px solid transparent;
+
+  &.scrolled {
+    background: rgba(255, 255, 255, 0.97);
+    border-bottom-color: rgba(0, 0, 0, 0.05);
+    box-shadow: 0 1px 16px rgba(0, 0, 0, 0.04);
+  }
+}
+
+.navbar-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+  height: 68px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.mobile-nav {
+  display: none;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+
+  img {
+    height: 38px;
+    width: auto;
+  }
+}
+
+.logo-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.15;
+}
+
+.logo-name {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1.15rem;
+  color: var(--primary);
+  letter-spacing: -0.01em;
+}
+
+.logo-sub {
+  font-size: 0.65rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2px;
+
+  a {
+    padding: 8px 16px;
+    border-radius: 50px;
+    font-weight: 500;
+    font-size: 0.88rem;
+    color: var(--text-light);
+    transition: all 0.2s ease;
+    letter-spacing: 0.01em;
+
+    &:hover {
+      color: var(--primary);
+      background: var(--primary-bg);
+    }
+
+    &.active {
+      color: var(--primary);
+      background: var(--primary-bg);
+      font-weight: 600;
+    }
+  }
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.lang-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  padding: 6px 12px;
+  border-radius: 50px;
+  background: var(--surface);
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-light);
+  transition: all 0.2s ease;
+  border: 1px solid transparent;
+
+  .lang-label {
+    letter-spacing: 0.04em;
+  }
+
+  &:hover {
+    background: var(--primary-bg);
+    color: var(--primary);
+    border-color: rgba(47, 103, 224, 0.1);
+  }
+}
+
+.btn-viber-nav {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 20px;
+  background: #7360f2;
+  color: white;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 0.84rem;
+  letter-spacing: 0.01em;
+  transition: all 0.25s ease;
+
+  .material-icons-round { font-size: 17px; }
+
+  &:hover {
+    background: #5b48d0;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 16px rgba(115, 96, 242, 0.3);
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    z-index: 1100;
+  }
+
+  .desktop-nav {
+    display: none;
+  }
+
+  .mobile-nav {
+    display: flex;
+    height: calc(var(--mobile-header-height) + var(--safe-top));
+    padding: calc(8px + var(--safe-top)) 14px 8px;
+    max-width: none;
+  }
+
+  .mobile-logo {
+    gap: 8px;
+
+    img {
+      height: 34px;
+    }
+
+    .logo-name {
+      font-size: 1rem;
+      white-space: nowrap;
+    }
+  }
+
+  .mobile-lang-toggle {
+    padding: 7px 12px;
+    min-width: 58px;
+    justify-content: center;
+  }
+}
+

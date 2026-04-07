@@ -1,0 +1,85 @@
+<!-- Hero -->
+<section class="market-hero">
+  <div class="hero-content"><h1>{{ 'market.title' | translate }}</h1>
+    <p>{{ 'market.heroDesc' | translate }}</p>
+    <a routerLink="/market/catalog" class="btn-primary">
+      <span class="material-icons-round">storefront</span>
+      {{ 'market.browseBtn' | translate }}
+    </a>
+  </div>
+</section>
+
+<!-- Featured Products -->
+<section class="section">
+  <div class="container">
+    <h2 class="section-title">{{ 'market.popular' | translate }}</h2>
+    <p class="section-subtitle">{{ 'market.popularSub' | translate }}</p>
+
+    <div class="featured-grid">
+      @for (product of featuredProducts; track product.title) {
+        <div class="product-card card">
+          <div class="product-info">
+            <h3>{{ product.title }}</h3>
+            <span class="price">{{ product.price }}</span>
+          </div>
+        </div>
+      }
+    </div>
+
+    <div class="section-cta">
+      <a routerLink="/market/catalog" class="btn-outline">
+        {{ 'market.viewCatalog' | translate }}
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- About Market -->
+<section class="section market-about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-content">
+        <h2>{{ 'market.convenience' | translate }}</h2>
+        <p>{{ 'market.convDesc1' | translate }}</p>
+        <p>{{ 'market.convDesc2' | translate }}</p>
+        <ul class="feature-list">
+          <li>
+            <span class="material-icons-round">schedule</span>
+            {{ 'market.openDaily' | translate }}
+          </li>
+          <li>
+            <span class="material-icons-round">local_grocery_store</span>
+            {{ 'market.freshProduce' | translate }}
+          </li>
+          <li>
+            <span class="material-icons-round">payments</span>
+            {{ 'market.competitive' | translate }}
+          </li>
+          <li>
+            <span class="material-icons-round">directions_walk</span>
+            {{ 'market.stepsAway' | translate }}
+          </li>
+        </ul>
+      </div>
+      <div class="about-image">
+        <img src="assets/Market/img/entrance.png" alt="Diamond Market Entrance" loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Back to Apartments -->
+<section class="section apartments-promo">
+  <div class="container">
+    <div class="promo-inner">
+      <div>
+        <h2>{{ 'market.lookingAccom' | translate }}</h2>
+        <p>{{ 'market.accomDesc' | translate }}</p>
+      </div>
+      <a routerLink="/" class="btn-primary">
+        <span class="material-icons-round">apartment</span>
+        {{ 'market.viewApartments' | translate }}
+      </a>
+    </div>
+  </div>
+</section>

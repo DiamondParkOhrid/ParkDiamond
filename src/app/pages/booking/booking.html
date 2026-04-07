@@ -1,0 +1,133 @@
+<div class="page-header">
+  <div class="container">
+    <h1>{{ 'booking.title' | translate }}</h1>
+    <p>{{ 'booking.subtitle' | translate }}</p>
+  </div>
+</div>
+
+<section class="section">
+  <div class="container">
+    <div class="booking-layout">
+      <!-- Form -->
+      <div class="booking-form-wrapper">
+        @if (!submitted()) {
+          <form #bookingForm="ngForm" class="booking-form" (ngSubmit)="onSubmit(bookingForm)">
+            <div class="form-group">
+              <label>{{ 'booking.name' | translate }}</label>
+              <input type="text" name="name" [(ngModel)]="model.name" [placeholder]="i18n.t('booking.namePlaceholder')" required>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label>{{ 'booking.email' | translate }}</label>
+                <input type="email" name="email" [(ngModel)]="model.email" placeholder="your@email.com" required>
+              </div>
+              <div class="form-group">
+                <label>{{ 'booking.phone' | translate }}</label>
+                <input type="tel" name="phone" [(ngModel)]="model.phone" placeholder="+389 7X XXX XXX" required>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label>{{ 'booking.guests' | translate }}: <strong>{{ guestCount() }}</strong></label>
+              <input type="range" name="guests" min="1" max="10" [value]="guestCount()" (input)="updateGuests($event)" class="range-input">
+              <div class="range-labels">
+                <span>1</span>
+                <span>10</span>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label>{{ 'booking.checkin' | translate }}</label>
+                <input type="date" name="checkin" [(ngModel)]="model.checkin" required>
+              </div>
+              <div class="form-group">
+                <label>{{ 'booking.checkout' | translate }}</label>
+                <input type="date" name="checkout" [(ngModel)]="model.checkout" required>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label>{{ 'booking.special' | translate }}</label>
+              <textarea name="message" [(ngModel)]="model.request" rows="3" [placeholder]="i18n.t('booking.specialPlaceholder')"></textarea>
+            </div>
+
+            <button type="submit" class="btn-primary submit-btn" [disabled]="submitting()">
+              <span class="material-icons-round">send</span>
+              {{ submitting() ? (i18n.lang() === 'en' ? 'Sending...' : 'Се испраќа...') : ('booking.sendInquiry' | translate) }}
+            </button>
+
+            @if (submitError()) {
+              <p class="form-note form-error">
+                <span class="material-icons-round">error</span>
+                {{ submitError() }}
+              </p>
+            }
+
+            <p class="form-note">
+              <span class="material-icons-round">info</span>
+              {{ 'booking.note' | translate }}
+            </p>
+          </form>
+        } @else {
+          <div class="success-message">
+            <span class="material-icons-round success-icon">check_circle</span>
+            <h2>{{ 'booking.sent' | translate }}</h2>
+            <p>{{ 'booking.sentMsg' | translate }}</p>
+          </div>
+        }
+      </div>
+
+      <!-- Sidebar -->
+      <div class="booking-sidebar">
+        <div class="sidebar-card">
+          <h3>{{ 'booking.quickContact' | translate }}</h3>
+          <p>{{ 'booking.quickContactDesc' | translate }}</p>
+          <a href="viber://chat?number=%2B38978333807" class="btn-viber sidebar-viber">
+            <span class="material-icons-round">chat</span>
+            {{ 'hero.viberBtn' | translate }}
+          </a>
+        </div>
+
+        <div class="sidebar-card">
+          <h3>{{ 'booking.whyDirect' | translate }}</h3>
+          <ul class="perks-list">
+            <li>
+              <span class="material-icons-round">check</span>
+              {{ 'booking.bestPrice' | translate }}
+            </li>
+            <li>
+              <span class="material-icons-round">check</span>
+              {{ 'booking.flexCancel' | translate }}
+            </li>
+            <li>
+              <span class="material-icons-round">check</span>
+              {{ 'booking.freePool' | translate }}
+            </li>
+            <li>
+              <span class="material-icons-round">check</span>
+              {{ 'booking.freeParking' | translate }}
+            </li>
+            <li>
+              <span class="material-icons-round">check</span>
+              {{ 'booking.personalHelp' | translate }}
+            </li>
+          </ul>
+        </div>
+
+        <div class="sidebar-card">
+          <h3>{{ 'booking.alsoFind' | translate }}</h3>
+          <a href="https://www.booking.com/hotel/mk/park-diamond-apartments.html" target="_blank" rel="noopener" class="external-link">
+            <img src="assets/ikoni/booking.png" alt="Booking.com">
+            Booking.com
+          </a>
+          <a href="https://www.tripadvisor.com/Hotel_Review-g303864-d15674452-Reviews-Park_Diamond_Apartments-Ohrid_Southwestern_Region.html" target="_blank" rel="noopener" class="external-link">
+            <img src="assets/ikoni/tripadvisor.png" alt="TripAdvisor">
+            TripAdvisor
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
