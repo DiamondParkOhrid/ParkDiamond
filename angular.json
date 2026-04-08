@@ -56,7 +56,7 @@
           },
           "configurations": {
             "production": {
-              "baseHref": "/ParkDiamond/",
+              "baseHref": "/",
               "budgets": [
                 {
                   "type": "initial",
