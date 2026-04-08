@@ -1,0 +1,702 @@
+[
+  {
+    "title": "Fresh Red Apples #1",
+    "img": "src/products/apples.jpg",
+    "price": "$3.99 / lb",
+    "description": "Crisp and juicy, perfect for snacking and baking.",
+    "category": "Fruits"
+  },
+  {
+    "title": "Organic Carrots #2",
+    "img": "src/products/organic_carrots.jpg",
+    "price": "$2.54 / bunch",
+    "description": "Sweet and crunchy, packed with vitamins.",
+    "category": "Vegetables"
+  },
+  {
+    "title": "Free Range Eggs #3",
+    "img": "src/products/free_range_eggs.jpg",
+    "price": "$5.09 / dozen",
+    "description": "Farm fresh eggs from happy hens.",
+    "category": "Dairy"
+  },
+  {
+    "title": "Whole Milk #4",
+    "img": "src/products/milk.jpg",
+    "price": "$3.14 / gallon",
+    "description": "Fresh and creamy whole milk.",
+    "category": "Dairy"
+  },
+  {
+    "title": "Bananas #5",
+    "img": "src/products/bananas.jpg",
+    "price": "$1.39 / lb",
+    "description": "Sweet and ripe bananas.",
+    "category": "Fruits"
+  },
+  {
+    "title": "Brown Bread #6",
+    "img": "src/products/brown_bread.jpg",
+    "price": "$3.75 / loaf",
+    "description": "Healthy whole grain bread.",
+    "category": "Bakery"
+  },
+  {
+    "title": "Almond Butter #7",
+    "img": "src/products/almond_butter.jpg",
+    "price": "$9.29 / jar",
+    "description": "Smooth and creamy almond butter.",
+    "category": "Pantry"
+  },
+  {
+    "title": "Greek Yogurt #8",
+    "img": "src/products/greek_yogurt.jpg",
+    "price": "$4.35 / tub",
+    "description": "Thick and rich Greek yogurt.",
+    "category": "Dairy"
+  },
+  {
+    "title": "Spinach #9",
+    "img": "src/products/spinach.jpg",
+    "price": "$3.39 / bunch",
+    "description": "Fresh green spinach leaves.",
+    "category": "Vegetables"
+  },
+  {
+    "title": "Honey #10",
+    "img": "src/products/honey.jpg",
+    "price": "$6.95 / bottle",
+    "description": "Pure natural honey.",
+    "category": "Pantry"
+  },
+  {
+    "title": "Fresh Red Apples #11",
+    "img": "src/products/apples.jpg",
+    "price": "$4.49 / lb",
+    "description": "Crisp and juicy, perfect for snacking and baking.",
+    "category": "Fruits"
+  },
+  {
+    "title": "Organic Carrots #12",
+    "img": "src/products/organic_carrots.jpg",
+    "price": "$3.04 / bunch",
+    "description": "Sweet and crunchy, packed with vitamins.",
+    "category": "Vegetables"
+  },
+  {
+    "title": "Free Range Eggs #13",
+    "img": "src/products/free_range_eggs.jpg",
+    "price": "$5.59 / dozen",
+    "description": "Farm fresh eggs from happy hens.",
+    "category": "Dairy"
+  },
+  {
+    "title": "Whole Milk #14",
+    "img": "src/products/milk.jpg",
+    "price": "$3.64 / gallon",
+    "description": "Fresh and creamy whole milk.",
+    "category": "Dairy"
+  },
+  {
+    "title": "Bananas #15",
+    "img": "src/products/bananas.jpg",
+    "price": "$1.89 / lb",
+    "description": "Sweet and ripe bananas.",
+    "category": "Fruits"
+  },
+  {
+    "title": "Brown Bread #16",
+    "img": "src/products/brown_bread.jpg",
+    "price": "$4.25 / loaf",
+    "description": "Healthy whole grain bread.",
+    "category": "Bakery"
+  },
+  {
+    "title": "Almond Butter #17",
+    "img": "src/products/almond_butter.jpg",
+    "price": "$9.79 / jar",
+    "description": "Smooth and creamy almond butter.",
+    "category": "Pantry"
+  },
+  {
+    "title": "Greek Yogurt #18",
+    "img": "src/products/greek_yogurt.jpg",
+    "price": "$4.85 / tub",
+    "description": "Thick and rich Greek yogurt.",
+    "category": "Dairy"
+  },
+  {
+    "title": "Spinach #19",
+    "img": "src/products/spinach.jpg",
+    "price": "$3.89 / bunch",
+    "description": "Fresh green spinach leaves.",
+    "category": "Vegetables"
+  },
+  {
+    "title": "Honey #20",
+    "img": "src/products/honey.jpg",
+    "price": "$7.45 / bottle",
+    "description": "Pure natural honey.",
+    "category": "Pantry"
+  },
+  {
+    "title": "Fresh Red Apples #21",
+    "img": "src/products/apples.jpg",
+    "price": "$4.99 / lb",
+    "description": "Crisp and juicy, perfect for snacking and baking.",
+    "category": "Fruits"
+  },
+  {
+    "title": "Organic Carrots #22",
+    "img": "src/products/organic_carrots.jpg",
+    "price": "$3.54 / bunch",
+    "description": "Sweet and crunchy, packed with vitamins.",
+    "category": "Vegetables"
+  },
+  {
+    "title": "Free Range Eggs #23",
+    "img": "src/products/free_range_eggs.jpg",
+    "price": "$6.09 / dozen",
+    "description": "Farm fresh eggs from happy hens.",
+    "category": "Dairy"
+  },
+  {
+    "title": "Whole Milk #24",
+    "img": "src/products/milk.jpg",
+    "price": "$4.14 / gallon",
+    "description": "Fresh and creamy whole milk.",
+    "category": "Dairy"
+  },
+  {
+    "title": "Bananas #25",
+    "img": "src/products/bananas.jpg",
+    "price": "$2.39 / lb",
+    "description": "Sweet and ripe bananas.",
+    "category": "Fruits"
+  },
+  {
+    "title": "Brown Bread #26",
+    "img": "src/products/brown_bread.jpg",
+    "price": "$4.75 / loaf",
+    "description": "Healthy whole grain bread.",
+    "category": "Bakery"
+  },
+  {
+    "title": "Almond Butter #27",
+    "img": "src/products/almond_butter.jpg",
+    "price": "$10.29 / jar",
+    "description": "Smooth and creamy almond butter.",
+    "category": "Pantry"
+  },
+  {
+    "title": "Greek Yogurt #28",
+    "img": "src/products/greek_yogurt.jpg",
+    "price": "$5.35 / tub",
+    "description": "Thick and rich Greek yogurt.",
+    "category": "Dairy"
+  },
+  {
+    "title": "Spinach #29",
+    "img": "src/products/spinach.jpg",
+    "price": "$4.39 / bunch",
+    "description": "Fresh green spinach leaves.",
+    "category": "Vegetables"
+  },
+  {
+    "title": "Honey #30",
+    "img": "src/products/honey.jpg",
+    "price": "$7.95 / bottle",
+    "description": "Pure natural honey.",
+    "category": "Pantry"
+  },
+  {
+    "title": "Fresh Red Apples #31",
+    "img": "src/products/apples.jpg",
+    "price": "$5.49 / lb",
+    "description": "Crisp and juicy, perfect for snacking and baking.",
+    "category": "Fruits"
+  },
+  {
+    "title": "Organic Carrots #32",
+    "img": "src/products/organic_carrots.jpg",
+    "price": "$4.04 / bunch",
+    "description": "Sweet and crunchy, packed with vitamins.",
+    "category": "Vegetables"
+  },
+  {
+    "title": "Free Range Eggs #33",
+    "img": "src/products/free_range_eggs.jpg",
+    "price": "$6.59 / dozen",
+    "description": "Farm fresh eggs from happy hens.",
+    "category": "Dairy"
+  },
+  {
+    "title": "Whole Milk #34",
+    "img": "src/products/milk.jpg",
+    "price": "$4.64 / gallon",
+    "description": "Fresh and creamy whole milk.",
+    "category": "Dairy"
+  },
+  {
+    "title": "Bananas #35",
+    "img": "src/products/bananas.jpg",
+    "price": "$2.89 / lb",
+    "description": "Sweet and ripe bananas.",
+    "category": "Fruits"
+  },
+  {
+    "title": "Brown Bread #36",
+    "img": "src/products/brown_bread.jpg",
+    "price": "$5.25 / loaf",
+    "description": "Healthy whole grain bread.",
+    "category": "Bakery"
+  },
+  {
+    "title": "Almond Butter #37",
+    "img": "src/products/almond_butter.jpg",
+    "price": "$10.79 / jar",
+    "description": "Smooth and creamy almond butter.",
+    "category": "Pantry"
+  },
+  {
+    "title": "Greek Yogurt #38",
+    "img": "src/products/greek_yogurt.jpg",
+    "price": "$5.85 / tub",
+    "description": "Thick and rich Greek yogurt.",
+    "category": "Dairy"
+  },
+  {
+    "title": "Spinach #39",
+    "img": "src/products/spinach.jpg",
+    "price": "$4.89 / bunch",
+    "description": "Fresh green spinach leaves.",
+    "category": "Vegetables"
+  },
+  {
+    "title": "Honey #40",
+    "img": "src/products/honey.jpg",
+    "price": "$8.45 / bottle",
+    "description": "Pure natural honey.",
+    "category": "Pantry"
+  },
+  {
+    "title": "Fresh Red Apples #41",
+    "img": "src/products/apples.jpg",
+    "price": "$5.99 / lb",
+    "description": "Crisp and juicy, perfect for snacking and baking.",
+    "category": "Fruits"
+  },
+  {
+    "title": "Organic Carrots #42",
+    "img": "src/products/organic_carrots.jpg",
+    "price": "$4.54 / bunch",
+    "description": "Sweet and crunchy, packed with vitamins.",
+    "category": "Vegetables"
+  },
+  {
+    "title": "Free Range Eggs #43",
+    "img": "src/products/free_range_eggs.jpg",
+    "price": "$7.09 / dozen",
+    "description": "Farm fresh eggs from happy hens.",
+    "category": "Dairy"
+  },
+  {
+    "title": "Whole Milk #44",
+    "img": "src/products/milk.jpg",
+    "price": "$5.14 / gallon",
+    "description": "Fresh and creamy whole milk.",
+    "category": "Dairy"
+  },
+  {
+    "title": "Bananas #45",
+    "img": "src/products/bananas.jpg",
+    "price": "$3.39 / lb",
+    "description": "Sweet and ripe bananas.",
+    "category": "Fruits"
+  },
+  {
+    "title": "Brown Bread #46",
+    "img": "src/products/brown_bread.jpg",
+    "price": "$5.75 / loaf",
+    "description": "Healthy whole grain bread.",
+    "category": "Bakery"
+  },
+  {
+    "title": "Almond Butter #47",
+    "img": "src/products/almond_butter.jpg",
+    "price": "$11.29 / jar",
+    "description": "Smooth and creamy almond butter.",
+    "category": "Pantry"
+  },
+  {
+    "title": "Greek Yogurt #48",
+    "img": "src/products/greek_yogurt.jpg",
+    "price": "$6.35 / tub",
+    "description": "Thick and rich Greek yogurt.",
+    "category": "Dairy"
+  },
+  {
+    "title": "Spinach #49",
+    "img": "src/products/spinach.jpg",
+    "price": "$5.39 / bunch",
+    "description": "Fresh green spinach leaves.",
+    "category": "Vegetables"
+  },
+  {
+    "title": "Honey #50",
+    "img": "src/products/honey.jpg",
+    "price": "$8.95 / bottle",
+    "description": "Pure natural honey.",
+    "category": "Pantry"
+  },
+  {
+    "title": "Fresh Red Apples #51",
+    "img": "src/products/apples.jpg",
+    "price": "$6.49 / lb",
+    "description": "Crisp and juicy, perfect for snacking and baking.",
+    "category": "Fruits"
+  },
+  {
+    "title": "Organic Carrots #52",
+    "img": "src/products/organic_carrots.jpg",
+    "price": "$5.04 / bunch",
+    "description": "Sweet and crunchy, packed with vitamins.",
+    "category": "Vegetables"
+  },
+  {
+    "title": "Free Range Eggs #53",
+    "img": "src/products/free_range_eggs.jpg",
+    "price": "$7.59 / dozen",
+    "description": "Farm fresh eggs from happy hens.",
+    "category": "Dairy"
+  },
+  {
+    "title": "Whole Milk #54",
+    "img": "src/products/milk.jpg",
+    "price": "$5.64 / gallon",
+    "description": "Fresh and creamy whole milk.",
+    "category": "Dairy"
+  },
+  {
+    "title": "Bananas #55",
+    "img": "src/products/bananas.jpg",
+    "price": "$3.89 / lb",
+    "description": "Sweet and ripe bananas.",
+    "category": "Fruits"
+  },
+  {
+    "title": "Brown Bread #56",
+    "img": "src/products/brown_bread.jpg",
+    "price": "$6.25 / loaf",
+    "description": "Healthy whole grain bread.",
+    "category": "Bakery"
+  },
+  {
+    "title": "Almond Butter #57",
+    "img": "src/products/almond_butter.jpg",
+    "price": "$11.79 / jar",
+    "description": "Smooth and creamy almond butter.",
+    "category": "Pantry"
+  },
+  {
+    "title": "Greek Yogurt #58",
+    "img": "src/products/greek_yogurt.jpg",
+    "price": "$6.85 / tub",
+    "description": "Thick and rich Greek yogurt.",
+    "category": "Dairy"
+  },
+  {
+    "title": "Spinach #59",
+    "img": "src/products/spinach.jpg",
+    "price": "$5.89 / bunch",
+    "description": "Fresh green spinach leaves.",
+    "category": "Vegetables"
+  },
+  {
+    "title": "Honey #60",
+    "img": "src/products/honey.jpg",
+    "price": "$9.45 / bottle",
+    "description": "Pure natural honey.",
+    "category": "Pantry"
+  },
+  {
+    "title": "Fresh Red Apples #61",
+    "img": "src/products/apples.jpg",
+    "price": "$6.99 / lb",
+    "description": "Crisp and juicy, perfect for snacking and baking.",
+    "category": "Fruits"
+  },
+  {
+    "title": "Organic Carrots #62",
+    "img": "src/products/organic_carrots.jpg",
+    "price": "$5.54 / bunch",
+    "description": "Sweet and crunchy, packed with vitamins.",
+    "category": "Vegetables"
+  },
+  {
+    "title": "Free Range Eggs #63",
+    "img": "src/products/free_range_eggs.jpg",
+    "price": "$8.09 / dozen",
+    "description": "Farm fresh eggs from happy hens.",
+    "category": "Dairy"
+  },
+  {
+    "title": "Whole Milk #64",
+    "img": "src/products/milk.jpg",
+    "price": "$6.14 / gallon",
+    "description": "Fresh and creamy whole milk.",
+    "category": "Dairy"
+  },
+  {
+    "title": "Bananas #65",
+    "img": "src/products/bananas.jpg",
+    "price": "$4.39 / lb",
+    "description": "Sweet and ripe bananas.",
+    "category": "Fruits"
+  },
+  {
+    "title": "Brown Bread #66",
+    "img": "src/products/brown_bread.jpg",
+    "price": "$6.75 / loaf",
+    "description": "Healthy whole grain bread.",
+    "category": "Bakery"
+  },
+  {
+    "title": "Almond Butter #67",
+    "img": "src/products/almond_butter.jpg",
+    "price": "$12.29 / jar",
+    "description": "Smooth and creamy almond butter.",
+    "category": "Pantry"
+  },
+  {
+    "title": "Greek Yogurt #68",
+    "img": "src/products/greek_yogurt.jpg",
+    "price": "$7.35 / tub",
+    "description": "Thick and rich Greek yogurt.",
+    "category": "Dairy"
+  },
+  {
+    "title": "Spinach #69",
+    "img": "src/products/spinach.jpg",
+    "price": "$6.39 / bunch",
+    "description": "Fresh green spinach leaves.",
+    "category": "Vegetables"
+  },
+  {
+    "title": "Honey #70",
+    "img": "src/products/honey.jpg",
+    "price": "$9.95 / bottle",
+    "description": "Pure natural honey.",
+    "category": "Pantry"
+  },
+  {
+    "title": "Fresh Red Apples #71",
+    "img": "src/products/apples.jpg",
+    "price": "$7.49 / lb",
+    "description": "Crisp and juicy, perfect for snacking and baking.",
+    "category": "Fruits"
+  },
+  {
+    "title": "Organic Carrots #72",
+    "img": "src/products/organic_carrots.jpg",
+    "price": "$6.04 / bunch",
+    "description": "Sweet and crunchy, packed with vitamins.",
+    "category": "Vegetables"
+  },
+  {
+    "title": "Free Range Eggs #73",
+    "img": "src/products/free_range_eggs.jpg",
+    "price": "$8.59 / dozen",
+    "description": "Farm fresh eggs from happy hens.",
+    "category": "Dairy"
+  },
+  {
+    "title": "Whole Milk #74",
+    "img": "src/products/milk.jpg",
+    "price": "$6.64 / gallon",
+    "description": "Fresh and creamy whole milk.",
+    "category": "Dairy"
+  },
+  {
+    "title": "Bananas #75",
+    "img": "src/products/bananas.jpg",
+    "price": "$4.89 / lb",
+    "description": "Sweet and ripe bananas.",
+    "category": "Fruits"
+  },
+  {
+    "title": "Brown Bread #76",
+    "img": "src/products/brown_bread.jpg",
+    "price": "$7.25 / loaf",
+    "description": "Healthy whole grain bread.",
+    "category": "Bakery"
+  },
+  {
+    "title": "Almond Butter #77",
+    "img": "src/products/almond_butter.jpg",
+    "price": "$12.79 / jar",
+    "description": "Smooth and creamy almond butter.",
+    "category": "Pantry"
+  },
+  {
+    "title": "Greek Yogurt #78",
+    "img": "src/products/greek_yogurt.jpg",
+    "price": "$7.85 / tub",
+    "description": "Thick and rich Greek yogurt.",
+    "category": "Dairy"
+  },
+  {
+    "title": "Spinach #79",
+    "img": "src/products/spinach.jpg",
+    "price": "$6.89 / bunch",
+    "description": "Fresh green spinach leaves.",
+    "category": "Vegetables"
+  },
+  {
+    "title": "Honey #80",
+    "img": "src/products/honey.jpg",
+    "price": "$10.45 / bottle",
+    "description": "Pure natural honey.",
+    "category": "Pantry"
+  },
+  {
+    "title": "Fresh Red Apples #81",
+    "img": "src/products/apples.jpg",
+    "price": "$7.99 / lb",
+    "description": "Crisp and juicy, perfect for snacking and baking.",
+    "category": "Fruits"
+  },
+  {
+    "title": "Organic Carrots #82",
+    "img": "src/products/organic_carrots.jpg",
+    "price": "$6.54 / bunch",
+    "description": "Sweet and crunchy, packed with vitamins.",
+    "category": "Vegetables"
+  },
+  {
+    "title": "Free Range Eggs #83",
+    "img": "src/products/free_range_eggs.jpg",
+    "price": "$9.09 / dozen",
+    "description": "Farm fresh eggs from happy hens.",
+    "category": "Dairy"
+  },
+  {
+    "title": "Whole Milk #84",
+    "img": "src/products/milk.jpg",
+    "price": "$7.14 / gallon",
+    "description": "Fresh and creamy whole milk.",
+    "category": "Dairy"
+  },
+  {
+    "title": "Bananas #85",
+    "img": "src/products/bananas.jpg",
+    "price": "$5.39 / lb",
+    "description": "Sweet and ripe bananas.",
+    "category": "Fruits"
+  },
+  {
+    "title": "Brown Bread #86",
+    "img": "src/products/brown_bread.jpg",
+    "price": "$7.75 / loaf",
+    "description": "Healthy whole grain bread.",
+    "category": "Bakery"
+  },
+  {
+    "title": "Almond Butter #87",
+    "img": "src/products/almond_butter.jpg",
+    "price": "$13.29 / jar",
+    "description": "Smooth and creamy almond butter.",
+    "category": "Pantry"
+  },
+  {
+    "title": "Greek Yogurt #88",
+    "img": "src/products/greek_yogurt.jpg",
+    "price": "$8.35 / tub",
+    "description": "Thick and rich Greek yogurt.",
+    "category": "Dairy"
+  },
+  {
+    "title": "Spinach #89",
+    "img": "src/products/spinach.jpg",
+    "price": "$7.39 / bunch",
+    "description": "Fresh green spinach leaves.",
+    "category": "Vegetables"
+  },
+  {
+    "title": "Honey #90",
+    "img": "src/products/honey.jpg",
+    "price": "$10.95 / bottle",
+    "description": "Pure natural honey.",
+    "category": "Pantry"
+  },
+  {
+    "title": "Fresh Red Apples #91",
+    "img": "src/products/apples.jpg",
+    "price": "$8.49 / lb",
+    "description": "Crisp and juicy, perfect for snacking and baking.",
+    "category": "Fruits"
+  },
+  {
+    "title": "Organic Carrots #92",
+    "img": "src/products/organic_carrots.jpg",
+    "price": "$7.04 / bunch",
+    "description": "Sweet and crunchy, packed with vitamins.",
+    "category": "Vegetables"
+  },
+  {
+    "title": "Free Range Eggs #93",
+    "img": "src/products/free_range_eggs.jpg",
+    "price": "$9.59 / dozen",
+    "description": "Farm fresh eggs from happy hens.",
+    "category": "Dairy"
+  },
+  {
+    "title": "Whole Milk #94",
+    "img": "src/products/milk.jpg",
+    "price": "$7.64 / gallon",
+    "description": "Fresh and creamy whole milk.",
+    "category": "Dairy"
+  },
+  {
+    "title": "Bananas #95",
+    "img": "src/products/bananas.jpg",
+    "price": "$5.89 / lb",
+    "description": "Sweet and ripe bananas.",
+    "category": "Fruits"
+  },
+  {
+    "title": "Brown Bread #96",
+    "img": "src/products/brown_bread.jpg",
+    "price": "$8.25 / loaf",
+    "description": "Healthy whole grain bread.",
+    "category": "Bakery"
+  },
+  {
+    "title": "Almond Butter #97",
+    "img": "src/products/almond_butter.jpg",
+    "price": "$13.79 / jar",
+    "description": "Smooth and creamy almond butter.",
+    "category": "Pantry"
+  },
+  {
+    "title": "Greek Yogurt #98",
+    "img": "src/products/greek_yogurt.jpg",
+    "price": "$8.85 / tub",
+    "description": "Thick and rich Greek yogurt.",
+    "category": "Dairy"
+  },
+  {
+    "title": "Spinach #99",
+    "img": "src/products/spinach.jpg",
+    "price": "$7.89 / bunch",
+    "description": "Fresh green spinach leaves.",
+    "category": "Vegetables"
+  },
+  {
+    "title": "Honey #100",
+    "img": "src/products/honey.jpg",
+    "price": "$11.45 / bottle",
+    "description": "Pure natural honey.",
+    "category": "Pantry"
+  }
+]

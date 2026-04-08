@@ -1,0 +1,98 @@
+title,description,price,category,img
+Fresh Bananas,Organic ripe bananas from Ecuador,1.29,Fruits,images/bananas.jpg
+Red Apples,Crunchy red apples packed with vitamins,2.99,Fruits,images/apples.jpg
+Orange Juice,100% pure squeezed orange juice,3.49,Beverages,images/orange_juice.jpg
+Whole Wheat Bread,Freshly baked whole wheat bread loaf,2.49,Bakery,images/bread.jpg
+Free-range Eggs,Dozen large free-range brown eggs,3.99,Dairy,images/eggs.jpg
+Greek Yogurt,Plain unsweetened Greek yogurt,4.59,Dairy,images/yogurt.jpg
+Almond Milk,Unsweetened almond milk carton 1L,3.29,Dairy Alternatives,images/almond_milk.jpg
+Broccoli Florets,Fresh broccoli florets packed with nutrients,1.99,Vegetables,images/broccoli.jpg
+Carrots,Bunch of fresh orange carrots,1.49,Vegetables,images/carrots.jpg
+Tomato Sauce,Rich and tangy tomato pasta sauce,2.99,Canned Goods,images/tomato_sauce.jpg
+Brown Rice,Organic long grain brown rice 2lb,3.79,Grains,images/brown_rice.jpg
+Peanut Butter,Crunchy peanut butter jar 16oz,4.49,Spreads,images/peanut_butter.jpg
+Honey,Raw natural honey from wildflowers,6.99,Sweets,images/honey.jpg
+Black Beans,Dried organic black beans 1lb,2.99,Legumes,images/black_beans.jpg
+Olive Oil,Extra virgin olive oil bottle 500ml,8.99,Oils,images/olive_oil.jpg
+White Sugar,Refined granulated white sugar 4lb,2.59,Baking,images/sugar.jpg
+Salt,Fine sea salt package 1lb,1.29,Spices,images/salt.jpg
+Ground Coffee,Medium roast ground coffee 12oz,7.99,Beverages,images/coffee.jpg
+Green Tea,Organic green tea bags pack,4.79,Beverages,images/green_tea.jpg
+Frozen Peas,Bag of frozen green peas 16oz,2.29,Frozen,images/frozen_peas.jpg
+Chicken Breast,Boneless skinless chicken breast 1lb,6.99,Meat,images/chicken_breast.jpg
+Ground Beef,85% lean ground beef 1lb,7.49,Meat,images/ground_beef.jpg
+Salmon Fillet,Fresh Atlantic salmon fillet 1lb,12.99,Seafood,images/salmon.jpg
+Shrimp,Peeled and deveined shrimp 1lb,14.99,Seafood,images/shrimp.jpg
+Cheddar Cheese,Sharp cheddar cheese block 8oz,5.49,Dairy,images/cheddar_cheese.jpg
+Mozzarella Cheese,Fresh mozzarella balls 8oz,6.29,Dairy,images/mozzarella.jpg
+Cucumber,Fresh organic cucumber,1.19,Vegetables,images/cucumber.jpg
+Lettuce,Green leaf lettuce head,1.59,Vegetables,images/lettuce.jpg
+Bell Peppers,Trio of red, yellow, and green bell peppers,4.99,Vegetables,images/bell_peppers.jpg
+Potatoes,Bag of russet potatoes 5lb,3.99,Vegetables,images/potatoes.jpg
+Onions,Yellow onions bag 3lb,2.79,Vegetables,images/onions.jpg
+Garlic,Bulb of fresh garlic,0.79,Vegetables,images/garlic.jpg
+Pasta,Spaghetti pasta 1lb,1.49,Grains,images/pasta.jpg
+Canned Tuna,Tuna in water can 5oz,1.89,Canned Goods,images/tuna.jpg
+Tomatoes,Fresh vine tomatoes,3.49,Vegetables,images/tomatoes.jpg
+Milk,Whole milk gallon,4.29,Dairy,images/milk.jpg
+Butter,Salted butter 1lb,4.99,Dairy,images/butter.jpg
+Ice Cream,Vanilla flavored ice cream pint,3.99,Frozen,images/ice_cream.jpg
+Chocolate Bar,Dark chocolate bar 70% cacao,2.99,Sweets,images/chocolate_bar.jpg
+Cereal,Whole grain cereal box 14oz,4.29,Breakfast,images/cereal.jpg
+Oatmeal,Instant oatmeal packets 10 count,3.79,Breakfast,images/oatmeal.jpg
+Orange,Juicy navel oranges,3.99,Fruits,images/orange.jpg
+Blueberries,Fresh blueberries pint,4.59,Fruits,images/blueberries.jpg
+Strawberries,Fresh strawberries pack 1lb,5.49,Fruits,images/strawberries.jpg
+Pineapple,Whole fresh pineapple,3.99,Fruits,images/pineapple.jpg
+Watermelon,Sweet seedless watermelon,7.99,Fruits,images/watermelon.jpg
+Mango,Fresh ripe mango,1.99,Fruits,images/mango.jpg
+Avocado,Fresh Hass avocado,2.49,Fruits,images/avocado.jpg
+Chickpeas,Dried chickpeas 1lb,2.99,Legumes,images/chickpeas.jpg
+Lentils,Dried green lentils 1lb,2.79,Legumes,images/lentils.jpg
+Soy Sauce,Dark soy sauce bottle 16oz,3.59,Condiments,images/soy_sauce.jpg
+Ketchup,Tomato ketchup bottle 20oz,2.99,Condiments,images/ketchup.jpg
+Mayonnaise,Creamy mayonnaise jar 15oz,3.49,Condiments,images/mayonnaise.jpg
+Mustard,Dijon mustard jar 8oz,2.79,Condiments,images/mustard.jpg
+Salted Pretzels,Pretzel snacks bag 8oz,2.99,Snacks,images/pretzels.jpg
+Potato Chips,Classic salted potato chips bag 10oz,3.49,Snacks,images/potato_chips.jpg
+Granola Bars,Assorted granola bars pack of 6,5.29,Snacks,images/granola_bars.jpg
+Almonds,Raw whole almonds 8oz,6.99,Nuts,images/almonds.jpg
+Cashews,Roasted cashews 8oz,7.49,Nuts,images/cashews.jpg
+Walnuts,Chopped walnuts 8oz,6.79,Nuts,images/walnuts.jpg
+Pine Nuts,Pine nuts 4oz pack,8.99,Nuts,images/pine_nuts.jpg
+Rice Cakes,Light salted rice cakes pack,3.29,Snacks,images/rice_cakes.jpg
+Maple Syrup,Pure maple syrup bottle 12oz,9.99,Sweets,images/maple_syrup.jpg
+Brown Sugar,Raw brown sugar 2lb bag,3.49,Baking,images/brown_sugar.jpg
+Flour,All purpose flour 5lb bag,4.29,Baking,images/flour.jpg
+Baking Powder,Baking powder canister 8oz,1.99,Baking,images/baking_powder.jpg
+Vanilla Extract,Pure vanilla extract bottle 2oz,5.99,Baking,images/vanilla_extract.jpg
+Cinnamon Ground,Ground cinnamon jar 2oz,2.79,Spices,images/cinnamon.jpg
+Black Pepper,Whole black peppercorns 3oz,3.29,Spices,images/black_pepper.jpg
+Chili Powder,Spicy chili powder jar 2oz,2.99,Spices,images/chili_powder.jpg
+Paprika,Smoked paprika jar 2oz,3.49,Spices,images/paprika.jpg
+Basil,Dried basil herb jar 1oz,2.19,Spices,images/basil.jpg
+Oregano,Dried oregano herb jar 1oz,2.19,Spices,images/oregano.jpg
+Parsley,Fresh parsley bunch,1.49,Herbs,images/parsley.jpg
+Cilantro,Fresh cilantro bunch,1.49,Herbs,images/cilantro.jpg
+Mint,Fresh mint bunch,1.59,Herbs,images/mint.jpg
+Rosemary,Fresh rosemary sprigs,2.29,Herbs,images/rosemary.jpg
+Thyme,Fresh thyme sprigs,2.29,Herbs,images/thyme.jpg
+Bagels,Plain bagels pack of 6,4.29,Bakery,images/bagels.jpg
+Croissants,Butter croissants pack of 4,5.99,Bakery,images/croissants.jpg
+Donuts,Glazed donuts pack of 6,4.59,Bakery,images/donuts.jpg
+Coffee Beans,Whole bean coffee 12oz,8.99,Beverages,images/coffee_beans.jpg
+Tea Bags,Assorted herbal tea bags pack,4.79,Beverages,images/tea_bags.jpg
+Sparkling Water,Lemon flavored sparkling water 1L,1.99,Beverages,images/sparkling_water.jpg
+Canned Corn,Canned sweet corn 15oz,1.29,Canned Goods,images/canned_corn.jpg
+Canned Peas,Canned green peas 15oz,1.29,Canned Goods,images/canned_peas.jpg
+Tomato Paste,Canned tomato paste 6oz,0.99,Canned Goods,images/tomato_paste.jpg
+Chicken Stock,Organic chicken stock carton 32oz,3.99,Canned Goods,images/chicken_stock.jpg
+Vegetable Stock,Organic vegetable stock carton 32oz,3.99,Canned Goods,images/veg_stock.jpg
+Instant Noodles,Spicy instant noodles pack,1.99,Grains,images/instant_noodles.jpg
+Granulated Garlic,Granulated garlic jar 3oz,2.49,Spices,images/granulated_garlic.jpg
+Chia Seeds,Organic chia seeds 12oz,6.99,Superfoods,images/chia_seeds.jpg
+Quinoa,Organic white quinoa 1lb,5.99,Grains,images/quinoa.jpg
+Coconut Oil,Organic virgin coconut oil jar 14oz,7.99,Oils,images/coconut_oil.jpg
+Dark Chocolate,70% cocoa dark chocolate bar 3.5oz,3.49,Sweets,images/dark_chocolate.jpg
+Ginger Root,Fresh ginger root,1.99,Vegetables,images/ginger_root.jpg
+Lemon,Fresh yellow lemons,3.29,Fruits,images/lemon.jpg
