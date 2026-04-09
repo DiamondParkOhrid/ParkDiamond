@@ -22,13 +22,18 @@
     </div>
     <div class="hero-stats animate-in stagger-4">
       <div class="stat">
-        <strong>35+</strong>
+        <strong>70+</strong>
         <span>{{ 'hero.guestCapacity' | translate }}</span>
       </div>
       <div class="stat-divider"></div>
       <div class="stat">
         <strong>3km</strong>
         <span>{{ 'hero.fromCenter' | translate }}</span>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat">
+        <strong>35+</strong>
+        <span>{{ 'hero.apartments' | translate }}</span>
       </div>
     </div>
   </div>
@@ -48,6 +53,9 @@
             <span class="guest-badge">
               <span class="material-icons-round">person</span>
               {{ apt.guests }}
+            </span>
+            <span class="apartment-count-badge">
+              {{ 'apartments.label' | translate }} 70+
             </span>
           </div>
           <div class="card-body">

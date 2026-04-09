@@ -1,4 +1,4 @@
-import { Component, DestroyRef, inject } from '@angular/core';
+import { Component, DestroyRef, inject, signal, OnInit } from '@angular/core';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { ActivatedRoute, NavigationEnd, Router, RouterOutlet } from '@angular/router';
 import { filter, startWith } from 'rxjs';
@@ -13,11 +13,18 @@ import { SeoConfig, SeoService } from './services/seo.service';
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })
-export class App {
+export class App implements OnInit {
   private readonly router = inject(Router);
   private readonly route = inject(ActivatedRoute);
   private readonly destroyRef = inject(DestroyRef);
   private readonly seo = inject(SeoService);
+
+  showSplash = signal(true);
+
+  ngOnInit() {
+    const duration = 400 + Math.random() * 900;
+    setTimeout(() => this.showSplash.set(false), duration);
+  }
 
   constructor() {
     this.router.events
