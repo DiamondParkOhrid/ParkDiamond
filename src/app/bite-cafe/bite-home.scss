@@ -144,6 +144,8 @@
     padding: 16px 32px;
     background: #fff;
     color: #4a6e28;
+    position: relative;
+    z-index: 3;
     font-family: var(--font-body);
     font-size: 0.92rem;
     font-weight: 600;

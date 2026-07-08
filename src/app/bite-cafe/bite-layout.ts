@@ -20,6 +20,7 @@ export class BiteLayout implements OnInit, OnDestroy {
   private lastScrollY = 0;
   private scrollThreshold = 80;
   private originalFavicon = '';
+  private originalBodyBg = '';
 
   private onScroll = () => {
     const y = window.scrollY;
@@ -52,6 +53,8 @@ export class BiteLayout implements OnInit, OnDestroy {
       this.originalFavicon = link.href;
       link.href = 'assets/bite-caffe/logo.png';
     }
+    this.originalBodyBg = document.body.style.background;
+    document.body.style.background = '#151f0e';
   }
 
   private restoreFavicon() {
@@ -59,6 +62,7 @@ export class BiteLayout implements OnInit, OnDestroy {
       const link = document.querySelector<HTMLLinkElement>('link[rel="icon"]');
       if (link) link.href = this.originalFavicon;
     }
+    document.body.style.background = this.originalBodyBg;
   }
 
   private async initLenis() {
