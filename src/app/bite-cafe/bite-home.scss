@@ -477,8 +477,6 @@
       #5f8536 60%,
       #6a9040 100%
     );
-  overflow: hidden;
-
   @media (min-width: 768px) { padding: 100px 32px; }
   @media (min-width: 1024px) { padding: 140px 80px; }
 
@@ -561,11 +559,11 @@
 
   &__track {
     display: flex;
-    gap: 14px;
+    gap: 16px;
     overflow-x: auto;
+    overflow-y: visible;
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
-    // Break out of parent padding, then add own padding for peek effect
     margin: 0 -20px;
     padding: 0 20px 4px;
     scrollbar-width: none;
@@ -612,9 +610,8 @@
   }
 
   &__card {
-    // Full width minus side padding (20px each) minus peek gap
     flex: 0 0 calc(100vw - 56px);
-    scroll-snap-align: center;
+    scroll-snap-align: start;
     min-width: 0;
     background: rgba(255, 255, 255, 0.92);
     backdrop-filter: blur(8px);

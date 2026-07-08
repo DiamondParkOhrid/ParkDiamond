@@ -61,7 +61,7 @@ export class BiteHome implements OnDestroy {
     {
       id: 'coffee',
       thumb: 'assets/bite-caffe/viber_image_2026-07-05_16-18-10-885.jpg',
-      video: 'assets/bite-caffe/video-output-7217A50C-53C2-4438-B8B9-905DB971493F-1 2.mov',
+      video: 'assets/bite-caffe/coffee-story.mp4',
       label: { en: 'Coffee Time', mk: 'Време за кафе' },
       caption: { en: 'When coffee hits different. Every. Single. Time.', mk: 'Кога кафето удира поинаку. Секој. Пат.' },
     },
@@ -339,8 +339,9 @@ export class BiteHome implements OnDestroy {
       });
 
       gsap.from('.intro__card', {
-        scrollTrigger: { trigger: '.intro__carousel', start: 'top 85%' },
+        scrollTrigger: { trigger: '.intro__carousel', start: 'top 85%', once: true },
         opacity: 0, y: isMobile ? 30 : 70, duration: 0.8, stagger: 0.15, ease: 'power3.out',
+        clearProps: 'all',
       });
 
       // ── Gallery ──

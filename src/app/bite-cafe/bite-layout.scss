@@ -470,6 +470,22 @@
       }
     }
   }
+
+  &__crafted {
+    font-size: 0.68rem;
+    color: rgba(250, 254, 249, 0.25);
+    letter-spacing: 0.02em;
+
+    a {
+      color: rgba(250, 254, 249, 0.4);
+      text-decoration: none;
+      transition: color 0.3s ease;
+
+      @media (hover: hover) {
+        &:hover { color: var(--bite-green-light); }
+      }
+    }
+  }
 }
 
 // ─── Reduced Motion ──────────────────────────────────────

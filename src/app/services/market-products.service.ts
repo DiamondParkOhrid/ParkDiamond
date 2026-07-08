@@ -12,7 +12,7 @@ export interface MarketProduct {
 @Injectable({ providedIn: 'root' })
 export class MarketProductsService {
   private readonly csvPath = '/assets/Market/cenovnik.csv';
-  private readonly fallbackImage = 'assets/market_diamond.png';
+  private readonly fallbackImage = 'assets/market_diamond.jpg';
 
   async loadProducts(): Promise<MarketProduct[]> {
     const response = await fetch(this.csvPath);

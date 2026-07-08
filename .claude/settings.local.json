@@ -3,7 +3,24 @@
     "allow": [
       "Read(//mnt/c/Users/kosto/WebstormProjects/**)",
       "Bash(npm install:*)",
-      "Bash(npx ng:*)"
+      "Bash(npx ng:*)",
+      "Bash(find C:/Users/kosto/WebstormProjects/ParkDiamond/public/assets -type f \\\\\\(-name *.jpg -o -name *.jpeg -o -name *.png -o -name *.mp4 -o -name *.mov -o -name *.webp \\\\\\) -exec ls -lhS {} +)",
+      "Bash(sort -k5 -hr)",
+      "Bash(ffmpeg -version)",
+      "Bash(npm ls:*)",
+      "Bash(where ffmpeg:*)",
+      "Read(//c/ffmpeg/bin/**)",
+      "Read(//c/Users/kosto/WebstormProjects/ParkDiamond/$LOCALAPPDATA/Microsoft/WinGet/Links/**)",
+      "Bash(npx --yes sharp-cli --version)",
+      "Bash(winget list:*)",
+      "Bash(node -e \"const sharp = require\\(''sharp''\\); console.log\\(''sharp version:'', sharp.versions.sharp\\);\")",
+      "Bash(npm root:*)",
+      "Bash(node:*)",
+      "Bash(winget install:*)",
+      "Bash(export PATH=$LOCALAPPDATA/Microsoft/WinGet/Links:$PATH)",
+      "Bash(export PATH=\"$LOCALAPPDATA/Microsoft/WinGet/Links:$PATH\" cd \"C:/Users/kosto/WebstormProjects/ParkDiamond/public/assets/bite-caffe\" __NEW_LINE_9bda21b93d9abd64__ echo \"=== Compressing 18.05.mp4 ===\" ffmpeg -y -i \"18.05.mp4\" -vf \"scale=720:1280\" -c:v libx264 -preset slow -crf 28 -an -movflags +faststart \"18.05_opt.mp4\")",
+      "Bash(export PATH=\"$LOCALAPPDATA/Microsoft/WinGet/Links:$PATH\" cd \"C:/Users/kosto/WebstormProjects/ParkDiamond/public/assets/bite-caffe\" __NEW_LINE_e9b0ee8d548af823__ echo \"=== Compressing tiramisu 1.mp4 ===\" ffmpeg -y -i \"tiramisu 1.mp4\" -vf \"scale=720:1280\" -c:v libx264 -preset slow -crf 28 -an -movflags +faststart \"tiramisu_1_opt.mp4\")",
+      "Bash(echo '=== Bite Caffe folder ===' du -sh C:/Users/kosto/WebstormProjects/ParkDiamond/public/assets/bite-caffe/ echo echo '=== Total assets ===' du -sh C:/Users/kosto/WebstormProjects/ParkDiamond/public/assets/ echo echo '=== Largest remaining files ===' find C:/Users/kosto/WebstormProjects/ParkDiamond/public/assets -type f \\\\\\(-name *.jpg -o -name *.jpeg -o -name *.png -o -name *.mp4 -o -name *.mov \\\\\\) -exec ls -lhS {} +)"
     ]
   }
 }
