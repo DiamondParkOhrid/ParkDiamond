@@ -1,0 +1,481 @@
+// ─── Theme Tokens ────────────────────────────────────────
+.bite-theme {
+  --bite-green: #6d9340;
+  --bite-green-light: #8aab5a;
+  --bite-green-dark: #5a7e32;
+  --bite-cream: #fafef9;
+  --bite-warm: #f5f0e8;
+  --bite-dark: #1f2a14;
+  --bite-brown: #6b4226;
+  --bite-brown-light: #8b6a4a;
+  --bite-text: #3a4a2a;
+  --bite-muted: #7a8a6a;
+  --bite-border: rgba(109, 140, 62, 0.12);
+  --bite-shadow: 0 4px 24px rgba(31, 42, 20, 0.06);
+  --bite-shadow-lg: 0 12px 40px rgba(31, 42, 20, 0.10);
+  --bite-radius: 14px;
+  --bite-radius-sm: 10px;
+  --bite-tab-h: 64px;
+  --font-heading: 'Fraunces', serif;
+  --font-body: 'Inter', sans-serif;
+
+  font-family: var(--font-body);
+  color: var(--bite-dark);
+  // Dark bg so no cream peeks below footer; sections set their own bg
+  background: #151f0e;
+  -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: transparent;
+
+  @media (min-width: 768px) {
+    --bite-radius: 16px;
+    --bite-tab-h: 0px; // No tab bar on desktop
+  }
+}
+
+// ─── Top Bar ────────────────────────────────────────────
+.bite-topbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  height: 52px;
+  padding-top: env(safe-area-inset-top, 0px);
+  transition: background-color 0.4s ease, box-shadow 0.4s ease;
+
+  @media (min-width: 768px) { height: 64px; }
+
+  &.scrolled {
+    background: rgba(250, 254, 249, 0.92);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    box-shadow: 0 1px 20px rgba(31, 42, 20, 0.06);
+
+    .bite-topbar__logo img { filter: none; }
+  }
+
+  &__inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 16px;
+
+    @media (min-width: 768px) { padding: 0 32px; }
+  }
+
+  &__logo {
+    flex-shrink: 0;
+
+    img {
+      display: block;
+      height: 28px;
+      width: auto;
+      object-fit: contain;
+      border-radius: 4px;
+      filter: brightness(0) invert(1);
+      transition: filter 0.4s ease;
+
+      @media (min-width: 768px) { height: 36px; border-radius: 5px; }
+    }
+  }
+
+  &__links {
+    display: none;
+
+    @media (min-width: 768px) {
+      display: flex;
+      gap: 32px;
+    }
+
+    a {
+      font-family: var(--font-body);
+      font-size: 0.82rem;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.8);
+      text-decoration: none;
+      position: relative;
+      padding: 4px 0;
+      transition: color 0.3s ease;
+
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: -2px;
+        left: 50%;
+        width: 0;
+        height: 2px;
+        background: var(--bite-green);
+        border-radius: 1px;
+        transition: width 0.3s ease, left 0.3s ease;
+      }
+
+      &:hover, &.active {
+        color: #fff;
+        &::after { width: 100%; left: 0; }
+      }
+    }
+  }
+
+  &.scrolled &__links a {
+    color: var(--bite-dark);
+    &.active, &:hover { color: var(--bite-green); }
+  }
+
+  &__right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    @media (min-width: 768px) { gap: 16px; }
+  }
+
+  &__toggle {
+    display: flex;
+    align-items: center;
+    border-radius: 999px;
+    border: 1.5px solid rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.08);
+    padding: 2px;
+    gap: 0;
+    transition: border-color 0.4s ease, background 0.4s ease;
+  }
+
+  &__toggle-opt {
+    font-family: var(--font-body);
+    font-size: 0.62rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 999px;
+    background: transparent;
+    color: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    transition: all 0.25s ease;
+    -webkit-tap-highlight-color: transparent;
+
+    @media (min-width: 768px) {
+      font-size: 0.66rem;
+      padding: 5px 12px;
+    }
+
+    &.active {
+      background: rgba(255, 255, 255, 0.9);
+      color: #3a5a22;
+      box-shadow: 0 1px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    &:active { transform: scale(0.93); }
+  }
+
+  &.scrolled &__toggle {
+    border-color: var(--bite-border);
+    background: rgba(109, 147, 64, 0.06);
+  }
+
+  &.scrolled &__toggle-opt {
+    color: var(--bite-muted);
+
+    &.active {
+      background: var(--bite-green);
+      color: #fff;
+      box-shadow: 0 1px 6px rgba(109, 147, 64, 0.2);
+    }
+  }
+}
+
+// ─── Main content ───────────────────────────────────────
+.bite-main {
+  // No padding here — footer handles its own tab-bar spacing
+}
+
+// ─── Bottom Tab Bar ─────────────────────────────────────
+.bite-tab {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  height: var(--bite-tab-h);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+  background: rgba(250, 254, 249, 0.94);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-top: 1px solid rgba(109, 140, 62, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  transition: transform 0.35s cubic-bezier(0.32, 0.72, 0, 1);
+
+  &.hidden {
+    transform: translateY(100%);
+  }
+
+  @media (min-width: 768px) {
+    display: none;
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+    flex: 1;
+    min-height: 44px;
+    padding: 6px 12px;
+    color: var(--bite-muted);
+    text-decoration: none;
+    border: none;
+    background: none;
+    cursor: pointer;
+    transition: color 0.25s ease;
+    -webkit-tap-highlight-color: transparent;
+
+    span {
+      font-family: var(--font-body);
+      font-size: 0.62rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    svg {
+      transition: transform 0.25s ease;
+    }
+
+    &:active {
+      svg { transform: scale(0.88); }
+    }
+
+    &.active {
+      color: var(--bite-green);
+    }
+  }
+}
+
+// ─── Footer ──────────────────────────────────────────────
+.bite-footer {
+  background: linear-gradient(175deg, #243518 0%, #1a2810 40%, #151f0e 100%);
+  color: rgba(250, 254, 249, 0.7);
+  padding: 0 0 0;
+  position: relative;
+  overflow: hidden;
+
+  // Decorative glow
+  &::before {
+    content: '';
+    position: absolute;
+    top: -60px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 400px;
+    height: 120px;
+    background: radial-gradient(ellipse, rgba(109, 147, 64, 0.2) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  &__map-strip {
+    width: 100%;
+    height: 200px;
+    position: relative;
+
+    @media (min-width: 768px) { height: 240px; }
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 60px;
+      background: linear-gradient(to bottom, transparent, #243518);
+      pointer-events: none;
+    }
+
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+      display: block;
+      filter: saturate(0.6) brightness(0.85);
+    }
+  }
+
+  &__body {
+    padding: 48px 20px 24px;
+    padding-bottom: calc(24px + var(--bite-tab-h) + env(safe-area-inset-bottom, 0px));
+    max-width: 1280px;
+    margin: 0 auto;
+
+    @media (min-width: 768px) {
+      padding: 56px 32px 36px;
+      padding-bottom: 36px;
+    }
+  }
+
+  &__top {
+    display: flex;
+    flex-direction: column;
+    gap: 36px;
+    margin-bottom: 36px;
+
+    @media (min-width: 768px) {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 48px;
+      margin-bottom: 48px;
+    }
+  }
+
+  &__brand {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+
+    img {
+      height: 32px;
+      width: auto;
+      max-width: 100px;
+      object-fit: contain;
+      border-radius: 4px;
+      opacity: 0.9;
+      @media (min-width: 768px) { height: 38px; max-width: 120px; }
+    }
+
+    p {
+      font-size: 0.85rem;
+      line-height: 1.65;
+      max-width: 320px;
+      opacity: 0.55;
+    }
+  }
+
+  &__social {
+    display: flex;
+    gap: 10px;
+    margin-top: 4px;
+  }
+
+  &__social-link {
+    width: 42px;
+    height: 42px;
+    border-radius: 12px;
+    background: rgba(138, 171, 90, 0.08);
+    border: 1px solid rgba(138, 171, 90, 0.12);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(250, 254, 249, 0.55);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    -webkit-tap-highlight-color: transparent;
+
+    &:active { transform: scale(0.92); }
+
+    @media (hover: hover) {
+      &:hover {
+        background: var(--bite-green);
+        border-color: var(--bite-green);
+        color: #fff;
+        transform: translateY(-3px);
+        box-shadow: 0 6px 20px rgba(109, 147, 64, 0.25);
+      }
+    }
+  }
+
+  &__columns {
+    display: flex;
+    gap: 40px;
+
+    @media (max-width: 767px) { gap: 28px; }
+  }
+
+  &__col {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  &__col-title {
+    font-family: var(--font-body);
+    font-size: 0.65rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--bite-green-light);
+    opacity: 0.7;
+    margin-bottom: 6px;
+  }
+
+  &__col a {
+    font-size: 0.84rem;
+    font-weight: 400;
+    color: rgba(250, 254, 249, 0.55);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    min-height: 30px;
+
+    svg {
+      flex-shrink: 0;
+      opacity: 0.4;
+      transition: all 0.3s ease;
+    }
+
+    @media (hover: hover) {
+      &:hover {
+        color: #fff;
+        transform: translateX(3px);
+        svg { opacity: 1; color: var(--bite-green-light); }
+      }
+    }
+  }
+
+  &__bottom {
+    padding-top: 24px;
+    border-top: 1px solid rgba(138, 171, 90, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    @media (min-width: 768px) {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 28px;
+    }
+
+    p {
+      font-size: 0.72rem;
+      opacity: 0.35;
+    }
+
+    a {
+      font-size: 0.72rem;
+      color: rgba(250, 254, 249, 0.35);
+      text-decoration: none;
+      transition: color 0.3s ease;
+
+      @media (hover: hover) {
+        &:hover { color: var(--bite-green-light); }
+      }
+    }
+  }
+}
+
+// ─── Reduced Motion ──────────────────────────────────────
+@media (prefers-reduced-motion: reduce) {
+  .bite-theme * {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

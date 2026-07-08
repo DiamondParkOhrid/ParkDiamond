@@ -1,0 +1,625 @@
+{
+  "restaurant": {
+    "name": "Bite",
+    "description": "Healthy food | Coffee | Fresh Juice | Tobacco",
+    "global_notes": [
+      {
+        "mk": "Состојките означени со * можат да предизвикаат алергиска реакција",
+        "en": "Ingredients marked with * may cause an allergic reaction"
+      }
+    ]
+  },
+  "menu": [
+    {
+      "category": {
+        "mk": "КАФЕ",
+        "en": "COFFEE"
+      },
+      "category_notes": [
+        {
+          "mk": "Секое кафе со млеко има веганска опција со млеко од индиски орев по ваш избор",
+          "en": "Every coffee with milk has a vegan option with cashew milk by your choice"
+        }
+      ],
+      "items": [
+        {
+          "name": { "mk": "Еспресо", "en": "Espresso" },
+          "description": { "mk": "8gr / 25ml", "en": "8gr / 25ml" },
+          "price": "70"
+        },
+        {
+          "name": { "mk": "Дупло еспресо", "en": "Double espresso" },
+          "description": { "mk": "16gr / 50ml", "en": "16gr / 50ml" },
+          "price": "130"
+        },
+        {
+          "name": { "mk": "Макијато", "en": "Macchiato" },
+          "description": { "mk": "165ml, еспресо, млеко*", "en": "165ml, espresso, steamed milk*" },
+          "price": "80 / 90"
+        },
+        {
+          "name": { "mk": "Американо", "en": "Americano" },
+          "description": { "mk": "165ml, еспресо, вода", "en": "165ml, espresso, hot water" },
+          "price": "80"
+        },
+        {
+          "name": { "mk": "Капучино", "en": "Cappuccino" },
+          "description": { "mk": "165ml, кафе во прав, млеко*, еспресо", "en": "165ml, coffee powder*, steamed milk*, espresso" },
+          "price": "90"
+        },
+        {
+          "name": { "mk": "Лате", "en": "Latte" },
+          "description": { "mk": "180ml, дупло еспресо, млеко*", "en": "180ml, double espresso, milk*" },
+          "price": "100"
+        },
+        {
+          "name": { "mk": "Чај", "en": "Tea" },
+          "description": { "mk": "180ml", "en": "180ml" },
+          "price": "80"
+        },
+        {
+          "name": { "mk": "Салеп", "en": "Salep" },
+          "description": { "mk": "180ml", "en": "180ml" },
+          "price": "120"
+        },
+        {
+          "name": { "mk": "Топло чоколадо", "en": "Hot Chocolate" },
+          "description": { "mk": "180ml, млеко*, чоколадо", "en": "180ml, steamed milk*, chocolate" },
+          "price": "120"
+        },
+        {
+          "name": { "mk": "Нескафе", "en": "Nescafe" },
+          "description": { "mk": "180ml, инстант кафе, вода, млеко*", "en": "180ml, instant coffee, water, milk*" },
+          "price": "100"
+        }
+      ]
+    },
+    {
+      "category": {
+        "mk": "МАЧА (250ml)",
+        "en": "MATCHA (250ml)"
+      },
+      "items": [
+        {
+          "name": { "mk": "Топла / Ладна", "en": "Hot / Cold" },
+          "description": null,
+          "price": "160 / 190"
+        }
+      ],
+      "addons": [
+        {
+          "name": { "mk": "Овошно пире* (вкусови)", "en": "Fruit Puree* (flavours)" },
+          "price": "40"
+        },
+        {
+          "name": { "mk": "Млеко од индиски орев*", "en": "Cashew Milk*" },
+          "price": "40"
+        }
+      ]
+    },
+    {
+      "category": {
+        "mk": "СВЕЖ ЏУС (250ml)",
+        "en": "FRESH JUICE (250ml)"
+      },
+      "items": [
+        { "name": { "mk": "Портокал", "en": "Orange" }, "price": "170" },
+        { "name": { "mk": "Јаболко", "en": "Apple" }, "price": "170" },
+        { "name": { "mk": "Морков", "en": "Carrot" }, "price": "170" },
+        { "name": { "mk": "Ананас", "en": "Pineapple" }, "price": "220" }
+      ]
+    },
+    {
+      "category": {
+        "mk": "ЛАДНО КАФЕ (250ml)",
+        "en": "ICE COFFEE (250ml)"
+      },
+      "items": [
+        {
+          "name": { "mk": "Ладно Лате", "en": "Iced Latte" },
+          "description": { "mk": "мраз, дупла доза еспресо, млеко*", "en": "ice, double shot of espresso, milk*" },
+          "price": "100"
+        },
+        {
+          "name": { "mk": "Тирамису Лате", "en": "Tiramisu Latte" },
+          "description": { "mk": "мраз, дупла доза еспресо, млеко*, сируп", "en": "ice, double shot of espresso, milk*, syrup" },
+          "price": "180"
+        },
+        {
+          "name": { "mk": "Ванила Лате", "en": "Vanilla Latte" },
+          "description": { "mk": "мраз, дупла доза еспресо, млеко*, сируп", "en": "ice, double shot of espresso, milk*, syrup" },
+          "price": "150"
+        },
+        {
+          "name": { "mk": "Лешник Лате", "en": "Hazelnut Latte" },
+          "description": { "mk": "мраз, дупла доза еспресо, млеко*, сируп", "en": "ice, double shot of espresso, milk*, syrup" },
+          "price": "150"
+        },
+        {
+          "name": { "mk": "Тиква Лате", "en": "Pumpkin Latte" },
+          "description": { "mk": "мраз, дупла доза еспресо, млеко*, сируп", "en": "ice, double shot of espresso, milk*, syrup" },
+          "price": "150"
+        },
+        {
+          "name": { "mk": "Ладно Американо", "en": "Iced Americano" },
+          "description": { "mk": "дупло еспресо, вода, мраз", "en": "double espresso, water, ice" },
+          "price": "120"
+        },
+        {
+          "name": { "mk": "Фредо Еспресо", "en": "Freddo Espresso" },
+          "description": { "mk": "дупло еспресо, мраз", "en": "double espresso, ice" },
+          "price": "130"
+        },
+        {
+          "name": { "mk": "Фредо Капучино", "en": "Freddo Cappucino" },
+          "description": { "mk": "дупло еспресо, млеко*, мраз", "en": "double espresso, milk*, ice" },
+          "price": "140"
+        },
+        {
+          "name": { "mk": "Нескафе Фрапе", "en": "Nescaffe Frappe" },
+          "description": { "mk": "инстант кафе, мраз, млеко*", "en": "instant coffee, ice, milk*" },
+          "price": "140"
+        },
+        {
+          "name": { "mk": "Ладно Кафе", "en": "Ice Coffee" },
+          "description": { "mk": "дупло еспресо, млеко*, сладолед*, мраз", "en": "double espresso, milk*, ice cream*, ice" },
+          "price": "140"
+        },
+        {
+          "name": { "mk": "Афогато", "en": "Affogato" },
+          "description": { "mk": "еспресо, сладолед*, какао", "en": "espresso, ice cream*, cocoa" },
+          "price": "180"
+        },
+        {
+          "name": { "mk": "Ладно цедено", "en": "Cold Brew" },
+          "description": { "mk": "100% арабика ладно филтрирано кафе, мраз", "en": "100% Arabica cold filtered coffee, ice" },
+          "price": "120"
+        },
+        {
+          "name": { "mk": "Ладно Какао", "en": "Iced Cocoa" },
+          "description": { "mk": "какао, мраз, млеко*", "en": "cocoa, ice, milk*" },
+          "price": "120"
+        }
+      ]
+    },
+    {
+      "category": {
+        "mk": "ЏУС МИКС (250ml)",
+        "en": "JUICE MIX (250ml)"
+      },
+      "items": [
+        {
+          "name": { "mk": "Фреш", "en": "Fresh" },
+          "description": { "mk": "портокал, лимон", "en": "orange, lemon" },
+          "price": "180"
+        },
+        {
+          "name": { "mk": "Пинк", "en": "Pink" },
+          "description": { "mk": "портокал, малина, ананас", "en": "orange, raspberry, pineapple" },
+          "price": "210"
+        },
+        {
+          "name": { "mk": "Грин", "en": "Green" },
+          "description": { "mk": "спанаќ, краставица, јаболко, ѓумбир, лимон", "en": "spinach, cucumber, apple, ginger, lemon" },
+          "price": "190"
+        },
+        {
+          "name": { "mk": "Ред", "en": "Red" },
+          "description": { "mk": "цвекло, морков, јаболко, лимон", "en": "beetroot, carrot, apple, lemon" },
+          "price": "190"
+        },
+        {
+          "name": { "mk": "Цитрус", "en": "Citrus" },
+          "description": { "mk": "лимон, портокал, цитрон", "en": "lemon, orange, citron" },
+          "price": "200"
+        },
+        {
+          "name": { "mk": "Буст", "en": "Boost" },
+          "description": { "mk": "лимон, малина, агаве", "en": "lemon, raspberry, agave" },
+          "price": "200"
+        },
+        {
+          "name": { "mk": "Егзотик", "en": "Exotic" },
+          "description": { "mk": "портокал, лимон, малина, ананас", "en": "orange, lemon, raspberry, pineapple" },
+          "price": "230"
+        }
+      ]
+    },
+    {
+      "category": {
+        "mk": "ПРОТЕИН СМУТИ (250ml)",
+        "en": "PROTEIN SMOOTHIE (250ml)"
+      },
+      "category_notes": [
+        {
+          "mk": "**Изберете го вашиот вкус на протеин: ванила, јагода или чоколадо.",
+          "en": "**Choose your protein flavour: vanilla, strawberry or chocolate."
+        }
+      ],
+      "items": [
+        {
+          "name": { "mk": "Мача Оазис", "en": "Matcha Oasis" },
+          "description": { "mk": "мача, грчки јогурт*, овес*, банана, мед*, протеин*", "en": "greek yogurt*, matcha, oats*, banana, honey*, protein*" },
+          "price": "250"
+        },
+        {
+          "name": { "mk": "Шери Протеин", "en": "Cherry Protein" },
+          "description": { "mk": "вишна, цвекло, јагода*, банана, протеин*", "en": "cherry, beetroot, strawberry*, banana, protein*" },
+          "price": "230"
+        },
+        {
+          "name": { "mk": "Зелен Протеин", "en": "Green Protein" },
+          "description": { "mk": "киви, спанаќ, јаболко, лимон, протеин*", "en": "kiwi, spinach, apple, lemon, protein*" },
+          "price": "220"
+        },
+        {
+          "name": { "mk": "Црвен Протеин", "en": "Red Protein" },
+          "description": { "mk": "грчки јогурт*, шумско овошје*, протеин*", "en": "greek yogurt*, forest fruit*, protein*" },
+          "price": "250"
+        },
+        {
+          "name": { "mk": "Крем Протеин", "en": "Cream Protein" },
+          "description": { "mk": "путер од кикирики*, какао, млеко*, банана, протеин*", "en": "peanut butter*, cocoa, milk*, banana, protein*" },
+          "price": "230"
+        }
+      ]
+    },
+    {
+      "category": {
+        "mk": "СМУТИ (250ml)",
+        "en": "SMOOTHIE (250ml)"
+      },
+      "items": [
+        {
+          "name": { "mk": "Бајт", "en": "Bite" },
+          "description": { "mk": "лимон, јаболко, јагода*, мед*", "en": "lemon, apple, strawberry*, honey*" },
+          "price": "200"
+        },
+        {
+          "name": { "mk": "Бери Бласт", "en": "Berry blast" },
+          "description": { "mk": "боровница, банана, ананас, јагода*", "en": "blueberry, banana, pineapple, strawberry*" },
+          "price": "190"
+        },
+        {
+          "name": { "mk": "Браун Енерџи", "en": "Brown energy" },
+          "description": { "mk": "путер од кикиритки*, банана, какао, урми", "en": "peanut butter*, banana, cocoa, dates" },
+          "price": "190"
+        },
+        {
+          "name": { "mk": "Џинџер Раш", "en": "Ginger Rush" },
+          "description": { "mk": "ѓумбир, ананас, лимон, мед*", "en": "ginger, pineapple, lemon, honey*" },
+          "price": "200"
+        },
+        {
+          "name": { "mk": "Велвет Енерџи", "en": "Velvet Energy" },
+          "description": { "mk": "путер од лешник*, банана, урми, боровница", "en": "hazelnut*, banana, dates, blueberry" },
+          "price": "220"
+        },
+        {
+          "name": { "mk": "Грин Машин", "en": "Green Machine" },
+          "description": { "mk": "спирулина, јаболко, банана, засладувач", "en": "spirulina, apple, banana, sweetener" },
+          "price": "190"
+        },
+        {
+          "name": { "mk": "Рефрешер", "en": "Refresher" },
+          "description": { "mk": "овес*, грчки јогурт*, банана, цреша, чиа семе", "en": "oats*, greek yougurt*, banana, cherry, chia seeds" },
+          "price": "220"
+        }
+      ],
+      "addons": [
+        {
+          "name": { "mk": "Протеин*", "en": "Protein*" },
+          "price": "90"
+        }
+      ]
+    },
+    {
+      "category": {
+        "mk": "МИЛКШЕЈК (250ml)",
+        "en": "MILKSHAKE (250ml)"
+      },
+      "items": [
+        {
+          "name": { "mk": "Јагода", "en": "Strawberry" },
+          "description": { "mk": "млеко*, банана, јагода*, сладолед*", "en": "milk*, banana, strawberry*, ice cream*" },
+          "price": "200"
+        },
+        {
+          "name": { "mk": "Кикирики", "en": "Peanut" },
+          "description": { "mk": "млеко*, банана, какао, урми, путер од кикирики*, сладолед*", "en": "milk*, banana, cocoa, dates, peanut butter*, ice cream*" },
+          "price": "200"
+        },
+        {
+          "name": { "mk": "Боровника", "en": "Blueberry" },
+          "description": { "mk": "млеко*, боровница, банана, агаве, сладолед*", "en": "milk*, blueberry, banana, agave, ice cream*" },
+          "price": "200"
+        },
+        {
+          "name": { "mk": "Банана", "en": "Banana" },
+          "description": { "mk": "млеко*, ванила, банана, сладолед*", "en": "milk*, vanilla, banana, ice cream*" },
+          "price": "200"
+        }
+      ]
+    },
+    {
+      "category": {
+        "mk": "ОВЕСЕН ОБРОК",
+        "en": "OAT MEAL"
+      },
+      "category_notes": [
+        {
+          "mk": "**Изберете го вашиот вкус на протеин: ванила, јагода или чоколадо.",
+          "en": "**Choose your protein flavour: vanilla, strawberry or chocolate."
+        }
+      ],
+      "items": [
+        {
+          "name": { "mk": "Бајт", "en": "Bite" },
+          "description": { "mk": "овес*, банана, шумско овошје*, путер од кикирики*, протеин*, бадем*", "en": "oats*, banana, forest fruit*, peanut butter*, almond*, protein*" },
+          "price": "200"
+        },
+        {
+          "name": { "mk": "Бери", "en": "Berry" },
+          "description": { "mk": "овес*, грчки јогурт*, шумско овошје*, протеин*", "en": "oats*, greek yogurt*, forest fruit*, protein*" },
+          "price": "190"
+        },
+        {
+          "name": { "mk": "Пинат", "en": "Peanut" },
+          "description": { "mk": "овес*, банана, путер од кикиритки*, протеин*", "en": "oats*, banana, peanut butter*, protein*" },
+          "price": "190"
+        },
+        {
+          "name": { "mk": "Рафаело", "en": "Raffaello" },
+          "description": { "mk": "овес*, ванила протеин*, млеко*, малина*, кокос", "en": "oats*, vanilla protein*, milk*, raspberry*, coconut" },
+          "price": "210"
+        }
+      ]
+    },
+    {
+      "category": {
+        "mk": "САЛАТИ",
+        "en": "SALADS"
+      },
+      "items": [
+        {
+          "name": { "mk": "Бајт", "en": "Bite" },
+          "description": { "mk": "домат, краставица, семки, фета сирење*, пиперка, кромид, пченка, ајсберг, дресинг*", "en": "tomato, cucumber, seeds, feta*, onion, peper, corn, dressing*, iceberg" },
+          "price": "240"
+        },
+        {
+          "name": { "mk": "Моцарела", "en": "Mozzarella" },
+          "description": { "mk": "моцарела*, рукола, домат, краставица, пармезан*, ајсберг", "en": "mozzarella*, rocket, tomato, cucumber, parmesan*, iceberg" },
+          "price": "240"
+        },
+        {
+          "name": { "mk": "Авокадо", "en": "Avocado" },
+          "description": { "mk": "авокадо, јајце*, краставица, домат, маслинки, ајсберг", "en": "avocado, egg*, cucumber, tomato, olives, iceberg" },
+          "price": "230"
+        },
+        {
+          "name": { "mk": "Витамински Микс", "en": "Vitamin Mix" },
+          "description": { "mk": "морков, ајсберг, цвекло, домат, краставица, семки, грав, наут", "en": "iceberg, carrot, beetroot, tomato, cucumber, seeds, beans, chickpeas" },
+          "price": "240"
+        },
+        {
+          "name": { "mk": "Цезар", "en": "Caesar" },
+          "description": { "mk": "домат, краставица, кубети*, пилешки стек, пармезан*, ајсберг, дресинг*", "en": "tomato, cucumber, cubes*, chicken, parmesan*, iceberg, dressing*" },
+          "price": "260"
+        },
+        {
+          "name": { "mk": "Туна", "en": "Tuna" },
+          "description": { "mk": "киноа, туна*, краставица, домат, пченка, кромид, ајсберг", "en": "tuna*, quinoa, cucumber, tomato, corn, onion, iceberg" },
+          "price": "250"
+        },
+        {
+          "name": { "mk": "Протеинска", "en": "Protein" },
+          "description": { "mk": "ајсберг, домат, краставица, кромид, јајце*, киноа, пилешки стек, авокадо, сос*", "en": "iceberg, tomato, cucumber, onion, egg*, quinoa, chicken breast, avocado, sauce*" },
+          "price": "290"
+        },
+        {
+          "name": { "mk": "Овошна", "en": "Fruit" },
+          "description": { "mk": "јаболко, портокал, малина, јагода*, банана, ананас", "en": "apple, orange, raspberry, strawberry*, banana, pineapple" },
+          "price": "200"
+        }
+      ]
+    },
+    {
+      "category": {
+        "mk": "ПОРЦИИ",
+        "en": "BOWLS"
+      },
+      "items": [
+        {
+          "name": { "mk": "Смути", "en": "Smoothie" },
+          "description": { "mk": "грчки јогурт*, агаве, шумско овошје*, домашна гранола*, бадеми*", "en": "greek yogurt*, agave, forest fruit*, homemade granola*, almonds*" },
+          "price": "230"
+        },
+        {
+          "name": { "mk": "Лосос", "en": "Salmon" },
+          "description": { "mk": "лосос*, зелена салата, домат, краставица, авокадо, јајце*, морков, сос+, сусам", "en": "salmon*, lettuce, tomato, cucumber, avocado, egg*, carrot, sauce*, sesame" },
+          "price": "300"
+        }
+      ]
+    },
+    {
+      "category": {
+        "mk": "СЕНДВИЧИ",
+        "en": "SANDWICHES"
+      },
+      "items": [
+        {
+          "name": { "mk": "Авокадо", "en": "Avocado" },
+          "description": { "mk": "авокадо, јајце*, домат, краставица, ајсберг", "en": "avocado, egg*, tomato, cucumber, iceberg" },
+          "price": "240"
+        },
+        {
+          "name": { "mk": "Туна", "en": "Tuna" },
+          "description": { "mk": "туна*, мајонез*, домат, краставица, кромид, ајсберг", "en": "tuna*, mayo* ,tomato, onion, cucumber, iceberg" },
+          "price": "240"
+        },
+        {
+          "name": { "mk": "Песто Моцарела", "en": "Pesto Mozzarella" },
+          "description": { "mk": "песто*, моцарела*, семки, домат, краставица, маслинки, ајсберг", "en": "pesto*, mozzarella*, seeds, tomato, olives, cucumber, iceberg" },
+          "price": "260"
+        },
+        {
+          "name": { "mk": "Хумус", "en": "Hummus" },
+          "description": { "mk": "хумус*, авокадо, домат, краставица, семки, ајсберг", "en": "hummus*, avocado, tomato, cucumber, seeds, iceberg" },
+          "price": "220"
+        },
+        {
+          "name": { "mk": "Фета", "en": "Feta" },
+          "description": { "mk": "фета сирење*, краставица, домат, пченка, пиперка, ајсберг", "en": "feta cheese*, cucumber, tomato, corn, peper, iceberg" },
+          "price": "200"
+        },
+        {
+          "name": { "mk": "Клуб Сендвич", "en": "Club Sendwich" },
+          "description": { "mk": "крем сир*, пилешки гради, кашкавал*, домат, краставица, ајсберг", "en": "cream cheese* , chicken ham, yellow cheese*, tomato, cucumber, iceberg" },
+          "price": "250"
+        },
+        {
+          "name": { "mk": "Мортадела", "en": "Mortadella" },
+          "description": { "mk": "песто*, моцарела*, мортадела, семки, домат, краставица, маслинки, ајсберг", "en": "pesto*, mozzarella*, mortadella, seeds, tomato, olives, cucumber, iceberg" },
+          "price": "280"
+        },
+        {
+          "name": { "mk": "Лосос", "en": "Salmon" },
+          "description": { "mk": "чаден лосос*, краставица, домат, ајсберг, домашен сос*, сусам", "en": "smoked salmon*, cucumber, tomato, iceberg, homemade sauce*, sesame" },
+          "price": "290"
+        }
+      ]
+    },
+    {
+      "category": {
+        "mk": "ВРАПС",
+        "en": "WRAPS"
+      },
+      "items": [
+        {
+          "name": { "mk": "Бајт", "en": "Bite" },
+          "description": { "mk": "тортиља*, песто*, пилешки стек, домат, краставица, семки, маслинки, кашкавал*, ајсберг", "en": "tortilla*, chicken meat, pesto*, tomato, cucumber, olives, seeds, yellow cheese*, iceberg" },
+          "price": "230"
+        },
+        {
+          "name": { "mk": "Хелти", "en": "Healthy" },
+          "description": { "mk": "тортиља*, јајце*, рукола, авокадо, грчки јогурт*, домат, краставица, ајсберг", "en": "egg*, arugula ,avocado, greek yogurt*, tomato, cucumber, iceberg" },
+          "price": "210"
+        },
+        {
+          "name": { "mk": "Чикен", "en": "Chicken" },
+          "description": { "mk": "тортиља*, крем сир*, пилешки стек, домат, краставица, авокадо, кашкавал*, ајсберг", "en": "tortilla*, cream cheese*, chicken breast, tomato, cucmber, avocado, yellow cheese*, iceberg" },
+          "price": "220"
+        },
+        {
+          "name": { "mk": "Фалафел", "en": "Falafel" },
+          "description": { "mk": "тортиља*, домашен хумус*, домат, краставица, ајсберг, авокадо, морков, маслинки", "en": "tortilla*, homemade hummus*, tomato, cucumber, iceberg, avocado, carrot, olives" },
+          "price": "230"
+        },
+        {
+          "name": { "mk": "Туна", "en": "Tuna" },
+          "description": { "mk": "туна, пченка, кромид, домат, краставица, ајсберг, дресинг", "en": "tuna, corn, onion, tomato, cucumber, iceberg, dressing" },
+          "price": "230"
+        }
+      ]
+    },
+    {
+      "category": {
+        "mk": "TOAST CHEF RECOMMENDATIONS",
+        "en": "TOAST CHEF RECOMMENDATIONS"
+      },
+      "items": [
+        {
+          "name": { "mk": "Guacamole Toast", "en": "Guacamole Toast" },
+          "description": { "mk": "домашен киснат леб*, гвакамоле", "en": "homemade sourdough bread*, guacamole" },
+          "price": "250"
+        },
+        {
+          "name": { "mk": "Лосос Авокадо", "en": "Salmon Avocado" },
+          "description": { "mk": "домашен киснат леб*, авокадо, јајце*, краставица, домат, чаден лосос*, дресинг*", "en": "homemade sourdough bread*, avocado, poached egg*, tomato, cucumber, smoked salmon*, dressing*" },
+          "price": "300"
+        }
+      ]
+    },
+    {
+      "category": {
+        "mk": "СПЕЦИЈАЛ ПОНУДИ",
+        "en": "SPECIAL OFFER"
+      },
+      "items": [
+        {
+          "name": { "mk": "Чиа Оброк / Чиа со млеко од индиски орев", "en": "Chia Meal / Chia with cashew milk" },
+          "description": { "mk": "банана, малина*, агаве, гранола*", "en": "banana, raspberry*, agave, granola*" },
+          "price": "170"
+        },
+        {
+          "name": { "mk": "Чоко Чиа Оброк / Чиа со млеко од бадем", "en": "Choco Chia Meal / Chia with almond milk" },
+          "description": { "mk": "банана, малина*, агаве, гранола*, какао", "en": "banana, raspberry*, agave, granola*, cocoa" },
+          "price": "180"
+        },
+        {
+          "name": { "mk": "Бери Чиа Оброк / Чиа со млеко од бадем", "en": "Berry Chia Meal / Chia with almond milk" },
+          "description": { "mk": "банана, малина*, агаве, гранола*", "en": "banana, raspberry*, agave, granola*" },
+          "price": "180"
+        },
+        {
+          "name": { "mk": "Парафаит", "en": "Parafait" },
+          "description": { "mk": "домашен џем од шумско овошје*, јогурт*, гранола*", "en": "homemade forest fruit jam*, yogurt*, granola*" },
+          "price": "200"
+        },
+        {
+          "name": { "mk": "Овошен оброк", "en": "Fruit Meal" },
+          "description": { "mk": "јогурт*, свежо овошје*, бадем*, ленено семе", "en": "yogurt*, fresh fruit*, almond*, flaxseed" },
+          "price": "230"
+        },
+        {
+          "name": { "mk": "Лимонада Монин", "en": "Lemonada Monin" },
+          "description": null,
+          "price": "160"
+        }
+      ]
+    },
+    {
+      "category": {
+        "mk": "ДОДАТОЦИ",
+        "en": "ADDONS"
+      },
+      "items": [
+        {
+          "name": { "mk": "Протеин*", "en": "Protein*" },
+          "description": null,
+          "price": "90"
+        },
+        {
+          "name": { "mk": "Путер Кикирики*", "en": "Peanut Butter*" },
+          "description": null,
+          "price": "40"
+        },
+        {
+          "name": { "mk": "Путер Бадем*", "en": "Almond Butter*" },
+          "description": null,
+          "price": "70"
+        },
+        {
+          "name": { "mk": "Путер Лешник*", "en": "Hazelnut Butter*" },
+          "description": null,
+          "price": "70"
+        },
+        {
+          "name": { "mk": "Овошно пире*", "en": "Fruit Puree*" },
+          "description": null,
+          "price": "40"
+        },
+        {
+          "name": { "mk": "Обично млеко*", "en": "Regular Milk*" },
+          "description": null,
+          "price": "30"
+        },
+        {
+          "name": { "mk": "Растително млеко*", "en": "Vegetable Milk*" },
+          "description": null,
+          "price": "40"
+        }
+      ]
+    }
+  ]
+}

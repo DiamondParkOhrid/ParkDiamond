@@ -1,6 +1,10 @@
-<app-navbar></app-navbar>
+@if (!isBiteRoute()) {
+  <app-navbar></app-navbar>
+}
 <main>
   <router-outlet></router-outlet>
 </main>
-<app-footer></app-footer>
-<app-bottom-nav></app-bottom-nav>
+@if (!isBiteRoute()) {
+  <app-footer></app-footer>
+  <app-bottom-nav></app-bottom-nav>
+}

@@ -1,0 +1,267 @@
+<!-- ══════════════════ HERO ══════════════════ -->
+<section class="hero">
+  <div class="hero__bg">
+    <img src="assets/bite-caffe/DSC_4695.jpg" alt="" fetchpriority="high">
+  </div>
+  <div class="hero__overlay"></div>
+
+  <div class="hero__content">
+    <img src="assets/bite-caffe/logo.png" alt="BITE" class="hero__logo">
+    <h1 class="hero__headline">{{ 'bite.home.headline' | translate }}</h1>
+    <p class="hero__tagline">{{ 'bite.home.subheadline' | translate }}</p>
+
+    <div class="hero__pills">
+      <span class="hero__pill">{{ 'bite.home.tagFood' | translate }}</span>
+      <span class="hero__pill">{{ 'bite.home.tagCoffee' | translate }}</span>
+      <span class="hero__pill">{{ 'bite.home.tagJuice' | translate }}</span>
+    </div>
+
+    <a routerLink="/bite-cafe/menu" class="hero__cta">
+      {{ 'bite.home.exploreCta' | translate }}
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+    </a>
+  </div>
+
+  <div class="hero__scroll">
+    <div class="hero__scroll-line"></div>
+  </div>
+</section>
+
+<!-- ══════════════════ STORIES ══════════════════ -->
+<section class="stories">
+  <div class="stories__strip">
+    @for (story of stories; track story.id; let i = $index) {
+      <button class="stories__thumb" (click)="openStory(i)">
+        <span class="stories__ring">
+          <img [src]="story.thumb" [alt]="t(story.label)">
+        </span>
+        <span class="stories__label">{{ t(story.label) }}</span>
+      </button>
+    }
+  </div>
+</section>
+
+<!-- Fullscreen story viewer -->
+@if (storyOpen()) {
+  <div class="story-viewer" (click)="closeStory()">
+    <!-- Progress bars -->
+    <div class="story-viewer__progress">
+      @for (story of stories; track story.id; let i = $index) {
+        <div class="story-viewer__bar" [class.done]="i < activeStory()" [class.active]="i === activeStory()">
+          <div class="story-viewer__bar-fill" [style.animation-duration.ms]="storyDuration()"></div>
+        </div>
+      }
+    </div>
+
+    <!-- Header -->
+    <div class="story-viewer__header">
+      <img src="assets/bite-caffe/logo.png" alt="BITE" class="story-viewer__avatar">
+      <span class="story-viewer__name">BITE Ohrid</span>
+      <button class="story-viewer__close" (click)="closeStory()" aria-label="Close">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+
+    <!-- Video -->
+    <video
+      class="story-viewer__video"
+      #storyVideo
+      [src]="stories[activeStory()].video"
+      autoplay
+      muted
+      playsinline
+      (ended)="onStoryEnded()"
+      (click)="$event.stopPropagation()">
+    </video>
+
+    <!-- Caption -->
+    <div class="story-viewer__caption" (click)="$event.stopPropagation()">
+      <p>{{ t(stories[activeStory()].caption) }}</p>
+    </div>
+
+    <!-- Tap zones -->
+    <div class="story-viewer__tap-prev" (click)="prevStory(); $event.stopPropagation()"></div>
+    <div class="story-viewer__tap-next" (click)="nextStory(); $event.stopPropagation()"></div>
+  </div>
+}
+
+<!-- ══════════════════ INTRO ══════════════════ -->
+<section class="intro">
+  <div class="intro__header">
+    <span class="intro__eyebrow">BITE Ohrid</span>
+    <h2 class="intro__title">{{ 'bite.home.introTitle' | translate }}</h2>
+    <p class="intro__desc">{{ 'bite.home.introDesc' | translate }}</p>
+  </div>
+
+  <div class="intro__carousel" #introCarousel>
+    <div class="intro__track">
+      <!-- Card: Bite (food) -->
+      <div class="intro__card">
+        <div class="intro__card-img">
+          <img src="assets/bite-caffe/wPT_Avocado-salad.jpg" alt="Fresh salads and bowls" loading="lazy">
+        </div>
+        <div class="intro__card-body">
+          <span class="intro__card-num">01</span>
+          <h3>{{ 'bite.home.cardBite' | translate }}</h3>
+          <p>{{ 'bite.home.cardBiteDesc' | translate }}</p>
+        </div>
+      </div>
+
+      <!-- Card: Brew (coffee) -->
+      <div class="intro__card">
+        <div class="intro__card-img">
+          <img src="assets/bite-caffe/DSC_3986.jpg" alt="Specialty coffee" loading="lazy">
+        </div>
+        <div class="intro__card-body">
+          <span class="intro__card-num">02</span>
+          <h3>{{ 'bite.home.cardBrew' | translate }}</h3>
+          <p>{{ 'bite.home.cardBrewDesc' | translate }}</p>
+        </div>
+      </div>
+
+      <!-- Card: Fresh (juices & smoothies) -->
+      <div class="intro__card">
+        <div class="intro__card-img">
+          <img src="assets/bite-caffe/wPT_Smoothie-bowl.jpg" alt="Smoothie bowls and juices" loading="lazy">
+        </div>
+        <div class="intro__card-body">
+          <span class="intro__card-num">03</span>
+          <h3>{{ 'bite.home.cardFresh' | translate }}</h3>
+          <p>{{ 'bite.home.cardFreshDesc' | translate }}</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="intro__dots">
+      @for (dot of [0, 1, 2]; track dot) {
+        <button
+          class="intro__dot"
+          [class.active]="activeCard() === dot"
+          (click)="goToCard(dot)"
+          [attr.aria-label]="'Card ' + (dot + 1)">
+        </button>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════ GALLERY ══════════════════ -->
+<section class="gallery">
+  <div class="gallery__grid">
+    <div class="gallery__item gallery__item--tall">
+      <img src="assets/bite-caffe/1783260975383048.png" alt="BITE coffee" loading="lazy">
+    </div>
+    <div class="gallery__item">
+      <img src="assets/bite-caffe/DSC_4477.jpg" alt="Salmon poke bowl" loading="lazy">
+    </div>
+    <div class="gallery__item">
+      <img src="assets/bite-caffe/wPT_Matcha.jpg" alt="Iced matcha latte" loading="lazy">
+    </div>
+    <div class="gallery__item gallery__item--wide">
+      <img src="assets/bite-caffe/pesto mocarela sendvic.jpg" alt="Pesto mozzarella sandwich" loading="lazy">
+    </div>
+    <div class="gallery__item">
+      <img src="assets/bite-caffe/DSC_4610.jpg" alt="Berry parfait" loading="lazy">
+    </div>
+    <div class="gallery__item gallery__item--video">
+      <video autoplay muted loop playsinline preload="metadata">
+        <source src="assets/bite-caffe/18.05.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="gallery__item gallery__item--hide-mobile">
+      <img src="assets/bite-caffe/viber_image_2026-07-05_16-17-46-085.jpg" alt="Fresh juice" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════ WOLT ══════════════════ -->
+<section class="wolt">
+  <div class="wolt__inner">
+    <div class="wolt__logo-wrap">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Wolt-Logo-Black.png/600px-Wolt-Logo-Black.png" alt="Wolt" class="wolt__logo" loading="lazy">
+    </div>
+    <div class="wolt__text">
+      <h3 class="wolt__title">{{ 'bite.home.woltTitle' | translate }}</h3>
+      <p class="wolt__desc">{{ 'bite.home.woltDesc' | translate }}</p>
+    </div>
+    <a href="https://wolt.com/en/mkd/ohrid/restaurant/bite10" target="_blank" rel="noopener" class="wolt__btn">
+      {{ 'bite.home.woltCta' | translate }}
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17l9.2-9.2M17 17V7H7"/></svg>
+    </a>
+  </div>
+</section>
+
+<!-- ══════════════════ FIND US ══════════════════ -->
+<section class="findus">
+  <div class="findus__inner">
+    <div class="findus__info">
+      <span class="findus__eyebrow">{{ 'bite.home.findUsLabel' | translate }}</span>
+      <h2 class="findus__title">{{ 'bite.home.findUsTitle' | translate }}</h2>
+
+      <div class="findus__details">
+        <a href="tel:+38977803141" class="findus__item">
+          <div class="findus__item-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          </div>
+          <div class="findus__item-text">
+            <span class="findus__item-label">{{ 'bite.home.phoneLabel' | translate }}</span>
+            <span class="findus__item-value">077 803 141</span>
+          </div>
+        </a>
+
+        <a href="https://www.instagram.com/bite_ohrid/reels/" target="_blank" rel="noopener" class="findus__item">
+          <div class="findus__item-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </div>
+          <div class="findus__item-text">
+            <span class="findus__item-label">Instagram</span>
+            <span class="findus__item-value">&#64;bite_ohrid</span>
+          </div>
+        </a>
+
+        <a href="https://www.facebook.com/p/BITE-healthy-foodcoffeefresh-juice-tobacco-61582525423672/" target="_blank" rel="noopener" class="findus__item">
+          <div class="findus__item-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          </div>
+          <div class="findus__item-text">
+            <span class="findus__item-label">Facebook</span>
+            <span class="findus__item-value">BITE Ohrid</span>
+          </div>
+        </a>
+      </div>
+
+      <div class="findus__delivery">
+        <span class="findus__delivery-label">{{ 'bite.home.orderOnline' | translate }}</span>
+        <div class="findus__delivery-links">
+          <a href="https://wolt.com/en/mkd/ohrid/restaurant/bite10" target="_blank" rel="noopener" class="findus__delivery-btn findus__delivery-btn--wolt">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Wolt-Logo-Black.png/600px-Wolt-Logo-Black.png" alt="Wolt" width="60" loading="lazy">
+          </a>
+          <a href="https://korpa.mk/partner/bite" target="_blank" rel="noopener" class="findus__delivery-btn findus__delivery-btn--korpa">
+            Korpa.mk
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="findus__map">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3005.767162632479!2d20.802124199999998!3d41.1177759!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1350dd0026fb3ce3%3A0xf8c9a4f76c22f8a1!2sBITE%20-%20healthy%20food%20%2C%20coffee%20%2C%20tobacco!5e0!3m2!1sen!2smk!4v1783551467470!5m2!1sen!2smk" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════ CTA ══════════════════ -->
+<section class="cta">
+  <div class="cta__bg">
+    <img src="assets/bite-caffe/1783260980563190.jpg" alt="" loading="lazy">
+  </div>
+  <div class="cta__overlay"></div>
+
+  <div class="cta__content">
+    <h2>{{ 'bite.home.ctaTitle' | translate }}</h2>
+    <p>{{ 'bite.home.ctaDesc' | translate }}</p>
+    <a routerLink="/bite-cafe/menu" class="cta__btn">
+      {{ 'bite.home.ctaMenu' | translate }}
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+    </a>
+  </div>
+</section>

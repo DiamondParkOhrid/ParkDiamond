@@ -1,0 +1,107 @@
+<!-- ══════════════════ MENU HERO ══════════════════ -->
+<section class="menu-hero">
+  <div class="menu-hero__bg">
+    <img src="assets/bite-caffe/pesto mocarela sendvic.jpg" alt="" fetchpriority="high">
+  </div>
+  <div class="menu-hero__overlay"></div>
+  <div class="menu-hero__content">
+    <h1>{{ 'bite.menu.title' | translate }}</h1>
+    <p>{{ 'bite.menu.subtitle' | translate }}</p>
+  </div>
+</section>
+
+@if (menuData(); as data) {
+  <!-- ══════════════════ STICKY NAV ══════════════════ -->
+  <div class="menu-sticky">
+    <div class="menu-sticky__inner">
+      @for (cat of data.menu; track cat.category.en; let i = $index) {
+        <button
+          [id]="'pill-' + i"
+          class="menu-sticky__pill"
+          [class.active]="activeCategory() === i"
+          (click)="scrollToCategory(i)">
+          {{ t(cat.category) }}
+        </button>
+      }
+    </div>
+  </div>
+
+  <!-- ══════════════════ MENU CATEGORIES ══════════════════ -->
+  <div class="menu-body">
+    <!-- Decorative leaves -->
+    <div class="menu-leaf menu-leaf--1"></div>
+    <div class="menu-leaf menu-leaf--2"></div>
+    <div class="menu-leaf menu-leaf--3"></div>
+    <div class="menu-leaf menu-leaf--4"></div>
+    <div class="menu-leaf menu-leaf--5"></div>
+
+    <!-- Allergen note -->
+    <div class="menu-note">
+      <div class="menu-note__inner">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+        @for (note of data.restaurant.global_notes; track note.en) {
+          <span>{{ t(note) }}</span>
+        }
+      </div>
+    </div>
+
+    @for (cat of data.menu; track cat.category.en; let i = $index) {
+      <!-- Section divider -->
+      @if (getSectionBreak(cat); as section) {
+        <div class="menu-divider">
+          <span>{{ t(section) }}</span>
+        </div>
+      }
+
+      <section class="menu-category" [id]="'cat-' + i">
+        <!-- Category image (if available) -->
+        @if (getCategoryImage(cat); as imgSrc) {
+          <div class="menu-category__img">
+            <img [src]="imgSrc" [alt]="t(cat.category)" loading="lazy">
+          </div>
+        }
+
+        <!-- White card with items -->
+        <div class="menu-category__card">
+          <div class="menu-category__header">
+            <h2>{{ t(cat.category) }}</h2>
+            @if (cat.category_notes?.length) {
+              @for (note of cat.category_notes; track note.en) {
+                <p class="menu-category__note">{{ t(note) }}</p>
+              }
+            }
+          </div>
+
+          <div class="menu-items">
+            @for (item of cat.items; track item.name.en) {
+              <div class="menu-item">
+                <div class="menu-item__row">
+                  <span class="menu-item__name">{{ t(item.name) }}</span>
+                  <span class="menu-item__dots"></span>
+                  <span class="menu-item__price">{{ item.price }} <small>{{ 'bite.menu.currency' | translate }}</small></span>
+                </div>
+                @if (tDesc(item.description)) {
+                  <p class="menu-item__desc">{{ tDesc(item.description) }}</p>
+                }
+              </div>
+            }
+          </div>
+
+          <!-- Addons -->
+          @if (cat.addons?.length) {
+            <div class="menu-addons">
+              <p class="menu-addons__label">{{ 'bite.menu.addons' | translate }}</p>
+              @for (addon of cat.addons; track addon.name.en) {
+                <div class="menu-addon">
+                  <span class="menu-addon__name">+ {{ t(addon.name) }}</span>
+                  <span class="menu-addon__dots"></span>
+                  <span class="menu-addon__price">{{ addon.price }} <small>{{ 'bite.menu.currency' | translate }}</small></span>
+                </div>
+              }
+            </div>
+          }
+        </div>
+      </section>
+    }
+  </div>
+}

@@ -1,4 +1,4 @@
-import { Component, DestroyRef, inject } from '@angular/core';
+import { Component, DestroyRef, inject, signal } from '@angular/core';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { ActivatedRoute, NavigationEnd, Router, RouterOutlet } from '@angular/router';
 import { filter, startWith } from 'rxjs';
@@ -19,6 +19,8 @@ export class App {
   private readonly destroyRef = inject(DestroyRef);
   private readonly seo = inject(SeoService);
 
+  isBiteRoute = signal(false);
+
   constructor() {
     this.router.events
       .pipe(
@@ -30,6 +32,8 @@ export class App {
         const deepest = this.getDeepestRoute(this.route);
         const routeSeo = deepest.snapshot.data['seo'] as SeoConfig | undefined;
         const path = this.router.url.split('?')[0] || '/';
+
+        this.isBiteRoute.set(path.startsWith('/bite-cafe'));
 
         this.seo.applySeo(
           routeSeo ?? {

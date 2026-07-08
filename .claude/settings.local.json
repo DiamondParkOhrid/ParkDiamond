@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//mnt/c/Users/kosto/WebstormProjects/**)",
+      "Bash(npm install:*)",
+      "Bash(npx ng:*)"
+    ]
+  }
+}

@@ -89,5 +89,9 @@ export const routes: Routes = [
       }
     }
   },
+  {
+    path: 'bite-cafe',
+    loadChildren: () => import('./bite-cafe/bite-cafe.routes').then(m => m.BITE_ROUTES),
+  },
   { path: '**', redirectTo: '' }
 ];
