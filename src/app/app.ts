@@ -1,5 +1,4 @@
 import { Component, DestroyRef, inject, signal, OnInit } from '@angular/core';
-import { Component, DestroyRef, inject, signal } from '@angular/core';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { ActivatedRoute, NavigationEnd, Router, RouterOutlet } from '@angular/router';
 import { filter, startWith } from 'rxjs';
