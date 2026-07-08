@@ -152,7 +152,7 @@ const translations: Record<string, Record<Lang, string>> = {
   'about.expansion': { en: 'Major Expansion', mk: 'Големо проширување' },
   'about.expansionDesc': { en: 'Added apartments, Diamond Market, and ATV rentals', mk: 'Додадовме апартмани, Diamond Market и ATV изнајмување' },
   'about.today': { en: 'Today', mk: 'Денес' },
-  'about.todayDesc': { en: '35+ guest capacity, full-service destination', mk: '35+ капацитет, целосна дестинација' },
+  'about.todayDesc': { en: '70+ guest capacity, full-service destination', mk: '70+ капацитет, целосна дестинација' },
   'about.services': { en: 'Our Services', mk: 'Наши услуги' },
   'about.servicesSubtitle': { en: 'More than just accommodation - a complete vacation experience.', mk: 'Повеќе од само сместување - целосно искуство за одмор.' },
   'about.aptDesc': { en: 'Fully equipped apartments with lake & mountain views, pool access, free WiFi and parking.', mk: 'Целосно опремени апартмани со поглед на езерото и планините, базен, бесплатен WiFi и паркинг.' },
