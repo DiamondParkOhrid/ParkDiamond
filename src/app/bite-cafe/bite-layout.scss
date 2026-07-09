@@ -557,16 +557,19 @@
   }
 
   &__bottom {
-    padding-top: 18px;
+    padding-top: 20px;
     border-top: 1px solid rgba(138, 171, 90, 0.1);
     display: flex;
     flex-direction: column;
-    gap: 4px;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
 
     @media (min-width: 768px) {
       flex-direction: row;
       justify-content: space-between;
       align-items: center;
+      text-align: left;
       padding-top: 28px;
       gap: 8px;
     }
@@ -574,35 +577,66 @@
     p {
       font-size: 0.68rem;
       opacity: 0.35;
+      margin: 0;
       @media (min-width: 768px) { font-size: 0.72rem; }
     }
+  }
 
-    a {
-      font-size: 0.68rem;
-      color: rgba(250, 254, 249, 0.35);
-      text-decoration: none;
-      transition: color 0.3s ease;
-      @media (min-width: 768px) { font-size: 0.72rem; }
+  &__meta {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    justify-content: center;
 
-      @media (hover: hover) {
-        &:hover { color: var(--bite-green-light); }
-      }
+    @media (min-width: 768px) {
+      justify-content: flex-end;
+      gap: 14px;
     }
+  }
+
+  &__sep {
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    background: rgba(138, 171, 90, 0.3);
+    flex-shrink: 0;
   }
 
   &__crafted {
     font-size: 0.64rem;
     color: rgba(250, 254, 249, 0.25);
-    letter-spacing: 0.02em;
+    letter-spacing: 0.03em;
     @media (min-width: 768px) { font-size: 0.68rem; }
 
     a {
       color: rgba(250, 254, 249, 0.4);
       text-decoration: none;
-      transition: color 0.3s ease;
+      border-bottom: 1px solid transparent;
+      transition: color 0.3s ease, border-color 0.3s ease;
 
       @media (hover: hover) {
-        &:hover { color: var(--bite-green-light); }
+        &:hover {
+          color: var(--bite-green-light);
+          border-bottom-color: rgba(138, 171, 90, 0.3);
+        }
+      }
+    }
+  }
+
+  &__pd-link {
+    font-size: 0.64rem;
+    color: rgba(250, 254, 249, 0.3);
+    text-decoration: none;
+    letter-spacing: 0.02em;
+    border-bottom: 1px solid transparent;
+    transition: color 0.3s ease, border-color 0.3s ease;
+    @media (min-width: 768px) { font-size: 0.68rem; }
+
+    @media (hover: hover) {
+      &:hover {
+        color: var(--bite-green-light);
+        border-bottom-color: rgba(138, 171, 90, 0.3);
       }
     }
   }

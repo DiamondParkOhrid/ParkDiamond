@@ -97,8 +97,11 @@
       </div>
       <div class="bite-footer__bottom">
         <p>&copy; {{ currentYear }} BITE Ohrid. {{ 'bite.footer.rights' | translate }}</p>
-        <span class="bite-footer__crafted">crafted by <a href="https://dkostoski.dev" target="_blank" rel="noopener">dkostoski.dev</a></span>
-        <a routerLink="/">parkdiamondapartments.com</a>
+        <div class="bite-footer__meta">
+          <span class="bite-footer__crafted">crafted by <a href="https://dkostoski.dev" target="_blank" rel="noopener">dkostoski.dev</a></span>
+          <span class="bite-footer__sep" aria-hidden="true"></span>
+          <a routerLink="/" class="bite-footer__pd-link">parkdiamondapartments.com</a>
+        </div>
       </div>
     </div>
   </footer>
