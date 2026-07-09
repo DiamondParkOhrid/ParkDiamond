@@ -14,7 +14,8 @@ export const BITE_ROUTES: Routes = [
             title: 'BITE | Healthy Food & Coffee in Ohrid',
             description: 'Fresh salads, wraps, smoothies, specialty coffee, and fresh juices in Ohrid.',
             keywords: 'Bite Ohrid, healthy food Ohrid, coffee Ohrid, fresh juice, cafe Ohrid, healthy cafe',
-            image: 'assets/bite-caffe/DSC_4526.jpg'
+            image: 'assets/bite-caffe/DSC_4526.jpg',
+            themeColor: '#1f2a14'
           }
         }
       },
@@ -26,7 +27,8 @@ export const BITE_ROUTES: Routes = [
             title: 'Menu | BITE Ohrid',
             description: 'Browse the full BITE menu — coffee, smoothies, salads, wraps, bowls, and more.',
             keywords: 'Bite menu, Ohrid cafe menu, healthy food menu',
-            image: 'assets/bite-caffe/wPT_Avocado-salad.jpg'
+            image: 'assets/bite-caffe/wPT_Avocado-salad.jpg',
+            themeColor: '#1f2a14'
           }
         }
       }

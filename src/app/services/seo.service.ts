@@ -8,11 +8,13 @@ export interface SeoConfig {
   keywords?: string;
   image?: string;
   type?: string;
+  themeColor?: string;
 }
 
 @Injectable({ providedIn: 'root' })
 export class SeoService {
   private readonly siteName = 'Park Diamond Apartments';
+  private readonly defaultThemeColor = '#2f67e0';
 
   constructor(
     private readonly title: Title,
@@ -44,6 +46,8 @@ export class SeoService {
       this.updateTag('property', 'og:image', imageUrl);
       this.updateTag('name', 'twitter:image', imageUrl);
     }
+
+    this.updateTag('name', 'theme-color', config.themeColor ?? this.defaultThemeColor);
 
     if (canonicalPath) {
       this.setCanonical(canonicalPath);

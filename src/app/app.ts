@@ -45,7 +45,8 @@ export class App implements OnInit {
         this.seo.applySeo(
           routeSeo ?? {
             title: 'Park Diamond Apartments',
-            description: 'Park Diamond Apartments in Ohrid.'
+            description: 'Park Diamond Apartments in Ohrid.',
+            themeColor: '#2f67e0'
           },
           path
         );
