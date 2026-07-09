@@ -34,8 +34,15 @@ export class SeoService {
     this.updateTag('property', 'og:type', config.type ?? 'website');
     this.updateTag('property', 'og:site_name', this.siteName);
 
+    // Twitter Card
+    this.updateTag('name', 'twitter:card', config.image ? 'summary_large_image' : 'summary');
+    this.updateTag('name', 'twitter:title', config.title);
+    this.updateTag('name', 'twitter:description', config.description);
+
     if (config.image) {
-      this.updateTag('property', 'og:image', config.image);
+      const imageUrl = config.image.startsWith('http') ? config.image : this.toAbsoluteUrl(`/${config.image}`);
+      this.updateTag('property', 'og:image', imageUrl);
+      this.updateTag('name', 'twitter:image', imageUrl);
     }
 
     if (canonicalPath) {
