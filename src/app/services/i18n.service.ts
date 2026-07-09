@@ -236,6 +236,9 @@ const translations: Record<string, Record<Lang, string>> = {
   'bite.footer.navigate': { en: 'Navigate', mk: 'Навигација' },
   'bite.footer.findUs': { en: 'Find Us', mk: 'Најди нè' },
   'bite.footer.orderLabel': { en: 'Order', mk: 'Нарачај' },
+  'bite.nav.callUs': { en: 'Call Us', mk: 'Јави се' },
+  'bite.phoneOrder.title': { en: 'Phone orders available!', mk: 'Нарачај по телефон!' },
+  'bite.phoneOrder.text': { en: 'Call us to place your order', mk: 'Јави се за нарачка' },
 
   // BITE Home
   'bite.home.headline': { en: 'Eat well. Feel good.', mk: 'Јади добро. Чувствувај се одлично.' },
