@@ -239,6 +239,7 @@ const translations: Record<string, Record<Lang, string>> = {
   'bite.nav.callUs': { en: 'Call Us', mk: 'Јави се' },
   'bite.phoneOrder.title': { en: 'Phone orders available!', mk: 'Нарачај по телефон!' },
   'bite.phoneOrder.text': { en: 'Call us to place your order', mk: 'Јави се за нарачка' },
+  'bite.phoneOrder.tip': { en: 'We take phone orders', mk: 'Нарачај по телефон' },
 
   // BITE Home
   'bite.home.headline': { en: 'Eat well. Feel good.', mk: 'Јади добро. Чувствувај се одлично.' },
