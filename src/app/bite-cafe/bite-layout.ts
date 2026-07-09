@@ -1,5 +1,6 @@
 import { Component, OnInit, OnDestroy, inject, signal } from '@angular/core';
-import { RouterOutlet, RouterLink, RouterLinkActive } from '@angular/router';
+import { RouterOutlet, RouterLink, RouterLinkActive, Router, NavigationEnd } from '@angular/router';
+import { filter, Subscription } from 'rxjs';
 import { I18nService } from '../services/i18n.service';
 import { TranslatePipe } from '../pipes/translate.pipe';
 
@@ -11,12 +12,14 @@ import { TranslatePipe } from '../pipes/translate.pipe';
 })
 export class BiteLayout implements OnInit, OnDestroy {
   i18n = inject(I18nService);
+  private router = inject(Router);
   isScrolled = signal(false);
   tabHidden = signal(false);
   currentYear = new Date().getFullYear();
 
   private lenis: any;
   private rafId = 0;
+  private routerSub?: Subscription;
   private lastScrollY = 0;
   private scrollThreshold = 80;
   private originalFavicon = '';
@@ -38,10 +41,20 @@ export class BiteLayout implements OnInit, OnDestroy {
     window.addEventListener('scroll', this.onScroll, { passive: true });
     this.initLenis();
     this.setBiteFavicon();
+    this.routerSub = this.router.events
+      .pipe(filter(e => e instanceof NavigationEnd))
+      .subscribe(() => {
+        if (this.lenis) {
+          this.lenis.scrollTo(0, { immediate: false, duration: 0.8 });
+        } else {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+      });
   }
 
   ngOnDestroy() {
     window.removeEventListener('scroll', this.onScroll);
+    this.routerSub?.unsubscribe();
     if (this.rafId) cancelAnimationFrame(this.rafId);
     this.lenis?.destroy();
     this.restoreFavicon();

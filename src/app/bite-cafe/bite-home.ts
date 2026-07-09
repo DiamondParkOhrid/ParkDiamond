@@ -298,7 +298,7 @@ export class BiteHome implements OnDestroy {
 
     this.ctx = gsap.context(() => {
       // ── Hero entrance ──
-      const hero = gsap.timeline({ defaults: { ease: 'power3.out' } });
+      const hero = gsap.timeline({ defaults: { ease: 'power3.out', clearProps: 'all' } });
       hero
         .from('.hero__logo', { opacity: 0, scale: 0.85, duration: 1.2 })
         .from('.hero__headline', { opacity: 0, y: isMobile ? 30 : 60, duration: 1 }, '-=0.6')

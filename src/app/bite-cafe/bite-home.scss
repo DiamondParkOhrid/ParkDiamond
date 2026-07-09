@@ -1065,12 +1065,6 @@
       color: #fff;
       padding: 10px 24px;
 
-      img {
-        height: 18px;
-        width: auto;
-        filter: brightness(0) invert(1);
-      }
-
       @media (hover: hover) {
         &:hover { background: #0082c3; transform: translateY(-2px); }
       }
