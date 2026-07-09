@@ -17,6 +17,7 @@ export class BiteLayout implements OnInit, OnDestroy {
   tabHidden = signal(false);
   showPhoneHint = signal(false);
   phoneHintClosing = signal(false);
+  phoneHintCollapsed = signal(false);
   currentYear = new Date().getFullYear();
 
   private lenis: any;
@@ -27,6 +28,7 @@ export class BiteLayout implements OnInit, OnDestroy {
   private originalFavicon = '';
   private originalBodyBg = '';
   private phoneHintTimer: any;
+  private phoneCollapseTimer: any;
 
   private onScroll = () => {
     const y = window.scrollY;
@@ -44,7 +46,10 @@ export class BiteLayout implements OnInit, OnDestroy {
     window.addEventListener('scroll', this.onScroll, { passive: true });
     this.initLenis();
     this.setBiteFavicon();
-    this.phoneHintTimer = setTimeout(() => this.showPhoneHint.set(true), 3000);
+    this.phoneHintTimer = setTimeout(() => {
+      this.showPhoneHint.set(true);
+      this.phoneCollapseTimer = setTimeout(() => this.phoneHintCollapsed.set(true), 3500);
+    }, 3000);
     this.routerSub = this.router.events
       .pipe(filter(e => e instanceof NavigationEnd))
       .subscribe(() => {
@@ -66,6 +71,7 @@ export class BiteLayout implements OnInit, OnDestroy {
 
   ngOnDestroy() {
     clearTimeout(this.phoneHintTimer);
+    clearTimeout(this.phoneCollapseTimer);
     window.removeEventListener('scroll', this.onScroll);
     this.routerSub?.unsubscribe();
     if (this.rafId) cancelAnimationFrame(this.rafId);

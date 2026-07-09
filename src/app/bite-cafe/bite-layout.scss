@@ -711,6 +711,7 @@
     opacity: 0;
     animation: tipFade 0.4s 0.6s both;
     pointer-events: none;
+    transition: opacity 0.35s ease, transform 0.35s ease;
   }
 
   &__x {
@@ -728,12 +729,32 @@
     justify-content: center;
     cursor: pointer;
     color: var(--bite-muted);
-    transition: all 0.2s ease;
+    transition: all 0.25s ease;
     -webkit-tap-highlight-color: transparent;
 
     &:hover {
       background: #fff;
       color: var(--bite-dark);
+    }
+  }
+
+  // Collapsed: hide tip & close, keep only the phone icon
+  &.collapsed {
+    .bite-phone-hint__tip {
+      opacity: 0 !important;
+      transform: translateY(-50%) translateX(4px);
+      pointer-events: none;
+    }
+
+    .bite-phone-hint__x {
+      opacity: 0;
+      transform: scale(0.5);
+      pointer-events: none;
+    }
+
+    .bite-phone-hint__pulse {
+      animation: none;
+      opacity: 0;
     }
   }
 }
