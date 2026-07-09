@@ -389,8 +389,8 @@
   }
 
   &__body {
-    padding: 48px 20px 24px;
-    padding-bottom: calc(24px + var(--bite-tab-h) + env(safe-area-inset-bottom, 0px));
+    padding: 32px 20px 16px;
+    padding-bottom: calc(16px + var(--bite-tab-h) + env(safe-area-inset-bottom, 0px));
     max-width: 1280px;
     margin: 0 auto;
 
@@ -403,8 +403,8 @@
   &__top {
     display: flex;
     flex-direction: column;
-    gap: 36px;
-    margin-bottom: 36px;
+    gap: 24px;
+    margin-bottom: 24px;
 
     @media (min-width: 768px) {
       flex-direction: row;
@@ -418,12 +418,12 @@
   &__brand {
     display: flex;
     flex-direction: column;
-    gap: 14px;
+    gap: 10px;
 
     img {
-      height: 32px;
+      height: 28px;
       width: auto;
-      max-width: 100px;
+      max-width: 90px;
       object-fit: contain;
       border-radius: 4px;
       opacity: 0.9;
@@ -431,23 +431,28 @@
     }
 
     p {
-      font-size: 0.85rem;
-      line-height: 1.65;
+      font-size: 0.8rem;
+      line-height: 1.55;
       max-width: 320px;
-      opacity: 0.55;
+      opacity: 0.45;
+
+      @media (min-width: 768px) {
+        font-size: 0.85rem;
+        line-height: 1.65;
+      }
     }
   }
 
   &__social {
     display: flex;
-    gap: 10px;
-    margin-top: 4px;
+    gap: 8px;
+    margin-top: 2px;
   }
 
   &__social-link {
-    width: 42px;
-    height: 42px;
-    border-radius: 12px;
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
     background: rgba(138, 171, 90, 0.08);
     border: 1px solid rgba(138, 171, 90, 0.12);
     display: flex;
@@ -457,6 +462,12 @@
     text-decoration: none;
     transition: all 0.3s ease;
     -webkit-tap-highlight-color: transparent;
+
+    @media (min-width: 768px) {
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+    }
 
     &:active { transform: scale(0.92); }
 
@@ -472,39 +483,63 @@
   }
 
   &__columns {
-    display: flex;
-    gap: 40px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px 24px;
 
-    @media (max-width: 767px) { gap: 28px; }
+    @media (min-width: 768px) {
+      display: flex;
+      gap: 40px;
+    }
   }
 
   &__col {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 6px;
+
+    @media (min-width: 768px) { gap: 10px; }
+
+    &:last-child {
+      @media (max-width: 767px) {
+        grid-column: 1 / -1;
+      }
+    }
   }
 
   &__col-title {
     font-family: var(--font-body);
-    font-size: 0.65rem;
+    font-size: 0.6rem;
     font-weight: 600;
-    letter-spacing: 0.14em;
+    letter-spacing: 0.12em;
     text-transform: uppercase;
     color: var(--bite-green-light);
     opacity: 0.7;
-    margin-bottom: 6px;
+    margin-bottom: 2px;
+
+    @media (min-width: 768px) {
+      font-size: 0.65rem;
+      letter-spacing: 0.14em;
+      margin-bottom: 6px;
+    }
   }
 
   &__col a {
-    font-size: 0.84rem;
+    font-size: 0.78rem;
     font-weight: 400;
     color: rgba(250, 254, 249, 0.55);
     text-decoration: none;
     transition: all 0.3s ease;
     display: flex;
     align-items: center;
-    gap: 8px;
-    min-height: 30px;
+    gap: 6px;
+    min-height: 26px;
+
+    @media (min-width: 768px) {
+      font-size: 0.84rem;
+      gap: 8px;
+      min-height: 30px;
+    }
 
     svg {
       flex-shrink: 0;
@@ -522,29 +557,32 @@
   }
 
   &__bottom {
-    padding-top: 24px;
+    padding-top: 18px;
     border-top: 1px solid rgba(138, 171, 90, 0.1);
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 4px;
 
     @media (min-width: 768px) {
       flex-direction: row;
       justify-content: space-between;
       align-items: center;
       padding-top: 28px;
+      gap: 8px;
     }
 
     p {
-      font-size: 0.72rem;
+      font-size: 0.68rem;
       opacity: 0.35;
+      @media (min-width: 768px) { font-size: 0.72rem; }
     }
 
     a {
-      font-size: 0.72rem;
+      font-size: 0.68rem;
       color: rgba(250, 254, 249, 0.35);
       text-decoration: none;
       transition: color 0.3s ease;
+      @media (min-width: 768px) { font-size: 0.72rem; }
 
       @media (hover: hover) {
         &:hover { color: var(--bite-green-light); }
@@ -553,9 +591,10 @@
   }
 
   &__crafted {
-    font-size: 0.68rem;
+    font-size: 0.64rem;
     color: rgba(250, 254, 249, 0.25);
     letter-spacing: 0.02em;
+    @media (min-width: 768px) { font-size: 0.68rem; }
 
     a {
       color: rgba(250, 254, 249, 0.4);
