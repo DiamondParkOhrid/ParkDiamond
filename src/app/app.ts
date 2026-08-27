@@ -24,6 +24,13 @@ export class App implements OnInit {
   showSplash = signal(true);
 
   ngOnInit() {
+    // Handle GitHub Pages 404.html SPA redirect
+    const params = new URLSearchParams(window.location.search);
+    const redirectPath = params.get('p');
+    if (redirectPath) {
+      this.router.navigateByUrl(redirectPath);
+    }
+
     const duration = 400 + Math.random() * 900;
     setTimeout(() => this.showSplash.set(false), duration);
   }
